@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<!-- This web application was developed entirely by Julio Kozarewicz. -->
+<!-- www.juliokozarewicz.dev -->
+
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="{% static '/core/js/index.js' %}"></script>
+	<link rel="stylesheet" href="{% static '/core/css/base.css' %}">
+	<script src="{% static '/core/js/index.js' %}"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+	{% block htmlhead %}
+		{% load i18n %}
+	{% endblock htmlhead %}
+</head>
+
+<body>
+	<header>
+		<div class="lineup" id="id-lineup"></div>
+		<nav id="id_nav">
+			<div id="idimagemdomenu">
+				<li>
+					<img onclick="location.href='/'" class="logo-menu" id="id_logo_menu" src="{% static '/core/images/logo.svg' %}" />
+				</li>
+			</div>
+			<div class="rigth-menu" id="idrigthmenu">
+				<ul>
+					<li onclick="location.href='/about-us'"><a>{% blocktrans %}about{% endblocktrans %}</a>
+					<li onclick="location.href='/features'"><a>{% blocktrans %}features{% endblocktrans %}</a></li>
+					<li onclick="location.href='/blog'"><a>{% blocktrans %}blog{% endblocktrans %}</a></li>
+					<li onclick="location.href='/contact'"><a>{% blocktrans %}contact{% endblocktrans %}</a></li>
+				</ul>
+				<button onclick="location.href='/accounts/login'" class="login">
+					<div class="img"></div>
+					<p class="login2">{% blocktrans %}sign in{% endblocktrans %}</p>
+				</button>
+			</div>
+		</nav>
+		<nav id="navmobile">
+			<img onclick="location.href='/'" id="idlogomenuhambimg" src="{% static '/core/images/logo-white.svg' %}" />
+			<div id="idmenuhambsquare" onclick="new status_menu()">
+				<div id="idinvisiblesquare">
+					<div id="linemenuhamb1"></div>
+					<div id="linemenuhamb2"></div>
+					<div id="linemenuhamb3"></div>
+				</div>
+			</div>
+			<div id="idblackbackground" onclick="new status_menu()"></div>
+			<div id="idbackgroundred">
+				<div id="idmenuhamboptions">
+
+					<img onclick="location.href='/'" id="idlogomenuhambimgopt" src="{% static '/core/images/logo-white.svg' %}" />
+
+					<div class="menucategory" onclick="location.href='/'">
+						<img onclick="location.href='/'" class="imagemmenu" src="{% static '/core/images/menu-home.svg' %}" />
+						<p class="textcategory">{% blocktrans %}HOME PAGE{% endblocktrans %}</p>
+					</div>
+					<div class="menucategory" onclick="location.href='/about-us'">
+						<img onclick="location.href='/'" class="imagemmenu" src="{% static '/core/images/menu-about.svg' %}" />
+						<p class="textcategory">{% blocktrans %}ABOUT{% endblocktrans %}</p>
+					</div>
+					<div class="menucategory" onclick="location.href='/features'">
+						<img onclick="location.href='/'" class="imagemmenu" src="{% static '/core/images/menu-features.svg' %}" />
+						<p class="textcategory">{% blocktrans %}FEATURES{% endblocktrans %}</p>
+					</div>
+					<div class="menucategory" onclick="location.href='/blog'">
+						<img onclick="location.href='/'" class="imagemmenu" src="{% static '/core/images/menu-blog.svg' %}" />
+						<p class="textcategory">{% blocktrans %}BLOG{% endblocktrans %}</p>
+					</div>
+					<div class="menucategory" onclick="location.href='/contact'">
+						<img onclick="location.href='/'" class="imagemmenu" src="{% static '/core/images/menu-contact.svg' %}" />
+						<p class="textcategory">{% blocktrans %}CONTACT{% endblocktrans %}</p>
+					</div>					
+				</div>
+				<div id="idloginmenuhambbottombtn" onclick="location.href='/accounts/login'" class="login">
+					<img onclick="location.href='/'" id="idlogomenuhambimgoptbottom" src="{% static '/core/images/login.svg' %}" />
+					<p>{% blocktrans %}sign in{% endblocktrans %}</p>
+				</div>
+			</div>
+		</nav>
+	</header>
+	{% block content %}
+	{% endblock %}
+</body>
+<div class="white-triangle">
+	<div class="white-triangle2"></div>
+</div>
+<footer>
+	<div class="top">
+		<img onclick="location.href='/'" class="logo-footer" src="{% static '/core/images/logo-white.svg' %}" />
+		<div class="social">
+			<p>{% blocktrans %}Follow our social networks:{% endblocktrans %}</p>
+			<img class="instagram" src="{% static '/core/images/instagram.svg' %}" />
+		</div>
+	</div>
+	<div class="bottom">
+		<nav class="box1">
+			<ul class="menuf1">
+				<li onclick="location.href='/blog'"><a>{% blocktrans %}blog{% endblocktrans %}</a></li>
+				<li onclick="location.href='/about-us'"><a>{% blocktrans %}about us{% endblocktrans %}</a></li>
+				<li onclick="location.href='/features'"><a>{% blocktrans %}features{% endblocktrans %}</a></li>
+			</ul>
+		</nav>
+		<div class="box2">
+			<p>{% blocktrans %}Did not find what you were looking for?{% endblocktrans %}</p>
+			<button onclick="location.href='/contact'">{% blocktrans %}contact us{% endblocktrans %}</button>
+		</div>
+		<nav class="box3">
+			<ul class="menuf3">
+				<li onclick="location.href='/'"><a>{% blocktrans %}home page{% endblocktrans %}</a></li>
+				<li onclick="location.href='/accounts/login'"><a>{% blocktrans %}login{% endblocktrans %}</a></li>
+				<li onclick="location.href='/accounts/signup'"><a>{% blocktrans %}try now{% endblocktrans %}</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div id="allcookiesdivison">
+		<div id="containercookies">
+			<div id="cookiesdivison"></div>
+			<div id="textcookies">
+				<p>{% blocktrans %}Murangoo uses cookies in accordance with our{% endblocktrans %} <span onclick="window.open('/privacy-policy')" style="font-weight: bold; color: white; cursor: pointer;">{% blocktrans %}Privacy Policy{% endblocktrans %}</span>. {% blocktrans %}By continuing to browse this site, you declare that you are aware of these conditions.{% endblocktrans %}</p>
+				<button onclick="new cookiesmessage()">ok</button>
+			</div>
+		</div>
+
+		<script>
+
+			if (document.cookie.replace(/(?:(?:^|.*;\s*)statusCookiemessage\s*\=\s*([^;]*).*$)|^.*$/, "$1") === 'statusCookiemessageCLOSED') {
+
+				// hide content
+				document.getElementById('allcookiesdivison').style = 'display: none;';
+
+			}
+
+		</script>
+	</div>
+
+</footer>
+<div class="linebottom" style="display: flex; align-items: center; justify-content: center;">
+	<a href="/privacy-policy" style="font-size: 10px; text-decoration: none; color: #ff828e; margin-left: 20px;">{% blocktrans %}Privacy Policy{% endblocktrans %}</a>
+	<a href="/service-terms" style="font-size: 10px; text-decoration: none; color: #ff828e; margin-left: 20px;">{% blocktrans %}Service Terms{% endblocktrans %}</a>
+</div>
+<img class="chat-icon" id="id-chat-icon" src="{% static '/core/images/chat.svg' %}" onclick="status_chat()"/>
+<div class="chat-load" id="id-chat-load">
+	<div class="chatframe">
+		<div class="title">
+			<p class="title2">{% blocktrans %}SELECT ONE OF OUR SERVICE CHANNELS:{% endblocktrans %}</p>
+		</div>
+		<button class="zap" onclick="window.open('https:\/\/api.whatsapp.com/send?phone=5541'), new chatMovement('chat-options', 'load-chat').status_chat()"">
+			<div class=" img"></div>
+			<p>WhatsApp</p>
+		</button>
+		<button class="email" onclick="location.href='/contact'">
+			<div class=" img"></div>
+			<p>Email</p>
+		</button>
+	</div>
+</div>
+
+</html>

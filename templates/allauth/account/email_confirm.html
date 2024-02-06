@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block htmlhead %}
+      {% load static %}
+      {% load i18n %}
+      {% load account %}
+      <title>Murangoo | finance</title>
+      <meta name="theme-color" content="#F51E33"/>
+      <meta name="apple-mobile-web-app-status-bar-style" content="#F51E33"/>
+      <meta name="msapplication-navbutton-color" content="#F51E33"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+      <link rel="stylesheet" href="{% static '/allauth/css/forgotpassword.css' %}">
+      <script src="{% static '/allauth/js/index.js' %}"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+  {% endblock htmlhead %}
+</head>
+
+<section id="idsectionlogin">
+
+  <img id="idlogomenuhambimg" src="{% static '/allauth/images/logo-white.svg' %}" />
+
+  <div id="idlinesep"></div>
+
+    {% if confirmation %}
+
+    {% user_display confirmation.email_address.user as user_display %}
+
+    <p id="idtextproceed">{% trans "Confirm E-mail Address:" %}</p>
+    <p id="idtextproceed" style="margin-bottom: 2vh; font-size: 1.5vh; color: black;">{% blocktrans with confirmation.email_address.email as email %}{{ email }}{% endblocktrans %}</p>
+
+    <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+    {% csrf_token %}
+        <button id="idsubmitmessage" type="submit">{% trans 'Confirm' %}</button>
+    </form>
+
+    {% else %}
+
+    {% url 'account_email' as email_url %}
+
+    <p id="idtextproceed">{% blocktrans %}This e-mail confirmation link expired or is invalid. Please issue a new e-mail confirmation request. <a style="text-decoration: none; color: black;" href="{{ email_url }}">[ click here ]</a>{% endblocktrans %}</p>
+
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <div id="idlinesep"></div>
+
+  <div id="idsignupbottom">
+    <p>{% blocktrans %}Already have an account?{% endblocktrans %}<a onclick="location.href='/accounts/login/'">{% blocktrans %}Sign In{% endblocktrans %}</a></p>
+  </div>
+
+</section>
+
+</html>

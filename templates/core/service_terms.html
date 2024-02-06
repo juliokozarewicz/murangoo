@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <title>Murangoo | finance - Service Terms</title>
+        <meta name="theme-color" content="#F51E33"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#F51E33"/>
+        <meta name="msapplication-navbutton-color" content="#F51E33"/>
+		<link rel="stylesheet" href="{% static '/core/css/serviceterms.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+
+    <section>
+
+        <div id="iddivtophead">
+            <h1 id="idtitle">{% blocktrans %}Service Terms{% endblocktrans %}</h1>
+            <img id="idimgtop" src="{% static '/core/images/serviceterms.svg' %}" />
+        </div>
+
+        <div id="idtext">
+
+            <h2>{% blocktrans %}Service terms of Murangoo Finance{% endblocktrans %} [{{privacy_policy.version}}]</h2>
+
+            {% get_current_language as user_language %}
+
+            {% if user_language == 'pt-br' %}
+
+                <p>{{privacy_policy.service_terms_pt_br|linebreaks}}</p>
+
+            {% else %}
+
+                <p>{{privacy_policy.service_terms_en|linebreaks}}</p>
+
+            {% endif %}
+
+            <h2 style="margin-bottom: 100px; margin-top: 80px; font-size: 15px; text-align: center;">{% blocktrans %}Please contact support for more information{% endblocktrans %}: <br><br> <a href="/contact" style="color: white; text-decoration: none; padding: 5px; background-color: black; border-radius: 5px;">{% blocktrans %}support{% endblocktrans %}</a></h2>            
+
+        </div>
+
+        <script type="text/javascript">
+            document.getElementById('navmobile').style.backgroundColor = "#fe6775";
+            document.getElementById('id_logo_menu').src = "static/core/images/logo-white.svg"
+            document.getElementById('id-lineup').style.backgroundColor = "#fe6775";
+            document.getElementById('id_nav').style.backgroundColor = "#fe6775";
+        </script>
+
+        <style>
+
+            li {
+                color: white;
+            }
+
+        </style>
+
+    </section>
+
+{% endblock %}
+
+</html>

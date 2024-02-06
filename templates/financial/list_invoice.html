@@ -1,0 +1,898 @@
+{% extends 'financial/base.html' %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <title>Murangoo | finance: {% blocktrans %}Financial{% endblocktrans %}</title>
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+		<link rel="stylesheet" href="{% static '/financial/css/list_invoices.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+
+    <section>
+
+        <div class="margintopdiv"></div>
+
+        <div id="ballancetopmobile">
+            <div id="ballone"></div>
+            <img class="iconbalancetopmobile" src="{% static '/financial/images/iconbalancetopmobile.svg' %}" />
+            <h2>{% blocktrans %}Your current balance is:{% endblocktrans %}</h2>
+            <p>{% blocktrans %}${% endblocktrans %} {{ template_balance }} </p>
+        </div>
+
+        <div id="allcontentpage">
+
+            <div id="topdivisioncards">
+
+                <div id="cardone" class="cardstop">
+                    <img class="imgiconcard" src="{% static '/financial/images/financialcard1.svg' %}" />
+                    <p class="valuecard" id="balancevalue">{% blocktrans %}${% endblocktrans %} {{ template_balance }}</p>
+                    <p class="textcard">{% blocktrans %}balance{% endblocktrans %}</p>
+                </div>
+
+                <div class="cardstop">
+                    <img class="imgiconcard" src="{% static '/financial/images/financialcard2.svg' %}" />
+                    <p class="valuecard" id="revenuesvalue">{% blocktrans %}${% endblocktrans %} {{ template_revenues }}</p>
+                    <p class="textcard">{% blocktrans %}revenues{% endblocktrans %}</p>
+                </div>
+
+                <div class="cardstop">
+                    <img class="imgiconcard" src="{% static '/financial/images/financialcard3.svg' %}" />
+                    <p class="valuecard" id="expensesvalue">{% blocktrans %}${% endblocktrans %} {{ template_expenses }}</p>
+                    <p class="textcard">{% blocktrans %}expenses{% endblocktrans %}</p>
+                </div>
+
+                <div class="cardstop">
+                    <img class="imgiconcard" src="{% static '/financial/images/financialcard4.svg' %}" />
+                    <p class="valuecard balancevalue" id="totalValue">{% blocktrans %}${% endblocktrans %} <span id="totalValuespan">0</span></p>
+                    <p class="textcard">{% blocktrans %}total selected{% endblocktrans %}</p>
+                </div>
+
+                <div class="cardstopnew" onclick="new newInvoiceFrame()">
+                    <p class="textcardnewadd">+</p>
+                    <p class="textcardnew">{% blocktrans %}new transaction{% endblocktrans %}</p>
+                </div>
+            </div>
+
+            <div class="linemobile" style="margin-top: 5vh;"></div>
+
+            <div id="allfilters">
+                <input type="text" id="inputfiltertext" placeholder="{% blocktrans %}Search...{% endblocktrans %}">
+                <img id="idiconsearch" src="{% static '/financial/images/searchicon.svg' %}" />
+                <button id="filtersothers" onclick="new statusFilterframe()">
+                    <img id="iconfilters" src="{% static '/financial/images/filtersicons.svg' %}" />
+                </button>
+                <button id="newtransaction" onclick="new newInvoiceFrame()">{% blocktrans %}+ new transaction{% endblocktrans %}</button>
+            </div>
+
+            <div id="serchmobile">
+                <img id="idiconsearchmopbile" src="{% static '/financial/images/searchicon.svg' %}" />
+                <input type="text" id="inputfiltertextmobile" placeholder="{% blocktrans %}Search...{% endblocktrans %}">
+                <button id="filtersothersnew" onclick="new statusFilterframe()">
+                    <img id="iconfilters" src="{% static '/financial/images/filtersicons.svg' %}" />
+                </button>
+            </div>
+
+            <div class="linemobile"></div>
+
+            <div id="all_list_invoices">
+
+                <div id="head_list_invoices">
+                    <input type="checkbox" id="selectallcheckbox"> <label for="selectallcheckbox" class="textselectallinvoicesmobile">{% blocktrans %}select all{% endblocktrans %}</label>
+                    <div class="fieldsformats" style="width: 15vh;">{% blocktrans %}date{% endblocktrans %}</div>
+                    <div class="fieldsformats descriptionhide" style="width: 45vh;">{% blocktrans %}description{% endblocktrans %}</div>
+                    <div class="fieldsformats" style="width: 10vh;">{% blocktrans %}type{% endblocktrans %}</div>
+                    <div class="fieldsformats categoryhide" style="width: 20vh;">{% blocktrans %}category{% endblocktrans %}</div>
+                    <div class="fieldsformats bankhide" style="width: 15vh;">{% blocktrans %}bank{% endblocktrans %}</div>
+                    <div class="fieldsformats" style="width: 15vh;">{% blocktrans %}card{% endblocktrans %}</div>
+                    <div class="fieldsformats" style="width: 15vh;">{% blocktrans %}amount{% endblocktrans %}</div>
+                    <div class="fieldsformats" style="width: 17vh;">{% blocktrans %}status{% endblocktrans %}</div>
+                    <div class="fieldsformats actionshide" style="width: 15vh;">{% blocktrans %}actions{% endblocktrans %}</div>
+                </div>
+
+                <div id="allcontentDesktopitens">
+                    {% for invoice in dados %}
+                            <div class="iteminvoive sumallevents">
+                                <div id="frameclickeditinvoice" onclick="new loadPage('{{invoice.get_absolute_url_update}}', 'loadcontent'), new updateInvoiceFrame()"></div>
+                                <input type="checkbox" class="checkboxitems" style="margin-left: 3vh; margin-right: 0vh; cursor: pointer;">
+                                <div class="iteminvoiceformats duedateitem" style="width: 15vh;">{{invoice.due_date|date:"SHORT_DATE_FORMAT"}}</div>
+                                <div class="iteminvoiceformats descriptionhide" style="width: 45vh;">{{invoice.payment_description}}</div>
+                                <div class="iteminvoiceformats invoiceposttype" style="width: 10vh;"><span>{{invoice.get_posting_type_display}}</span></div>
+                                <div class="iteminvoiceformats categoryhide" style="width: 20vh;">{{invoice.category}}</div>
+                                <div class="iteminvoiceformats bankhide" style="width: 15vh;">{{invoice.bank_account}}</div>
+                                <div class="iteminvoiceformats" style="width: 15vh;">{{invoice.card}}</div>
+                                <div class="iteminvoiceformats paymentamount" style="width: 15vh;"><span>{{invoice.payment_amount}}</span></div>
+                                <div class="iteminvoiceformats statusitem" style="width: 17vh;"><span>{{invoice.get_status_display}}</span></div>
+                                <div class="iteminvoiceformats actionshide" style="width: 15vh;">
+                                    <img id="copyicon" onclick="new newInvoiceFrame(), new fill_out_copy_form(
+
+                                        '{{invoice.posting_type}}',
+                                        '{{invoice.payment_description}}',
+                                        '{{invoice.payment_amount}}',
+                                        '{{invoice.due_date|date:'SHORT_DATE_FORMAT'}}',
+                                        '{{invoice.category}}',
+                                        '{{invoice.bank_account}}',
+                                        '{{invoice.payee}}',
+                                        '{{invoice.document_number}}',
+                                        '{{invoice.card}}',
+                                        '{{invoice.notes}}'
+
+                                    )" src="{% static '/financial/images/copyicon.svg' %}" />
+                                    <img id="deleticon" onclick="new loadPage('{{invoice.get_absolute_url_delete}}', 'loadcontent')" src="{% static '/financial/images/deleteicon.svg' %}" />
+                                </div>
+                            </div>
+                    {% endfor %}
+                </div>
+
+                <div id="allcontentmobileitens">
+                    {% for date in date_mobile %}
+                        <div id="datemobileitens" class="classdatemobileitens">
+                            <div class="datetitlemobileinvoice">{{date}}</div>
+                            {% for invoice in dados %}
+                                {% if invoice.due_date == date %}
+                                    <div class="iteminvoivemobile sumallevents">
+                                        <input type="checkbox" class="checkboxitems" style="margin-left: 2vh; cursor: pointer;">
+                                        <div class="divisionclomitensmobileinvoicesinit">
+                                            <div style="display: none;">{{invoice.due_date | date:"SHORT_DATE_FORMAT"}}</div>
+                                            <div style="display: none;">{{invoice.payment_description}}</div>
+                                            <div class="iteminvoiceformats invoiceposttype"><span>{{invoice.get_posting_type_display}}</span></div>
+                                        </div>
+                                        <div class="divisionclomitensmobileinvoicesmiddle">
+                                            <div class="iteminvoiceformats">{{invoice.payment_description}}</div>
+                                            <div class="iteminvoiceformats bankhide">{{invoice.category}}</div>
+                                            <div class="iteminvoiceformats" style="width: 15vh; display: none;">{{invoice.card}}</div>
+                                        </div>
+                                        <div class="divisionclomitensmobileinvoiceslast">
+                                            <div class="iteminvoiceformats paymentamount"><span>{{invoice.payment_amount}}</span></div>
+                                            <div class="iteminvoiceformats statusitem"><span>{{invoice.get_status_display}}</span></div>
+                                        </div>
+                                        <div id="clickeditinvoice" onclick="new loadPage('{{invoice.get_absolute_url_update}}', 'loadcontent'), new updateInvoiceFrame()"></div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div id="filter_all">
+
+                    <div id="background_black_filter" onclick="new statusFilterframe()"></div>
+
+                    <div id="contentfilter">
+
+                        <div id="scrolloffilters">
+                            <p id="ttitlefilters">{% blocktrans %}customize how data will be displayed:{% endblocktrans %}</p>
+
+                            <form id="formfilter" method="get">
+                                {% csrf_token %}
+                                <p id="labelfieldformfilter">{{filter.label}}{% blocktrans %}initial date{% endblocktrans %}:</p>
+                                <div class="frameinputandicon">
+                                    <div class="iconcalendarinput">
+                                        <img class="calendaricon" src="{% static '/financial/images/calendaicon.svg' %}" />
+                                    </div>
+                                    <div class="filterfieldform">
+                                        {{form.date_min}}
+                                    </div>
+                                </div>
+
+                                <p id="labelfieldformfilter">{{filter.label}}{% blocktrans %}final date{% endblocktrans %}:</p>
+                                <div class="frameinputandicon">
+                                    <div class="iconcalendarinput">
+                                        <img class="calendaricon" src="{% static '/financial/images/calendaicon.svg' %}" />
+                                    </div>
+                                    <div class="filterfieldform">
+                                        {{form.date_max}}
+                                    </div>
+                                </div>
+
+                                <p id="labelfieldformfilter">{{filter.label}}{% blocktrans %}Transaction type{% endblocktrans %}:</p>
+                                <div class="typetransaction">
+                                    {% for radio in form.transaction_type %}
+                                        <div class="radiotypetransaction">
+                                            {{ radio.tag }}
+                                            <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                <p id="labelfieldformfilter">{{filter.label}}{% blocktrans %}category{% endblocktrans %}:</p>
+                                <div class="frameinputandicon">
+                                    <div class="filterfieldform">{{form.selecteditemfinal}}</div>
+                                </div>
+
+                                <p id="labelfieldformfilter">{{filter.label}}{% blocktrans %}bank account{% endblocktrans %}:</p>
+                                <div class="frameinputandicon">
+                                    <div class="filterfieldform">{{form.bankaccount}}</div>
+                                </div>
+
+                                <p id="labelfieldformfilter">{{filter.label}}{% blocktrans %}card{% endblocktrans %}:</p>
+                                <div class="frameinputandicon">
+                                    <div class="filterfieldform">{{form.card}}</div>
+                                </div>
+
+                                <p id="labelfieldformfilter">{{filter.label}}{% blocktrans %}status{% endblocktrans %}:</p>
+                                <div class="frameinputandicon">
+                                    <div class="filterfieldform">{{form.statusacc}}</div>
+                                </div>
+
+                                <p id="labelfieldformfilter">{{filter.label}}{% blocktrans %}order{% endblocktrans %}:</p>
+                                <div class="typetransaction">
+                                    {% for radio in form.order_search %}
+                                        <div class="radiotypetransaction">
+                                            {{ radio.tag }}
+                                            <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                <div style="margin-bottom: 10vh;"></div>
+
+                            </form>
+
+                        </div>
+
+                        <div id="btnsfiltersendclose">
+                            <button id="sendformfilter" class="buttons2" type="submit" onclick="location.href='/financial/invoices/'">{% blocktrans %}clean filter{% endblocktrans %}</button>
+                            <button id="sendformfilter" class="buttons" type="submit" onclick="new statusFilterframe(), new sendforms('formfilter')">{% blocktrans %}apply filter{% endblocktrans %}</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="marginbottomdiv"></div>
+
+    </section>
+
+    <section id="transaction_content_new">
+
+        <div id="background_black_filter_new" onclick="new newInvoiceFrame()"></div>
+
+            <div id="contentnewinvoice_new">
+
+                <div id="scrolloffilters_new">
+
+                    <p id="ttitlefilters_new">{% blocktrans %}new transaction{% endblocktrans %}:</p>
+
+                    <form id="forminsertinvoice_new" action="{% url 'financial:list_invoice' %}" method="post" autocomplete="off" novalidate>
+                        {% csrf_token %}
+                        {{ form_new_invoice.form_id }}
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}type{% endblocktrans %}:</p>
+                        <div class="typetransaction_new">
+                            {% for radio in form_new_invoice.posting_type %}
+                                <div class="radiotypetransaction_new">
+                                    {{ radio.tag }}
+                                    <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}description{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="iconcalendarinput_new">
+                                <img class="iconnewinvoicerequired_new" src="{% static '/financial/images/descriptionicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_new" id="id_payment_description">
+                                {{form_new_invoice.payment_description}}
+                            </div>
+                        </div>
+                        {% if form_new_invoice.payment_description.errors %}
+                            <script type="text/javascript">
+                                document.getElementById('id_payment_description').classList.add("errorinputform");
+                            </script>
+                        {% endif %}
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}amount{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="iconcalendarinput_new">
+                                <img class="iconnewinvoicerequired_new" src="{% static '/financial/images/moneyicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_new" id="id_payment_amount">
+                                {{form_new_invoice.payment_amount}}
+                            </div>
+                        </div>
+                        {% if form_new_invoice.payment_amount.errors %}
+                            <script type="text/javascript">
+                                document.getElementById('id_payment_amount').classList.add("errorinputform");
+                            </script>
+                        {% endif %}
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}due date{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="iconcalendarinput_new">
+                                <img class="iconnewinvoicerequired_new" src="{% static '/financial/images/calendaicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_new" id="id_due_date">
+                                {{form_new_invoice.due_date}}
+                            </div>
+                        </div>
+                        {% if form_new_invoice.due_date.errors %}
+                            <script type="text/javascript">
+                                document.getElementById('id_due_date').classList.add("errorinputform");
+                            </script>
+                        {% endif %}
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}category{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="iconcalendarinput_new">
+                                <img class="iconnewinvoicerequired_new" src="{% static '/financial/images/categoryicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_new" id="id_category">
+                                {{form_new_invoice.category}}
+                            </div>
+                        </div>
+                        {% if form_new_invoice.category.errors %}
+                            <script type="text/javascript">
+                                document.getElementById('id_category').classList.add("errorinputform");
+                            </script>
+                        {% endif %}
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}bank account{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="iconcalendarinput_new">
+                                <img class="iconnewinvoicerequired_new" src="{% static '/financial/images/bankicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_new">
+                                {{form_new_invoice.bank_account}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}payee{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="filterfieldform_new">
+                                {{form_new_invoice.payee}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}document number{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="filterfieldform_new">
+                                {{form_new_invoice.document_number}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}card{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="filterfieldform_new">
+                                {{form_new_invoice.card}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}notes{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="filterfieldformtextarea_new">
+                                {{form_new_invoice.notes}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}status{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_new">
+                            <div class="filterfieldform_new">
+                                {{form_new_invoice.status}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_new">{% blocktrans %}repeat{% endblocktrans %}:</p>
+                        <div class="allsliderbutton">
+                            {{ form_new_invoice.repeat_check }}
+                            <label for="checkboxrepeat" class="bargrayslide">
+                                <div id="slider"></div>
+                            </label>
+                        </div>
+
+                        <div id="allacontentrepeat">
+                            <p id="labelfieldformfilter_new">{% blocktrans %}number of repetitions{% endblocktrans %}:</p>
+                            <div class="frameinputandicon_new_repeat">
+                                <div class="filterfieldform_new_repeat" id="idfilterfieldform_new_repeat">
+                                    {{form_new_invoice.qtd_repeat}}
+                                </div>
+                                {% if form_new_invoice.qtd_repeat.errors %}
+                                    <script type="text/javascript">
+                                        document.getElementById('idfilterfieldform_new_repeat').classList.add("errorinputform");
+                                    </script>
+                                {% endif %}
+                            </div>
+                            <p id="labelfieldformfilter_new">{% blocktrans %}period{% endblocktrans %}:</p>
+                            <div class="frameinputandicon_new">
+                                <div class="filterfieldform_new" id="idfilterfieldform_newdfg">
+                                    {{form_new_invoice.period_repeat}}
+                                </div>
+                                {% if form_new_invoice.period_repeat.errors %}
+                                    <script type="text/javascript">
+                                        document.getElementById('idfilterfieldform_newdfg').classList.add("errorinputform");
+                                    </script>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 10vh;"></div>
+
+                    </form>
+
+                </div>
+
+                <div id="btnsfiltersendclosenew_new">
+                    <button class="btncancel_new" type="submit" onclick="new newInvoiceFrame()">{% blocktrans %}cancel{% endblocktrans %}</button>
+                    <button class="buttoninsert_new" type="submit" onclick="new sendforminsertinvoice('forminsertinvoice_new')">{% blocktrans %}+ insert{% endblocktrans %}</button>
+                </div>
+
+            </div>
+
+    </section>
+
+    <div id="loadcontent"></div>
+
+    <script type="text/javascript">
+
+        window.sessionStorage.setItem('status_filterframe', 'status_filterframe_off');
+        document.cookie = "statusUpdateInvoice=statusUpdateInvoiceCLOSED; path=/; SameSite=Strict;";
+        
+        // set config for navbar (INIT)
+        document.getElementById('iconnavlisinvoice').style.display = 'block';
+        // set config for navbar (END)
+
+        // Invoice style (init)
+        var spans = document.getElementsByTagName('span');
+
+        for (var i = 0; i < spans.length; i++) {
+
+            if (spans[i].textContent.toLowerCase() === '{% blocktrans %}revenue{% endblocktrans %}') {
+                spans[i].style = "color: var(--blue);";
+            }
+
+            if (spans[i].textContent.toLowerCase() === '{% blocktrans %}expense{% endblocktrans %}') {
+                spans[i].style = "color: var(--red);";
+            }
+
+            if (spans[i].textContent.toLowerCase() === '{% blocktrans %}pending{% endblocktrans %}') {
+                spans[i].classList.add("pendingclassstyle");
+            }
+
+            if (spans[i].textContent.toLowerCase() === '{% blocktrans %}canceled{% endblocktrans %}') {
+                spans[i].classList.add("canceledclassstyle");
+            }
+
+            if (spans[i].textContent.toLowerCase() === '{% blocktrans %}paid{% endblocktrans %}') {
+                spans[i].classList.add("paidclassstyle");
+            }
+
+            if (spans[i].textContent.toLowerCase() === '{% blocktrans %}overdue{% endblocktrans %}') {
+                spans[i].classList.add("overdueclassstyle");
+            }
+
+            if ( parseInt(spans[i].textContent) < 0 ) {
+                spans[i].style = "color: var(--darkred);";
+            }
+
+            if ( parseInt(spans[i].textContent) > 0 ) {
+                spans[i].style = "color: var(--greendark);";
+            }
+
+        }
+        // Invoice style (end)
+
+        // sumvalues (init)
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.checkboxitems');
+            checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', recalcularSomaValoresSelecionados);
+            });
+        });
+
+        function recalcularSomaValoresSelecionados() {
+            var total = 0;
+            var elementosInvoice = document.querySelectorAll(".sumallevents");
+
+            elementosInvoice.forEach(function (elemento) {
+                var checkbox = elemento.querySelector(".checkboxitems");
+                if (checkbox.checked) {
+                    var valorElement = elemento.querySelector('.paymentamount');
+                    var valor = parseFloat(valorElement.textContent);
+                    if (!isNaN(valor)) {
+                        total += valor;
+                    }
+                }
+            });
+
+            var totalValueElement = document.getElementById("totalValue");
+            totalValueElement.textContent = "{% blocktrans %}${% endblocktrans %} " + total.toFixed(2);
+        }
+        // sumvalues (end)
+
+        // sumvalues all (init)
+        var checkboxPrincipal = document.querySelector("#head_list_invoices input[type='checkbox']");
+
+        checkboxPrincipal.addEventListener('change', function() {
+            var checkboxes = document.querySelectorAll('.checkboxitems');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = checkboxPrincipal.checked;
+            });
+
+            recalcularSomaValoresSelecionadosall();
+        });
+
+        function recalcularSomaValoresSelecionadosall() {
+            var total = 0;
+            var elementosInvoice = document.querySelectorAll(".sumallevents");
+
+            elementosInvoice.forEach(function (elemento) {
+                var checkbox = elemento.querySelector(".checkboxitems");
+                if (checkbox.checked) {
+                    var valorElement = elemento.querySelector('.paymentamount');
+                    var valor = parseFloat(valorElement.textContent);
+                    if (!isNaN(valor)) {
+                        total += valor;
+                    }
+                }
+            });
+
+            var totalValueElement = document.getElementById("totalValue");
+            total = total / 2
+            totalValueElement.textContent = "{% blocktrans %}${% endblocktrans %} " + total.toFixed(2);
+        }
+        // sumvalues all (end)
+
+        // filter text (init)
+        function setupTextFilter(inputId, itemClassName) {
+            const inputFilter = document.getElementById(inputId);
+            const itemElements = document.getElementsByClassName(itemClassName);
+
+            inputFilter.addEventListener('input', function () {
+                const filterText = inputFilter.value.toLowerCase();
+
+                for (const item of itemElements) {
+                    const itemText = item.textContent.toLowerCase();
+                    const shouldDisplay = itemText.includes(filterText);
+
+                    if (shouldDisplay) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        setupTextFilter('inputfiltertextmobile', 'iteminvoivemobile');
+        setupTextFilter('inputfiltertext', 'iteminvoive');
+        // filter text (end)
+
+        // Cards: balance values (init)
+        var sum_all_values = document.getElementsByClassName('iteminvoive');
+        var balance_value = 0
+
+        for (var i = 0; i < sum_all_values.length; i++) {
+            const value_payment = sum_all_values[i].querySelectorAll('.paymentamount');
+            var value_payment_float = parseFloat(value_payment[0].textContent);
+
+            balance_value += value_payment_float
+        }
+
+        var totalValueElement_balance = document.getElementById("balancevalue");
+        totalValueElement_balance.textContent = "{% blocktrans %}${% endblocktrans %} " + balance_value.toFixed(2);
+        // Cards: balance values (end)
+
+        // Cards: revenues values (init)
+        var sum_all_values_revenues = document.getElementsByClassName('iteminvoive');
+        var revenue_value = 0
+
+        for (var i = 0; i < sum_all_values_revenues.length; i++) {
+
+            const item_name_list = sum_all_values_revenues[i].querySelectorAll('.invoiceposttype');
+            var item_name_list_clean = item_name_list[0].textContent;
+
+            if(item_name_list_clean === '{% blocktrans %}revenue{% endblocktrans %}') {
+                const value_payment = sum_all_values_revenues[i].querySelectorAll('.paymentamount');
+                var value_payment_float = parseFloat(value_payment[0].textContent);
+
+                revenue_value += value_payment_float
+            }
+        }
+
+        var totalValueElement_revenue = document.getElementById("revenuesvalue");
+        totalValueElement_revenue.textContent = "{% blocktrans %}${% endblocktrans %} " + revenue_value.toFixed(2);
+        // Cards: revenues values (end)
+
+        // Cards: expenses values (init)
+        var sum_all_values_expenses = document.getElementsByClassName('iteminvoive');
+        var expense_value = 0
+
+        for (var i = 0; i < sum_all_values_expenses.length; i++) {
+
+            const item_name_list = sum_all_values_expenses[i].querySelectorAll('.invoiceposttype');
+            var item_name_list_clean = item_name_list[0].textContent;
+
+            if(item_name_list_clean === '{% blocktrans %}expense{% endblocktrans %}') {
+                const value_payment = sum_all_values_expenses[i].querySelectorAll('.paymentamount');
+                var value_payment_float = parseFloat(value_payment[0].textContent);
+
+                expense_value += value_payment_float
+            }
+
+        }
+
+        var totalValueElement_expense = document.getElementById("expensesvalue");
+        totalValueElement_expense.textContent = "{% blocktrans %}${% endblocktrans %} " + expense_value.toFixed(2);
+        // Cards: expenses values (end)
+
+        // Status filter frame (init)
+        function statusFilterframe() {
+
+            try {
+
+                this.status_filterframe = window.sessionStorage.getItem('status_filterframe');
+
+                if (this.status_filterframe === 'status_filterframe_on') {
+
+                    /* Hide content */
+                    document.getElementById('filter_all').style = 'display: none;';
+
+                    /* SET STATUS */
+                    this.status_filterframe = window.sessionStorage.setItem('status_filterframe', 'status_filterframe_off');
+
+                } else if (this.status_filterframe === 'status_filterframe_off') {
+
+                    /* Show content */
+                    document.getElementById('filter_all').style = 'display: flex;';
+
+                    /* SET STATUS */
+                    this.status_filterframe = window.sessionStorage.setItem('status_filterframe', 'status_filterframe_on');
+                }
+
+                } catch (error) {
+
+                    console.log('***** [ ERROR - STATUS FIELD FRAME ! ] *****')
+                    console.log(error)
+
+                }
+        }
+        // Status filter frame (end)
+
+        // send form insert (init)
+        function sendforminsertinvoice(id_form) {
+            document.getElementById(id_form).submit();
+        }
+        // send form insert (end) 
+  
+        // hide show itens desktop/mobile (INIT)
+        function checkScreenSize() {
+  
+
+            if (window.innerWidth <= 800) {
+                document.getElementById('allcontentDesktopitens').style.display = 'none';
+            } else {
+                document.getElementById('allcontentDesktopitens').style.display = 'block';
+            }
+
+
+            if (window.innerWidth > 800) {
+                document.getElementById('allcontentmobileitens').style.display = 'none';
+            } else {
+                document.getElementById('allcontentmobileitens').style.display = 'block';
+            }
+    
+        }
+
+        checkScreenSize();
+        window.addEventListener("resize", checkScreenSize);
+        // hide show itens desktop/mobile (END)
+
+        // hide date mobile empty (INIT)
+        function hidedateemptymobile() {
+
+            const dateElementsempty = document.getElementsByClassName('classdatemobileitens');
+
+            for (var i = 0; i < dateElementsempty.length; i++) {
+                const children = dateElementsempty[i].children;
+                let visibleChildCount = 0;
+
+                for (var j = 0; j < children.length; j++) {
+                    const computedStyle = window.getComputedStyle(children[j]);
+                    if (computedStyle.display !== 'none') {
+                        visibleChildCount++;
+                    }
+                }
+
+                if (visibleChildCount <= 1) {
+                    dateElementsempty[i].style.display = 'none';
+                } else {
+                    dateElementsempty[i].style.display = 'block';
+                }
+            }
+        }
+
+        window.addEventListener("keydown", hidedateemptymobile);
+        // hide date mobile empty (END)
+
+        // frame new invoice form insert (init)
+        function newInvoiceFrame() {
+
+            var status_newInvoice = document.cookie.replace(/(?:(?:^|.*;\s*)statusNewInvoice\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+            if (status_newInvoice === 'statusNewInvoiceCLOSED' || status_newInvoice === "") {
+                // set status cookie
+                document.cookie = "statusNewInvoice=statusNewInvoiceOPEN; path=/; SameSite=Strict;";
+                // show content
+                document.getElementById('transaction_content_new').style.display = 'flex';
+            }
+
+            if (status_newInvoice === 'statusNewInvoiceOPEN') {
+                // set status cookie
+                document.cookie = "statusNewInvoice=statusNewInvoiceCLOSED; path=/; SameSite=Strict;";
+                // hide content
+                document.getElementById('transaction_content_new').style.display = 'none';
+            }
+        }
+
+        function showHideBeforeReload() {
+        
+            var status_newInvoice_extern = document.cookie.replace(/(?:(?:^|.*;\s*)statusNewInvoice\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+            if (status_newInvoice_extern === 'statusNewInvoiceOPEN') {
+                document.getElementById('transaction_content_new').style.display = 'flex';
+            } else {
+                document.getElementById('transaction_content_new').style.display = 'none';
+            }
+        }
+
+        showHideBeforeReload()
+        // frame new invoice form insert (END)
+
+        // frame update invoice form (init)
+        function updateInvoiceFrame() {
+
+            var statusUpdateInvoice = document.cookie.replace(/(?:(?:^|.*;\s*)statusUpdateInvoice\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+            if (statusUpdateInvoice === 'statusUpdateInvoiceCLOSED' || statusUpdateInvoice === "") {
+                // set status cookie
+                document.cookie = "statusUpdateInvoice=statusUpdateInvoiceOPEN; path=/; SameSite=Strict;";
+                // show content
+                document.getElementById('transaction_content_update').style.display = 'flex';
+            }
+
+            if (statusUpdateInvoice === 'statusUpdateInvoiceOPEN') {
+                // set status cookie
+                document.cookie = "statusUpdateInvoice=statusUpdateInvoiceCLOSED; path=/; SameSite=Strict;";
+                // hide content
+                document.getElementById('transaction_content_update').style.display = 'none';
+            }
+        }
+        // frame update invoice form (END)
+
+        // change commas (INIT)
+        document.addEventListener('input', function (e) {
+            if (e.target.id === 'id_payment_amount') {
+                let valor = e.target.value;
+                
+                valor = valor.replace(/,/g, '.');
+
+                e.target.value = valor;
+            }
+        });
+        // change commas (END)
+
+        // function text not item in squares (INIT)
+        function countElementsWithClass(classname, idsquareitem) {
+
+        const elements = document.querySelectorAll(classname);
+
+            if (elements.length === 0) {
+
+                var divEspecifica = document.getElementById(idsquareitem);
+                var novoParagrafo = document.createElement("p");
+                novoParagrafo.textContent = "{% blocktrans %}You have nothing to display here. Please add new items!{% endblocktrans %}";
+                novoParagrafo.classList.add("amptyitens")
+                divEspecifica.appendChild(novoParagrafo);
+
+            }
+
+        }
+
+        countElementsWithClass(".iteminvoive", 'allcontentDesktopitens')
+        countElementsWithClass(".iteminvoivemobile", 'allcontentmobileitens')
+        // function text not item in squares (END)
+
+        // hide show repeat new invoice (INIT)
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxRepeat = document.getElementById('checkboxrepeat');
+            const allaContentRepeat = document.getElementById('allacontentrepeat');
+
+            checkboxRepeat.addEventListener('change', function() {
+                if (this.checked) {
+                    allaContentRepeat.style.display = 'flex';
+                } else {
+                    allaContentRepeat.style.display = 'none';
+                }
+            });
+
+            if (checkboxRepeat.checked) {
+                allaContentRepeat.style.display = 'flex';
+            } else {
+                allaContentRepeat.style.display = 'none';
+            }
+        });
+        // hide show repeat new invoice (INIT)
+        
+        // change dateformat (INIT)
+
+        // new invoice due date
+        document.addEventListener('input', function (e) {
+            if (e.target.id === 'id_due_date') {
+                let valor = e.target.value;
+
+                // if return is pressed
+                if (e.inputType === 'deleteContentBackward') {
+                    return;
+                }
+                
+                if (valor.length === 2 ) {
+                    valor = valor.slice(0, 2) + '/' + valor.slice(2);
+                } else if (valor.length === 5) {
+                    valor = valor.slice(0, 5) + '/' + valor.slice(5);
+                }
+                
+                e.target.value = valor;
+            }
+        });
+        
+        
+        // filter min date
+        document.addEventListener('input', function (e) {
+            if (e.target.id === 'id_date_min') {
+                let valor = e.target.value;
+
+                // if return is pressed
+                if (e.inputType === 'deleteContentBackward') {
+                    return;
+                }
+                
+                if (valor.length === 2 ) {
+                    valor = valor.slice(0, 2) + '/' + valor.slice(2);
+                } else if (valor.length === 5) {
+                    valor = valor.slice(0, 5) + '/' + valor.slice(5);
+                }
+                
+                e.target.value = valor;
+            }
+        });
+        // change dateformat (END)
+        
+        // filter man date
+        document.addEventListener('input', function (e) {
+            if (e.target.id === 'id_date_max') {
+                let valor = e.target.value;
+
+                // if return is pressed
+                if (e.inputType === 'deleteContentBackward') {
+                    return;
+                }
+                
+                if (valor.length === 2 ) {
+                    valor = valor.slice(0, 2) + '/' + valor.slice(2);
+                } else if (valor.length === 5) {
+                    valor = valor.slice(0, 5) + '/' + valor.slice(5);
+                }
+                
+                e.target.value = valor;
+            }
+        });
+        // change dateformat (END)
+
+    </script>
+
+{% endblock %}
+
+</html>
+

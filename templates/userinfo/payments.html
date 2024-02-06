@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <title>Murangoo | finance</title>
+        <meta name="theme-color" content="#F51E33"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#F51E33"/>
+        <meta name="msapplication-navbutton-color" content="#F51E33"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static '/userinfo/css/payments.css' %}">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+    {% endblock htmlhead %}
+</head>
+
+<body>
+
+    <section id="idsection">
+
+        <div id="idtoplinered"></div>
+
+        <div id="idfirstdivgray">
+            
+            <img id="idlogomenuhambimg" src="{% static '/allauth/images/logo.svg' %}" />
+
+            <p id="idcurrentplan">{% blocktrans %}Your current plan:{% endblocktrans %}</p>
+
+            <img id="idimgplanicon" src="{% static '/userinfo/images/iconpaymentstop.svg' %}" />
+
+            <p id="idplantext">
+                {{template_account_plan.plan_verbose}}
+            </p>
+
+            <p id="idplancost">{% blocktrans %}${% endblocktrans %} {{template_account_value}}</p>
+
+            <p id="idexpirationdatetext">{% blocktrans %}Plan valid until:{% endblocktrans %}</p>
+            <p id="idexpirationdatevalue">{{date_limit_plan.date | date:"d/m/Y"}}</p>
+
+            <button id="idbtnchangeplan" onclick="new testperiod()">{% blocktrans %}+ Change my plan{% endblocktrans %}</button>
+
+            <script type="text/javascript">
+
+                function testperiod() {
+                    alert('{% blocktrans %}We are still in the testing phase. For now, feel free to try our services.{% endblocktrans %}')
+                }
+
+            </script>
+
+        </div>
+
+        <div id="idsecondgray">
+
+            <p id="idsubscriptionhistory">{% blocktrans %}subscription history:{% endblocktrans %}</p>
+
+            <div id="idframeallpaymentshistory">
+
+                <div id="idframehead">
+
+                    <div id="idheadpaymenthistory">
+                        <span>{% blocktrans %}date{% endblocktrans %}</span>
+                        <span>{% blocktrans %}plan{% endblocktrans %}</span>
+                        <span>{% blocktrans %}amount{% endblocktrans %}</span>
+                        <span>{% blocktrans %}status{% endblocktrans %}</span>
+                    </div>
+
+                </div>
+
+                <div id="idframeobjects">
+
+                    {% for history in template_plan_history %}
+
+                        <div id="idobjectspaymentshistory">
+                            <span class="classdatefield">{{history.date.date | date:"d/m/Y"}}</span>
+                            <span>{{history.plan_verbose}}</span>
+                            <span>{% blocktrans %}${% endblocktrans %} {{history.amount}}</span>
+                            <span>{{history.get_status_display}}</span>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <script type="text/javascript">
+
+                    var spans = document.getElementsByTagName('span');
+
+                    for (var i = 0; i < spans.length; i++) {
+
+                        // Verifica se o texto da tag <span> é igual a "renovado"
+                        if (spans[i].textContent === '{% blocktrans %}renewed{% endblocktrans %}') {
+
+                            // Aplica a estilização desejada à tag <span>
+                            spans[i].style = "background-color: var(--newgreen); color: black;";
+                        }
+
+                        // Verifica se o texto da tag <span> é igual a "recusado"
+                        if (spans[i].textContent === '{% blocktrans %}refused{% endblocktrans %}') {
+
+                            // Aplica a estilização desejada à tag <span>
+                            spans[i].style = "background-color: var(--red);";
+                        }
+
+                    }
+
+                </script>
+
+            </div>
+
+            <div id="idsignupbottom" onclick="location.href='/accounts'">
+                <div id="idbackicon">
+                  <svg style="height: 2.5vh;" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="99.6611mm" height="100mm" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+                    viewBox="0 0 9966.1 9999.99"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Camada_x0020_1">
+                      <metadata id="CorelCorpID_0Corel-Layer"/>
+                      <path fill="white" d="M521.39 9999.99c-778.56,0 -492.62,-726.8 -353.7,-1243.71 128.76,-479.08 332.03,-971.99 557.98,-1357.43 400.03,-682.36 1207.17,-1509.58 1906.89,-1893.27 90.53,56.52 146.55,132.08 231,200.81 1041.82,847.77 2245.61,1096.57 3511.24,493.38 192.98,-91.98 347.19,-196.12 511.01,-316.64 115.66,-85.11 377.64,-338.74 454.05,-371.05 398.47,248.6 794.84,548.61 1073.86,836.03 677.35,697.77 1106.95,1384.98 1391.47,2375.97 155.47,541.57 370.59,1275.91 -297.1,1275.91 -3014.58,0 -6029.16,0 -8986.69,0zm4278.48 -9988.65c890.68,-87.32 1691.42,344.67 2111.72,784.75 524.25,548.92 806.17,1002.75 918.31,2025.1 95.51,870.61 -288.35,1724.53 -691.63,2200.81 -1067.59,1260.74 -2845.7,1406.65 -4076.64,257.66 -1680.3,-1568.42 -1041.72,-4995.73 1738.24,-5268.31z"/>
+                    </g>
+                  </svg>
+                </div>
+                <a onclick="location.href='/accounts'">{% blocktrans %} Back to Your Account{% endblocktrans %}</a>
+            </div>
+
+        </div>
+
+        <div id="idtoplinered"></div>
+
+    </section>
+
+</body>
+
+</html>

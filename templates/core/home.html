@@ -1,0 +1,153 @@
+{% extends 'core/base.html' %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+		{% load i18n %}
+        <title>Murangoo | finance - Home</title>
+        <meta name="theme-color" content="#F51E33"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#F51E33"/>
+        <meta name="msapplication-navbutton-color" content="#F51E33"/>
+		<link rel="stylesheet" href="{% static '/core/css/home.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+<div id="content">
+	<section class="container">
+		<div class="left-side">
+			<h1 class="title">{% blocktrans %}Take control of your life{% endblocktrans %}</h1>
+			<p class="sub-text">{% blocktrans %}With us, you can finally gain control over your finances and also take charge of your personal life. Murangoo makes it easy and hassle-free to organize yourself{% endblocktrans %} =)</p>
+			<button class="register" onclick="location.href='/accounts/signup/'">{% blocktrans %}Try now! It's free.{% endblocktrans %}</button>
+		</div>
+		<div class="right-side"></div>
+	</section>
+	<div class="three-lineup"></div>
+	<div class=red-triangle>
+		<div class=red-triangle2></div>
+	</div>
+	<section class="three-div">
+		<div class="top">
+			<p class="title">{% blocktrans %}How we help...{% endblocktrans %}</p>
+			<p>{% blocktrans %}Take a look at what we have to offer. These are just the main features of our system, we have many
+				more tools that can help you.{% endblocktrans %}</p>
+		</div>
+		<div class="frame">
+			<div class="cash">
+				<div class="icon"></div>
+				<h2 class="text">{% blocktrans %}Take care of your money, organize and plan your financial life.{% endblocktrans %}</h2>
+				<div class="bottom">{% blocktrans %}MONEY{% endblocktrans %}</div>
+			</div>
+			<div class="task">
+				<div class="icon"></div>
+				<h2 class="text">{% blocktrans %}Organize your tasks, build goals and reach your dreams.{% endblocktrans %}</h2>
+				<div class="bottom">{% blocktrans %}TASKS{% endblocktrans %}</div>
+			</div>
+			<div class="report">
+				<div class="icon"></div>
+				<h2 class="text">{% blocktrans %}Generate customized reports that will help you determine which way to go.{% endblocktrans %}</h2>
+				<div class="bottom">{% blocktrans %}REPORTS{% endblocktrans %}</div>
+			</div>
+			<div class="investment">
+				<div class="icon"></div>
+				<h2 class="text">{% blocktrans %}Invest your money in the correct way and make your assets grow.{% endblocktrans %}</h2>
+				<div class="bottom">{% blocktrans %}INVESTMENTS{% endblocktrans %}</div>
+			</div>
+		</div>
+	</section>
+	<div class="red-triangle-vector">
+		<div class="red-triangle-vector2"></div>
+	</div>
+	<section class="reinvent">
+		<div class=" contents">
+			<img class="svg" src="{% static '/core/images/reinvent.svg' %}" />
+			<div class="text">
+				<h2 class="txt-1">{% blocktrans %}REINVENT YOURSELF{% endblocktrans %}</h2>
+				<h2 class="txt-2">{% blocktrans %}Discover new possibilities! By accessing your spending history and with our help, you can create personalized plans to reduce expenses. Try new experiences by reallocating expenses to other areas, or simply invest and make your extra money go even further.{% endblocktrans %}</h2>
+				<h2 class="txt-3">{% blocktrans %}Be more productive! Don't worry about when to pay your bills, we'll help you remember.{% endblocktrans %}</h2>
+			</div>
+		</div>
+	</section>
+	<div class=green-triangle>
+		<div class=green-triangle2></div>
+	</div>
+	<section class="blog">
+		<div class="top1">
+			<h2 class="title">{% blocktrans %}WE TEACH YOU ABOUT FINANCE{% endblocktrans %}</h2>
+		</div>
+		<div class="top2">
+			<h2 class="title">{% blocktrans %}LEARN MORE ON OUR BLOG{% endblocktrans %}</h2>
+		</div>
+		<div class="bottom1">
+			<p>{% blocktrans %}When we learn to take better care of our money, it becomes easier to balance our finances. Knowing where to invest and how to use money over time is essential for success. By handling finances responsibly, it's possible to balance the budget and achieve goals.{% endblocktrans %}</p>
+			<p>{% blocktrans %}Take a look at our blog to learn how to improve your financial life, discover where to invest, and get various tips. Simplify the way you manage your personal or business finances. With us, you can do it!{% endblocktrans %}</p>
+		</div>
+		<div class="top2-mob">
+			<h2 class="title">{% blocktrans %}Learn more on our blog{% endblocktrans %}</h2>
+		</div>
+		<div class="bottom2">
+			<div class="pub1" onclick="location.href='{{post_last_one.get_absolute_url}}'">
+				<div class="img">
+					<img src="{{post_last_one.cover.url}}" id="idimginside" alt=""/>
+				</div>
+				<h3 class="title">{{post_last_one.title}}</h3>
+			</div>
+			<div class="pub2" onclick="location.href='{{post_last_two.get_absolute_url}}'">
+				<div class="img">
+					<img src="{{post_last_two.cover.url}}" id="idimginside" alt=""/>
+				</div>
+				<h3 class="title">{{post_last_two.title}}</h3>
+			</div>
+			<div class="pub3" onclick="location.href='{{post_last_three.get_absolute_url}}'">
+				<div class="img">
+					<img src="{{post_last_three.cover.url}}" id="idimginside" alt=""/>
+				</div>
+				<h3 class="title">{{post_last_three.title}}</h3>
+			</div>
+			<div class="go-blog">
+				<button class="go-blog2" onclick="location.href='/blog'">{% blocktrans %}view more{% endblocktrans %}</button>
+			</div>
+		</div>
+	</section>
+	<div class="gray-triangle">
+		<div class="gray-triangle2"></div>
+	</div>
+	<section class="comments">
+		<div class="title-stars">
+			<h1>{% blocktrans %}see what others have to say:{% endblocktrans %}</h1>
+			<img class="star" src="{% static '/core/images/star-rating.svg' %}" />
+			<p>[ 4.7 ] - {% blocktrans %}Based on user reviews{% endblocktrans %}</p>
+		</div>
+		<div class="rating">
+			<div>
+				<p>{% blocktrans %}I started using it a few months ago, but I'm really enjoying it! Used daily to control my
+					expenses and I can also control my credit card, I have already managed to reduce about 10% of my
+					expenses. I REALLY RECOMMEND!{% endblocktrans %}</p>
+				<h3>Emma Harris</h3>
+			</div>
+			<div>
+				<p>{% blocktrans %}The system is incredible! I've been using it for a long time and I can't live without it. Assists
+					in the visualization and control of finances, it is also very simple to use and intuitive. Your
+					expenses can be allocated and edited on the days and months you prefer.{% endblocktrans %}</p>
+				<h3>Ashley Kastrati</h3>
+			</div>
+			<div>
+				<p>{% blocktrans %}It is a complete app with many features. Excellent, super organized and gives good visibility of
+					our monthly commitment among other really cool options. I recommend it and the best app I've
+					ever seen. Enjoy the app that just keeps getting better!{% endblocktrans %}</p>
+				<h3>Gabriel Silveira</h3>
+			</div>
+			<div>
+				<p>{% blocktrans %}Good for controlling your resources. Some functions are still missing, I spoke with the support
+					staff and their response was that they are always studying how to improve the system and accept
+					suggestions to develop improvements.{% endblocktrans %}</p>
+				<h3>Leandro Vonetsk</h3>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}
+
+</html>

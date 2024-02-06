@@ -1,0 +1,314 @@
+/* desktop */
+@media (min-width: 1100px) {
+	#idframeerror {
+		z-index: 110;
+		position: fixed;
+		top: 2vh;
+
+		width: 100%;
+		min-width: 75vh;
+
+		-webkit-animation: closemsgsucess 4s forwards;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@keyframes closemsgsucess {
+
+		0% {
+			opacity: 100%;
+			visibility: show;
+		}
+
+		50% {
+			opacity: 100%;
+			visibility: show;
+		}
+
+		100% {
+			opacity: 0%;
+			visibility: hidden;
+		}
+		
+	}
+
+	.classerror {
+		position: relative;
+
+		background: linear-gradient(#202020, #474747);
+		color: var(--redlight);
+
+		width: 75vh;
+		min-height: 5vh;
+
+		border-radius: 1.5vh;
+
+		font-size: 2vh;
+		font-family: textbold;
+
+		display: flex;
+		align-items: center;
+		justify-content: end;
+
+		margin-bottom: 1vh;
+
+		padding-top: 1vh;
+		padding-bottom: 1vh;
+
+		padding-left: 4vh;
+		padding-right: 4vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		text-align: center;
+
+		cursor: pointer;
+	}
+
+	.classerror strong {
+		position: relative;
+	}
+
+	.classerror p {
+		position: absolute;
+		right: 1.5vh;
+
+		width: 2vh;
+		height: 2vh;
+
+		border-radius: 50%;
+
+		color:  var(--redlight);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+
+		font-size: 2vh;
+	}
+
+
+	.classsucess {
+		position: relative;
+
+		width: 75vh;
+		min-height: 5vh;
+
+		background: linear-gradient(#202020, #474747);
+		color: var(--greenlight);
+
+		border-radius: 1.5vh;
+
+		font-size: 2vh;
+		font-family: textbold;
+
+		display: flex;
+		align-items: center;
+		justify-content: end;
+
+		margin-bottom: 1vh;
+
+		padding-top: 1vh;
+		padding-bottom: 1vh;
+
+		padding-left: 4vh;
+		padding-right: 4vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		text-align: center;
+
+		cursor: pointer;
+	}
+
+	.classsucess strong {
+		position: relative;
+	}
+
+	.classsucess p {
+		position: absolute;
+		right: 1.5vh;
+
+		width: 2vh;
+		height: 2vh;
+
+		border-radius: 50%;
+
+		color: var(--greenlight);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+
+		font-size: 2vh;
+	}
+}
+
+/* ##### */
+@media (max-width: 1099px) {
+
+	
+	#idframeerror {
+        z-index: 110;
+        position: fixed;
+        top: 2vh;
+    
+        width: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		-webkit-animation: closemsgsucess 4s forwards;
+	}
+
+	@keyframes closemsgsucess {
+
+		0% {
+			opacity: 100%;
+			visibility: show;
+		}
+
+		50% {
+			opacity: 100%;
+			visibility: show;
+		}
+
+		100% {
+			opacity: 0%;
+			visibility: hidden;
+		}
+		
+	}
+
+	.classerror {
+		position: relative;
+
+		background: linear-gradient(#202020, #474747);
+		color: var(--redlight);
+
+		width: 95%;
+		min-height: 5vh;
+
+		border-radius: 1.5vh;
+
+		font-size: 1.5vh;
+		font-family: textbold;
+
+		display: flex;
+		align-items: center;
+		justify-content: end;
+
+		margin-bottom: 1vh;
+
+		padding-top: 1vh;
+		padding-bottom: 1vh;
+
+		padding-left: 4vh;
+		padding-right: 4vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		text-align: center;
+
+		cursor: pointer;
+	}
+
+	.classerror strong {
+		position: relative;
+	}
+
+	.classerror p {
+		position: absolute;
+		right: 1.5vh;
+
+		width: 2vh;
+		height: 2vh;
+
+		border-radius: 50%;
+
+		color:  var(--redlight);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+
+		font-size: 2vh;
+	}
+
+
+	.classsucess {
+		position: relative;
+
+		width: 95%;
+		min-height: 5vh;
+
+		background: linear-gradient(#202020, #474747);
+		color: var(--greenlight);
+
+		border-radius: 1.5vh;
+
+		font-size: 1.5vh;
+		font-family: textbold;
+
+		display: flex;
+		align-items: center;
+		justify-content: end;
+
+		margin-bottom: 1vh;
+
+		padding-top: 1vh;
+		padding-bottom: 1vh;
+
+		padding-left: 4vh;
+		padding-right: 4vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		text-align: center;
+
+		cursor: pointer;
+	}
+
+	.classsucess strong {
+		position: relative;
+	}
+
+	.classsucess p {
+		position: absolute;
+		right: 1.5vh;
+
+		width: 2vh;
+		height: 2vh;
+
+		border-radius: 50%;
+
+		color: var(--greenlight);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		cursor: pointer;
+
+		font-size: 2vh;
+	}
+}

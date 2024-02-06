@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+		<link rel="stylesheet" href="{% static '/financial/css/delete_invoice.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+<section id="sectiondeleteinvoice">
+
+    <div id="blackbackground" onclick="new unloadPage('loadcontent')"></div>
+
+    <div id="framedelete">
+
+        <div id="closexframe" onclick="new unloadPage('loadcontent')">x</div>
+
+        <div id="contentdelete">
+            <img id="trashicondelete" src="{% static '/financial/images/trashicondelete.svg' %}" />
+            <h1>{% blocktrans %}delete transaction{% endblocktrans %}</h1>
+            <p>{% blocktrans %}Do you really want to delete {% endblocktrans %}"{{delete_invoice.payment_description}}"?</p>
+            <form action="{% url 'financial:delete_invoice' delete_invoice.pk %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="{% blocktrans %}Delete{% endblocktrans %}" id="deleteinput">
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+</html>
+

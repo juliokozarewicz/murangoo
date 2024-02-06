@@ -1,0 +1,141 @@
+{% extends 'financial/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block htmlhead %}
+      {% load static %}
+      {% load i18n %}
+      <title>Murangoo | finance</title>
+      <link rel="stylesheet" href="{% static '/allauth/css/accounts.css' %}">
+      <link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  {% endblock htmlhead %}
+</head>
+
+{% block content %}
+
+  <section id="idsectionaccounts">
+
+    <div id="idmanaacc">
+      {% with first_name=request.user.first_name.split.0 %}
+        <p id="idmanaacctxt">{% blocktrans %}Hello, {% endblocktrans %}{{first_name_global}}! {% blocktrans %}Manage your account.{% endblocktrans %}</p>
+      {% endwith %}
+    </div>
+
+    <div class="rectangleoptionacc">
+      <div class="imageicon">
+        <img class="imagerectangle" src="{% static '/allauth/images/profile.svg' %}" />
+      </div>
+      <div class="textscenter">
+        <p class="titlecenter">{% blocktrans %}Profile{% endblocktrans %}</p>
+        <p class="textcenter">{% blocktrans %}Keep your profile information up to date on our website for accurate and relevant details, ensuring a better experience.{% endblocktrans %}</p>
+      </div>
+      <div class="btnexterno">
+        {% for profile in profile_page %}
+          <button id="idbtngopage" onclick="location.href='{{profile.get_absolute_url}}'">{% blocktrans %}profile{% endblocktrans %}</button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!--
+    <div class="rectangleoptionacc">
+      <div class="imageicon">
+        <img class="imagerectangle" src="{% static '/allauth/images/email_acc.svg' %}" />
+      </div>
+      <div class="textscenter">
+        <p class="titlecenter">{% blocktrans %}Manage your emails{% endblocktrans %}</p>
+        <p class="textcenter">{% blocktrans %}Here you can associate more emails to your account or request a change to your current email.{% endblocktrans %}</p>
+      </div>
+      <div class="btnexterno">
+        <button id="idbtngopage" onclick="location.href='/accounts/email'">{% blocktrans %}email{% endblocktrans %}</button>
+      </div>
+    </div>
+    -->
+
+    <div class="rectangleoptionacc">
+      <div class="imageicon">
+        <img class="imagerectangle" src="{% static '/allauth/images/password.svg' %}" />
+      </div>
+      <div class="textscenter">
+        <p class="titlecenter">{% blocktrans %}Change your password{% endblocktrans %}</p>
+        <p class="textcenter">{% blocktrans %}Protect your account with regular password changes and stay one step ahead of potential intruders. Never share your password with strangers.{% endblocktrans %}</p>
+      </div>
+      <div class="btnexterno">
+        <button id="idbtngopage" onclick="location.href='/accounts/password/change'">{% blocktrans %}password{% endblocktrans %}</button>
+      </div>
+    </div>
+
+    <div class="rectangleoptionacc">
+      <div class="imageicon">
+        <img class="imagerectangle" src="{% static '/allauth/images/cc.svg' %}" />
+      </div>
+      <div class="textscenter">
+        <p class="titlecenter">{% blocktrans %}Payments{% endblocktrans %}</p>
+        <p class="textcenter">{% blocktrans %}Here you can keep track of your payments, check, cancel, or change your plan. You can also manage your cards and payment methods.{% endblocktrans %}</p>
+      </div>
+      <div class="btnexterno">
+        <button id="idbtngopage" onclick="location.href='/profile/payments'">{% blocktrans %}payment{% endblocktrans %}</button>
+      </div>
+    </div>
+
+    <div class="rectangleoptionacc">
+      <div class="imageicon">
+        <img class="imagerectangle" src="{% static '/allauth/images/logouticon.svg' %}" />
+      </div>
+      <div class="textscenter">
+        <p class="titlecenter">{% blocktrans %}Logout{% endblocktrans %}</p>
+        <p class="textcenter">{% blocktrans %}Do you want to exit the app and log in with another account?{% endblocktrans %}</p>
+      </div>
+      <div class="btnexterno">
+        <button id="idbtngopage" onclick="location.href='/accounts/logout'">{% blocktrans %}logout{% endblocktrans %}</button>
+      </div>
+    </div>
+
+    <div class="rectangleoptionacc" style="border: 0.3vh solid var(--redlight);">
+      <div class="imageicon">
+        <img class="imagerectangle" src="{% static '/allauth/images/deleteacc.svg' %}" />
+      </div>
+      <div class="textscenter">
+        <p class="titlecenter">{% blocktrans %}Delete account{% endblocktrans %}</p>
+        <p class="textcenter">{% blocktrans %}Attention! When deleting your account, all your data will be deleted, with no possibility of recovery. Be aware that if you decide to use Murangoo again you will need to create a new account and start all over again.{% endblocktrans %}</p>
+      </div>
+      <div class="btnexterno">
+        <button id="idbtngopage" style="background-color: var(--redlight); color: white;" onclick="new loadPage('/profile/delete-account', 'loadcontent')">{% blocktrans %}delete{% endblocktrans %}</button>
+      </div>
+    </div>
+
+    <div class="marginbottomdiv"></div>
+
+  </section>
+
+  <div id="loadcontent"></div>
+
+  <script>
+    // hide button 'sendcode' and show input number send email (INIT)
+    function hideshowbuttons() {
+          document.getElementById('buttonsendcode').style.display = 'none';
+          document.getElementById('inputdiv2').style.display = 'flex';
+          document.getElementById('inputdiv3').style.display = 'flex';
+          document.getElementById('deleteupdateicon').style.display = 'flex';
+          document.getElementById('resendcode').style.display = 'block';       
+    }
+    // hide button 'sendcode' and show input number send email (END)
+
+    // Generate code email AJAX (INIT)
+    function generate_code() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', "{% url 'userinfo:deleteacc_sendemail_code' %}", true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var data = xhr.responseText;
+        }
+      };
+      xhr.send();
+    }
+    // Generate code email AJAX (END)
+  </script>
+
+{% endblock %}
+
+</html>

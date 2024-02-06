@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block htmlhead %}
+      {% load static %}
+      {% load i18n %}
+      <title>Murangoo | finance</title>
+      <meta name="theme-color" content="#F51E33"/>
+      <meta name="apple-mobile-web-app-status-bar-style" content="#F51E33"/>
+      <meta name="msapplication-navbutton-color" content="#F51E33"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+      <link rel="stylesheet" href="{% static '/allauth/css/profile.css' %}">
+      <script src="{% static '/allauth/js/index.js' %}"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+  {% endblock htmlhead %}
+</head>
+
+<section id="idsectionlogin">
+
+  <img id="idlogomenuhambimg" src="{% static '/allauth/images/logo-white.svg' %}" />
+
+  <p id="idtextproceed">{% blocktrans %}Excellent choice, let's go!{% endblocktrans %}</p>
+
+  <div id="idlinesep"></div>
+
+  <form id="idformlogin" class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}" autocomplete="off" novalidate>
+    {% csrf_token %}
+
+    <div id="idframeerror">
+      {% if form.errors %}
+ 
+        {% for error in form.non_field_errors %}
+          <div id="{{error}}" class="classerror" onclick="new unloadPage('{{error}}')">
+            <strong>{{ error }}</strong>
+            <p onclick="new unloadPage('{{error}}')" id="closeerror">x</p>
+          </div>
+        {% endfor %}
+
+        {% for field in form %}
+
+          {% for error in field.errors %}
+          
+            <div id="{{field.auto_id}}" class="classerror" onclick="new unloadPage('{{field.auto_id}}')">
+              <strong>{{field.label}}: {{ error }}</strong>
+              <p onclick="new unloadPage('{{field.auto_id}}')" id="closeerror">x</p>
+            </div>
+
+          {% endfor %}
+
+        {% endfor %}
+
+      {% endif %}
+
+      {% if messages %}
+        {% for message in messages %}
+          <div id="id_msgsucess" class="classsucess" onclick="new unloadPage('id_msgsucess')">
+            <strong>{{ message|safe }}</strong>
+            <p onclick="new unloadPage('id_msgsucess')" id="closeerror">x</p>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+    </div>
+
+    {% for field in form %}
+      {{field}}
+    {% endfor %}
+
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button id="idsubmitmessage" type="submit">{% trans "Sign Up" %}</button>
+  </form>
+
+  <div id="idlinesep"></div>
+
+  <div id="idsignupbottom">
+    <p>{% blocktrans %}Already have an account?{% endblocktrans %}<a onclick="location.href='/accounts/login/'">{% blocktrans %}Sign In{% endblocktrans %}</a></p>
+  </div>
+
+</section>
+
+</html>
+
+
+
+
+
+
+
+
+
+

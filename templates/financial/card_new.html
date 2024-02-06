@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+		<link rel="stylesheet" href="{% static '/financial/css/category_new.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+<section id="sectiondeleteinvoice_category">
+
+    <div id="blackbackground_category" onclick="new unloadPage('loadcontent')"></div>
+
+    <div id="framedelete_category">
+
+        <div id="closexframe_category" onclick="new unloadPage('loadcontent')">x</div>
+
+        <div id="contentdelete_category">
+            <h1>{% blocktrans %}new credit card{% endblocktrans %}</h1>
+            <p>{% blocktrans %}Customize! Add your credit cards, this can also help with your filters!{% endblocktrans %}</p>
+            <form id="formid" method="post" action="{% url 'financial:settings_new_card' %}" novalidate>
+                {% csrf_token %}
+                <div>
+                    {{ form.card }}
+                </div>
+                <input type="submit" value="{% blocktrans %}+ insert{% endblocktrans %}">
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+</html>
+

@@ -1,0 +1,142 @@
+{% extends 'financial/base.html' %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <title>Murangoo | finance: {% blocktrans %}Settings{% endblocktrans %}</title>
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+		<link rel="stylesheet" href="{% static '/financial/css/account_settings.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+
+<section id="idsectionsettings">
+
+    <div class="margintopdiv"></div>
+
+    <div id="allsquares">
+
+        <div class="squares">
+            <div class="squares-head">
+                <img src="{% static '/financial/images/categoryicon.svg' %}" />
+                <p>{% blocktrans %}categories:{% endblocktrans %}</p>
+                <div class="addnewitem" onclick="new loadPage('/account-settings/new-category', 'loadcontent')">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="squares-allitem" id="idsquare_category">
+                {% for category in Invoice_category %}
+                    <div onclick="new loadPage('{{category.get_absolute_url_update}}', 'loadcontent')" class="category">
+                        <p>
+                            {{category.invoice_category}}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="squares">
+            <div class="squares-head">
+                <img src="{% static '/financial/images/categoryicon.svg' %}" />
+                <p>{% blocktrans %}bank accounts:{% endblocktrans %}</p>
+                <div class="addnewitem" onclick="new loadPage('/account-settings/new-bank', 'loadcontent')">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="squares-allitem" id="idsquare_bank">
+                {% for bank in Invoice_bank %}
+                    <div onclick="new loadPage('{{bank.get_absolute_url_update}}', 'loadcontent')" class="bank">
+                        <p>
+                            {{bank.invoice_bank}}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="squares">
+            <div class="squares-head">
+                <img src="{% static '/financial/images/categoryicon.svg' %}" />
+                <p>{% blocktrans %}credit cards:{% endblocktrans %}</p>
+                <div class="addnewitem" onclick="new loadPage('/account-settings/new-card', 'loadcontent')">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="squares-allitem" id="idsquare_card">
+                {% for card in Credit_card %}
+                    <div onclick="new loadPage('{{card.get_absolute_url_update}}', 'loadcontent')" class="card">
+                        <p>
+                            {{card.card}}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="squares">
+            <div class="squares-head">
+                <img src="{% static '/financial/images/categoryicon.svg' %}" />
+                <p>{% blocktrans %}payees:{% endblocktrans %}</p>
+                <div class="addnewitem" onclick="new loadPage('/account-settings/new-payee', 'loadcontent')">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="squares-allitem" id="idsquare_payee">
+                {% for payee in payees %}
+                    <div onclick="new loadPage('{{payee.get_absolute_url_update}}', 'loadcontent')" class="payee">
+                        <p>
+                            {{payee.payee}}
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="marginbottomdiv"></div>
+
+</section>
+
+<script>
+
+    /* function text not item in squares (INIT) */
+    function countElementsWithClass(classname, idsquareitem) {
+
+        const elements = document.querySelectorAll(classname);
+
+        if (elements.length === 0) {
+
+            var divEspecifica = document.getElementById(idsquareitem);
+            var novoParagrafo = document.createElement("p");
+            novoParagrafo.textContent = "{% blocktrans %}You have nothing to display here. Please add new items!{% endblocktrans %}";
+            novoParagrafo.classList.add("amptyitens")
+            divEspecifica.appendChild(novoParagrafo);
+
+        }
+
+    }
+
+    countElementsWithClass(".category", 'idsquare_category')
+    countElementsWithClass(".bank", 'idsquare_bank')
+    countElementsWithClass(".card", 'idsquare_card')
+    countElementsWithClass(".payee", 'idsquare_payee')
+    /* function text not item in squares (END) */
+
+</script>
+
+<div id="loadcontent"></div>
+
+{% endblock %}
+
+</html>

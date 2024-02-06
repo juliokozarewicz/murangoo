@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+		{% load i18n %}
+        <title>Murangoo | finance - Blog</title>
+        <meta name="theme-color" content="#000000"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000000"/>
+        <meta name="msapplication-navbutton-color" content="#000000"/>
+        <link rel="stylesheet" href="{% static '/blog/css/blog.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+<section>
+    <div class="img-title">
+        <h1 class="title">{% blocktrans %}Learn more about finance{% endblocktrans %}</h1>
+        <div class="img"></div>
+    </div>
+    <div class="text-mid">
+        <div class="text-mid2">{% blocktrans %}Discover more about finance, learn how and where to invest your money. With our tips, you can accelerate the process of growing your wealth, stay informed about market movements, and stay updated with our latest news.{% endblocktrans %}</div>
+    </div>
+    <div class="posts">
+        <div class="spc-start"></div>
+        <div class="box-all">
+            {% for post in all_post_list %}
+                <a class="post" href="{{post.get_absolute_url}}">
+                    <img src="{{ post.cover.url }}" id="idpost-img" alt=""/>
+                    <div class="post-title">{{post.title}}</div>
+                    <div class="post-pub">{{post.author.first_name}} {{post.author.last_name}}</div>
+                    <div class="post-pub">{{post.published}}</div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="spc-end"></div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById('navmobile').style.backgroundColor = "#987cff";
+        document.getElementById('id_logo_menu').src = "../static/core/images/logo-white.svg"
+        document.getElementById('id-lineup').style.backgroundColor = "#987cff";
+        document.getElementById('id_nav').style.backgroundColor = "#987cff";
+    </script>
+    <style>
+
+        li {
+            color: white;
+        }
+
+        li a:hover {
+            color: rgb(197, 197, 197);
+        }        
+    </style>
+</section>
+{% endblock %}
+
+</html>

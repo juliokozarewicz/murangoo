@@ -1,0 +1,148 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: textbold;
+    font-size: 12px;
+
+    background-color: #fe6775;
+
+    color: white;
+}
+
+#iddivtophead {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    gap: 80px;
+}
+
+#idtitle {
+    font-size: 45px;
+
+    font-family: dolcevita-bold;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+#idimgtop {
+    width: 60%;
+    height: 600px;
+
+    border-radius: 0% 0% 0% 50%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+#idtext {
+    max-width: 100%;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#idtext h2 {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+#idtext p {
+    max-width: 60%;
+
+    font-size: 18px;
+
+    text-indent: 2em;
+    line-height: 1.5;
+    
+    text-align: start;
+
+    margin-top: 10px;
+}
+
+.white-triangle .white-triangle2 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 20px solid #fe6775;
+}
+
+.white-triangle {
+    display: flex;
+    justify-content: center;
+}
+
+/* ##### */
+/* other devices */
+@media (max-width: 1099px) {
+
+    #iddivtophead {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+    }
+
+    #idtitle {
+
+        max-width: 90%;
+
+        font-size: 40px;
+    
+        font-family: dolcevita-bold;
+    
+        letter-spacing: 2px;
+
+        margin-top: 150px;
+    }
+
+    #idimgtop {
+        width: 100%;
+    
+        border-radius: 0% 0% 0% 0%;
+    
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+    }
+
+    #idtext h2 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        max-width: 80%;
+
+        text-align: center;
+    }
+
+    #idtext p {
+        max-width: 90%;
+    
+        font-size: 15px;
+    
+        text-indent: 2em;
+        line-height: 1.5;
+        
+        text-align: justify;
+    
+        margin-top: 5px;
+    }
+
+}

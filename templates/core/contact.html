@@ -1,0 +1,127 @@
+{% extends 'core/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <title>Murangoo | finance - Contact</title>
+        <meta name="theme-color" content="#000000"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000000"/>
+        <meta name="msapplication-navbutton-color" content="#000000"/>
+        <link rel="stylesheet" href="{% static '/core/css/contact.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+<section>
+    <div class="img-title">
+        <h1 class="title">{% blocktrans %}contact us and clear your doubts.{% endblocktrans %}</h1>
+        <div class="img"></div>
+    </div>
+    <p class="p">{% blocktrans %}Do you have any questions? Get in touch with us, and we'll be happy to assist you. We're here to clear up any doubts you may have. Don't hesitate to reach out to us!{% endblocktrans %}</p>
+    <div class="features-txt">
+        <p class="sub-title" id="idcontact">{% blocktrans %}Contact:{% endblocktrans %}</p>
+    </div>
+    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#CACACA" fill-opacity="1"
+            d="M0,64L26.7,53.3C53.3,43,107,21,160,32C213.3,43,267,85,320,133.3C373.3,181,427,235,480,240C533.3,245,587,203,640,192C693.3,181,747,203,800,213.3C853.3,224,907,224,960,224C1013.3,224,1067,224,1120,192C1173.3,160,1227,96,1280,85.3C1333.3,75,1387,117,1413,138.7L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+        </path>
+    </svg>
+    <div class="features">
+        <div class="spc-start"></div>
+
+        <form method="post" id="idform" autocomplete="off" novalidate>
+
+            {% csrf_token %}
+
+            <div id="idframeerror">
+
+                {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div id="{{field.auto_id}}" class="classerror">
+                                    <strong>{{field.label}}: {{ error }}</strong>
+                                    <p onclick="new unloadPage('{{field.auto_id}}')" id="closeerror">x</p>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                {% endif %}
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div id="id_msgsucess" class="classsucess">
+                            <strong>{{ message|safe }}</strong>
+                            <p onclick="new unloadPage('id_msgsucess')" id="closeerror">x</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+
+            {% for field in form %}
+                {{field}}
+            {% endfor %}
+
+            <div id="idtextgoogle">
+                <p>{% blocktranslate %}This site is protected by reCAPTCHA Enterprise and the Google {% endblocktranslate %}
+                <a href="https://policies.google.com/privacy" target="_blank">{% blocktranslate %}Privacy Policy{% endblocktranslate %}</a>{% blocktranslate %} and {% endblocktranslate %}
+                <a href="https://policies.google.com/terms" target="_blank">{% blocktranslate %}Terms of Service{% endblocktranslate %}</a> 
+                {% blocktranslate %}apply.{% endblocktranslate %}</p>
+            </div>
+
+            <input id="idsubmitmessage" type="submit" value="{% blocktranslate %}send message{% endblocktranslate %}" onclick="new changeurlnoupdate('#idcontact')">
+            
+        </form>
+
+        <p id="idotherchannels">{% blocktrans %}You can reach out to us through these customer service channels as well:{% endblocktrans %}</p>
+
+        <div id="idalternativemethod">
+            <div id="idzaplogo" onclick="window.open('https:\/\/api.whatsapp.com/send?phone=5541*****')">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="6.6405mm" height="6.642mm" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+                    viewBox="0 0 185.77 185.81"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Camada_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"/>
+                    <g id="_2087840768080">
+                    <path fill="#33CC66" d="M22.85 163.49c2.24,-11.07 10.56,-25.06 7.81,-29.8 -5.58,-9.61 -9.65,-15.88 -11.95,-28.67 -13.23,-73.4 74.91,-119.69 128.42,-68.95 12.41,11.76 24.33,31.64 23.54,57.33 -1.42,45.98 -43.59,79.62 -87.73,72.9 -16.02,-2.44 -18.75,-6.04 -29.59,-10.82 -3.96,-1.75 -24.74,6.55 -30.5,8.01zm-22.62 20.88l-0.23 1.44 1.37 -0.3c4.21,-0.46 31.33,-9.57 37.7,-11.6 11.7,-3.73 8.04,-4.31 18.63,0.39 73.97,32.85 154.1,-43.67 119.97,-120.05 -6.17,-13.82 -11.16,-19 -20.16,-28.55 -14,-14.85 -43.48,-28.65 -73.11,-25.13 -29.98,3.56 -49.53,18.5 -62.87,35.17 -19.15,23.92 -25.68,62.78 -9.86,94.64 5.03,10.12 4.49,5.94 0.63,17.53l-12.05 36.48z"/>
+                    <path fill="#33CC66" d="M117.1 101.6c-2.06,1.9 -3.68,4.19 -5.38,6.21 -2.55,3.06 -2.89,5.5 -7.59,4.58 -9,-1.76 -21.36,-12.92 -27.25,-20.9 -6.92,-9.38 -4.03,-7.31 1.33,-14.73 3.93,-5.43 -0.57,-11.37 -3.06,-17.41 -2.89,-7.01 -3.24,-12.43 -13.17,-9.57 -10.98,3.16 -15.64,19.38 -9.75,33.39 4.3,10.25 13.96,21.29 20.28,27.58 9.09,9.03 15.3,13.43 29.86,18.82 11.58,4.3 25.94,7.71 35.24,-4.92 1.6,-2.18 2.71,-5.71 2.89,-9.04 0.29,-5.32 -1.8,-5.1 -5.67,-6.93 -4.58,-2.18 -12.71,-7.18 -17.74,-7.08z"/>
+                    </g>
+                    </g>
+                </svg>
+            </div>
+            <div id="idemailogo" onclick="location.href='mailto:*****'">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="7.054mm" height="4.925mm" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+                    viewBox="0 0 493.45 344.52"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Camada_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"/>
+                    <path fill="white" d="M179.44 197.64c15.82,7.72 27.47,34.17 65.64,34.7 14.31,0.2 28.4,-3.4 38.45,-10.42 7.42,-5.19 21.46,-17.65 26.16,-24.66 10.57,2.67 11.02,6.88 18.1,14.07l80.68 73.08c7.5,5.93 8.77,8.11 15.63,15.04 5.76,5.81 11.72,7.69 15.46,14.8l-386.28 -0.05c3.84,-4.37 8.32,-9.28 13.2,-14.06 11.47,-11.21 32.65,-27.8 48.18,-44.04 5.42,-5.67 10.8,-8.7 16.8,-14.1l47.98 -44.37zm155.45 -22.01c3.92,-7.7 22.17,-23.06 30.94,-31.04l64.61 -58.38c10.24,-9.02 21.13,-18.69 31.57,-27.11l-0.2 232.62c-16.77,-13.62 -20.44,-19.52 -31.39,-29.19l-79.8 -73.94c-5.16,-5.8 -8.69,-9.81 -15.74,-12.96zm-304.47 -116.52l105.49 94.4c0.33,0.27 0.8,0.66 1.13,0.92 7.16,5.78 17.21,13.75 20.75,21.8l-49.16 43.14c-10.98,9.73 -72.18,69.81 -78.22,72.19l0.01 -232.46zm410.42 -28.37c-4.3,3.72 -6.62,7.23 -11.2,11.51l-107.78 97.3c-15.08,12.63 -57.93,59.39 -74.96,59.85 -9.31,0.25 -25.69,-13.17 -29.55,-16.94l-118.95 -108.48c-8.92,-10.01 -42.93,-36.84 -46.32,-43.7l388.77 0.46zm-440.84 267.55c0,27.66 16.22,46.23 44.19,46.23l407.8 0c15.16,0 27.18,-9.02 32.97,-17.4 8.91,-12.91 8.02,-22.97 8.02,-41.13l0 -184.43c0.16,-47.55 7.87,-101.57 -45.09,-101.57l-403.7 0c-26.34,0 -44.19,18.16 -44.19,44.18l0 254.11z"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div class="spc-end"></div>
+    </div>
+    <svg class="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#CACACA" fill-opacity="1"
+            d="M0,224L40,192C80,160,160,96,240,96C320,96,400,160,480,181.3C560,203,640,181,720,149.3C800,117,880,75,960,85.3C1040,96,1120,160,1200,165.3C1280,171,1360,117,1400,90.7L1440,64L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+        </path>
+    </svg>
+    <p class="p">
+        {% blocktrans %}We are always at your disposal, ready to assist you. We will be happy to help you in any way we can. We believe you are special and deserve our full attention and support. Count on us to make your experience even more exceptional.{% endblocktrans %}</p>
+    <script type="text/javascript">
+        document.getElementById('navmobile').style.backgroundColor = "#10b9e7";
+        document.getElementById('id_logo_menu').src = "static/core/images/logo-white.svg"
+        document.getElementById('id-lineup').style.backgroundColor = "#10b9e7";
+        document.getElementById('id_nav').style.backgroundColor = "#10b9e7";
+    </script>
+    <style>
+        li {
+            color: white;
+        }       
+    </style>
+</section>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'core/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <title>Murangoo | finance - Features</title>
+        <meta name="theme-color" content="#000000"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000000"/>
+        <meta name="msapplication-navbutton-color" content="#000000"/>
+        <link rel="stylesheet" href="{% static '/core/css/features.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+<section>
+    <div class="img-title">
+        <h1 class="title">{% blocktrans %}Discover more features of our platform{% endblocktrans %}</h1>
+        <div class="img"></div>
+    </div>
+    <p class="p">{% blocktrans %}Discover how we can assist you! With our platform, you can customize your financial and personal life in a practical, easy, and intuitive manner. Don't waste time! Explore the resources that will provide you with a complete path to your financial well-being, helping you make better decisions in the future.{% endblocktrans %}</p>
+    <div class="features-txt">
+        <p class="sub-title">{% blocktrans %}Features:{% endblocktrans %}</p>
+    </div>
+    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#CACACA" fill-opacity="1"
+            d="M0,64L26.7,53.3C53.3,43,107,21,160,32C213.3,43,267,85,320,133.3C373.3,181,427,235,480,240C533.3,245,587,203,640,192C693.3,181,747,203,800,213.3C853.3,224,907,224,960,224C1013.3,224,1067,224,1120,192C1173.3,160,1227,96,1280,85.3C1333.3,75,1387,117,1413,138.7L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+        </path>
+    </svg>
+    <div class="features">
+        <div class="spc-start"></div>
+        <div class="ft1">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Spending{% endblocktrans %}</p>
+        </div>
+        <div class="ft2">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Revenues{% endblocktrans %}</p>
+        </div>
+        <div class="ft3">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}reports{% endblocktrans %}</p>
+        </div>
+        <div class="ft4">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Tasks and goals{% endblocktrans %}</p>
+        </div>
+        <div class="ft5">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Assets{% endblocktrans %}</p>
+        </div>
+        <div class="ft6">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Categories{% endblocktrans %}</p>
+        </div>
+        <div class="ft7">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Email notices{% endblocktrans %}</p>
+        </div>
+        <div class="ft8">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Bank accounts{% endblocktrans %}</p>
+        </div>
+        <div class="ft9">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Credit cards{% endblocktrans %}</p>
+        </div>
+        <div class="ft10">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Dashboard{% endblocktrans %}</p>
+        </div>
+        <div class="ft11">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Budgets{% endblocktrans %}</p>
+        </div>
+        <div class="ft12">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}Payees{% endblocktrans %}</p>
+        </div>
+        <div class="spc-end"></div>
+    </div>
+    <svg class="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#CACACA" fill-opacity="1"
+            d="M0,224L40,192C80,160,160,96,240,96C320,96,400,160,480,181.3C560,203,640,181,720,149.3C800,117,880,75,960,85.3C1040,96,1120,160,1200,165.3C1280,171,1360,117,1400,90.7L1440,64L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+        </path>
+    </svg>
+    <p class="p">{% blocktrans %}We are part of an organic system that is constantly changing, evolving, and exploring new paths. Our company operates in the same way, prioritizing safety while continuously studying and researching new possibilities and functionalities. And you know who can help us? It's you! Your recommendations and opinions allow us to assess the feasibility of implementing new features.{% endblocktrans %}</p>
+    <script type="text/javascript">
+        document.getElementById('navmobile').style.backgroundColor = "#81dd6b";
+        document.getElementById('id_logo_menu').src = "static/core/images/logo-white.svg"
+        document.getElementById('id-lineup').style.backgroundColor = "#81dd6b";
+        document.getElementById('id_nav').style.backgroundColor = "#81dd6b";
+    </script>
+    <style>
+        li {
+            color: white;
+        }     
+    </style>
+</section>
+{% endblock %}
+
+</html>

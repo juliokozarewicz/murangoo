@@ -1,0 +1,494 @@
+@import url("colors.css");
+
+@font-face {
+    font-family: 'textbold';
+    src: url('../fonts/textbold/textbold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'dolcevita-bold';
+    src: url('../fonts/dolcevita/dolcevita-bold.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 2.2vh;
+    outline: none;
+}
+
+/* Works on Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--gray3) var(--gray2);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+	width: 1vh;
+	border-radius: 1vh;
+  }
+  
+  *::-webkit-scrollbar-track {
+	background: var(--gray2);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+	background-color: var(--gray3);
+	border-radius: 1vh;
+  }
+  /* SCROLLBAR END */
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 2vh;
+    background-color:  var(--gray1);
+    font-family: textbold;
+    color: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#idtoplinered {
+    width: 100%;
+    height: 2vh;
+
+    background-color: var(--red);
+}
+
+#idsection {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow-x: hidden;
+}
+
+#idlogomenuhambimg {
+    width: 42vh;
+
+    margin-top: 10vh;
+}
+
+#idfirstdivgray{
+    position: relative;
+
+    width: 100%;
+
+    background-color: var(--gray2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#idcurrentplan {
+    margin-top: 5vh;
+
+    font-size: 3vh;
+
+    color: var(--newpurple);
+}
+
+#idimgplanicon {
+    margin-top: 5vh;
+    width: 7vh;
+}
+
+#idplantext {
+    margin-top: 2vh;
+
+    font-size: 4vh;
+    font-family: dolcevita-bold;
+
+    color: var(--gray5);
+}
+
+#idplancost {
+    margin-top: 1vh;
+
+    font-size: 3vh;
+
+    color: var(--gray4);
+}
+
+#idexpirationdatetext {
+    margin-top: 4vh;
+
+    font-size: 2vh;
+
+    color: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+#idexpirationdatevalue {
+    margin-bottom: 10vh;
+
+    font-size: 3vh;
+
+    color: var(--gray4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+#idbtnchangeplan {
+    z-index: 2;
+
+    position: absolute;
+    bottom: -3vh;
+
+    width: 35vh;
+    height: 6vh;
+
+    font-size: 2.5vh;
+
+    background-color: var(--newpurple);
+    color: white;
+
+    border: none;
+
+    border-radius: 1vh;
+
+    cursor: pointer;
+}
+
+#idbtnchangeplan:hover {
+    background-color: var(--newgreen);
+}
+
+#idsecondgray {
+    z-index: 1;
+
+    position: relative;
+
+    width: 100%;
+
+    background-color: var(--gray1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#idsubscriptionhistory {
+    margin-top: 15vh;
+
+    font-size: 3vh;
+    font-family: dolcevita-bold;
+
+    color: var(--gray4);
+}
+
+#idsignupbottom {
+    margin-top: 10vh;
+    margin-bottom: 8vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#idbackicon {
+    font-size: 2.5vh;
+
+    width: 5vh;
+    height: 5vh;
+
+    background-color: var(--gray5);
+    color:  var(--gray3);
+    border-radius: 1vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 0.5vh;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#idsignupbottom a {
+    list-style: none;
+    text-decoration: none;
+
+    font-size: 2vh;
+
+    height: 5vh;
+
+    color: white;
+    background-color:  var(--black);
+
+    text-align: center;
+
+    padding-left: 4vh;
+    padding-right: 4vh;
+
+    border-radius: 1vh;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#idsignupbottom:hover > a {
+    background-color: var(--gray5);
+}
+
+#idframeallpaymentshistory {
+    width: 93vh;
+    
+    margin-top: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    font-size: 2vh;
+    font-family: textbold;
+
+    max-height: 35vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#idframehead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+#idheadpaymenthistory {
+
+    width: 90vh;
+    height: 4vh;
+    min-height: 4vh;
+
+    padding-left: 5vh;
+    padding-right: 5vh;
+
+    background-color: var(--black);
+    color: var(--gray4);
+
+    border-radius: 1vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: start;
+
+    column-gap: 10vh;
+}
+
+#idframeobjects {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    margin-top: 0.5vh;
+}
+
+#idobjectspaymentshistory {
+
+    width: 90vh;
+    height: 4vh;
+    min-height: 4vh;
+
+    padding-left: 5vh;
+    padding-right: 5vh;
+
+    background-color: var(--gray2);
+    color: var(--gray4);
+
+    border-radius: 1vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: start;
+
+    column-gap: 10vh;
+
+    margin-top: 0.8vh;
+}
+
+#idheadpaymenthistory span, #idobjectspaymentshistory span {
+    font-size: 1.9vh;
+}
+
+#idobjectspaymentshistory span:nth-child(4) {
+    width: 10vh;
+    height: 2.5vh;
+    font-size: 1.8vh;
+
+    border-radius: 1vh;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#idobjectspaymentshistory span:nth-child(2) {
+    font-size: 1.8vh;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    text-transform: lowercase;
+}
+
+/* ##### */
+/* other devices */
+@media (max-width: 980px) {
+
+    #idframeallpaymentshistory {
+        width: 100%;
+
+        margin-top: 5vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    
+        font-family: textbold;
+    
+        max-height: 35vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #idframehead {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+
+    #idheadpaymenthistory {
+
+        width: 95%;
+        height: 4vh;
+        min-height: 4vh;
+
+        padding-left: 2vh;
+        padding-right: 2vh;
+
+        background-color: var(--black);
+        color: var(--gray4);
+
+        border-radius: 1vh;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        justify-items: start;
+
+        column-gap: 2vh;
+    }
+    
+    #idframeobjects {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+
+        margin-top: 0.5vh;
+    }
+
+    #idobjectspaymentshistory {
+
+        width: 95%;
+        height: 4vh;
+        min-height: 4vh;
+
+        padding-left: 2vh;
+        padding-right: 2vh;
+
+        background-color: var(--gray2);
+        color: var(--gray4);
+
+        border-radius: 1vh;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        justify-items: start;
+
+        column-gap: 1vh;
+
+        margin-top: 0.8vh;
+    }
+
+    #idheadpaymenthistory span, #idobjectspaymentshistory span {
+        font-size: 1.3vh;
+    }
+
+    #idobjectspaymentshistory span:nth-child(4) {
+        width: 10vh;
+        height: 2.5vh;
+        font-size: 1.4vh;
+
+        border-radius: 1vh;
+
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #idobjectspaymentshistory span:nth-child(2) {
+        font-size: 1.8vh;
+
+        max-width: 10vh;
+    
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    
+        text-transform: lowercase;
+    }
+
+}
+
+#idframeerror {
+    display: none;
+}

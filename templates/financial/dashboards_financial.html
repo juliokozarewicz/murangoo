@@ -1,0 +1,454 @@
+{% extends 'financial/base.html' %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <title>Murangoo | finance: {% blocktrans %}Dashboard{% endblocktrans %}</title>
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+		<link rel="stylesheet" href="{% static '/financial/css/dashboards_financial.css' %}">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+
+<section id="idsectiondashboards">
+
+    <div class="margintopdiv"></div>
+
+    <div class="sectionfinancial">
+        <h2 class="titlesection">{% blocktrans %}Monitor your financial health{% endblocktrans %}</h2>
+        <h3 class="datasection">{{GLOBAL_month_name}} {{GLOBAL_year_name}}</h3>
+        <div id="splittwosecfinancial">
+
+            <div id="graphmajorbalance">
+
+                <div id="legendsmajor">
+
+                    <span id="legendrevenues">
+                        <div></div>
+                        <p>{% blocktrans %}revenues{% endblocktrans %}</p>
+                    </span>
+
+                    <span id="legendexpenses">
+                        <div></div>
+                        <p>{% blocktrans %}expenses{% endblocktrans %}</p>
+                    </span>
+
+                </div>
+
+                <canvas id="canvaschart"></canvas>
+
+            </div>
+
+            <div id="graphmajorbalance2">
+
+                <h2 id="titlemajortwo">{% blocktrans %}expenses by categories{% endblocktrans %}</h2>
+
+                <canvas id="canvascharttwo"></canvas>
+
+            </div>
+
+            <div id="alltreecards">
+
+                <div class="framecontentcards">
+                    <span>{% blocktrans %}${% endblocktrans %} {{GLOBAL_template_revenues}}</span>
+                    <p>{% blocktrans %}revenues{% endblocktrans %}</p>
+                </div>
+
+                <div class="framecontentcards">
+                    <span>{% blocktrans %}${% endblocktrans %} {{GLOBAL_template_expenses}}</span>
+                    <p>{% blocktrans %}expenses{% endblocktrans %}</p>
+                </div>
+
+                <div class="framecontentcards">
+                    <span>{% blocktrans %}${% endblocktrans %} {{GLOBAL_template_balance}}</span>
+                    <p>{% blocktrans %}balance{% endblocktrans %}</p>
+                </div>
+
+            </div>
+        </div>
+ 
+        <div id="twosecdashboardfinance">
+
+            <div id="alltopfiveexpense">
+                <h2 class="titletopfice">{% blocktrans %}top 5 expenses{% endblocktrans %}</h2>
+                <div id="splittreedivtopfive">
+                    <div class="rowstopfiveitensone">
+                        <p class="textpositions">{{GLOBAL_top_five_expenses.0.0}}</p>
+                        <p class="textpositions">{{GLOBAL_top_five_expenses.1.0}}</p>
+                        <p class="textpositions">{{GLOBAL_top_five_expenses.2.0}}</p>
+                        <p class="textpositions">{{GLOBAL_top_five_expenses.3.0}}</p>
+                        <p class="textpositions">{{GLOBAL_top_five_expenses.4.0}}</p>
+                    </div>
+                    <div class="rowstopfiveitenstwo">
+                        <p class="textpositions"><span>{{GLOBAL_top_five_expenses.0.1}}</span></p>
+                        <p class="textpositions"><span>{{GLOBAL_top_five_expenses.1.1}}</span></p>
+                        <p class="textpositions"><span>{{GLOBAL_top_five_expenses.2.1}}</span></p>
+                        <p class="textpositions"><span>{{GLOBAL_top_five_expenses.3.1}}</span></p>
+                        <p class="textpositions"><span>{{GLOBAL_top_five_expenses.4.1}}</span></p>
+                    </div>
+                    <div class="rowstopfiveitenstree">
+                        <div>
+                            <p class="valuemonetary">{{GLOBAL_top_five_expenses.0.2}}</p>
+                            <span class="growthbar">{{GLOBAL_top_five_expenses.0.3}}</span>
+                        </div>
+                        <div>
+                            <p class="valuemonetary">{{GLOBAL_top_five_expenses.1.2}}</p>
+                            <span class="growthbar">{{GLOBAL_top_five_expenses.1.3}}</span>
+                        </div>
+                        <div>
+                            <p class="valuemonetary">{{GLOBAL_top_five_expenses.2.2}}</p>
+                            <span class="growthbar">{{GLOBAL_top_five_expenses.2.3}}</span>
+                        </div>
+                        <div>
+                            <p class="valuemonetary">{{GLOBAL_top_five_expenses.3.2}}</p>
+                            <span class="growthbar">{{GLOBAL_top_five_expenses.3.3}}</span>
+                        </div>
+                        <div>
+                            <p class="valuemonetary">{{GLOBAL_top_five_expenses.4.2}}</p>
+                            <span class="growthbar">{{GLOBAL_top_five_expenses.4.3}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="secondframe">
+
+                <h2 class="titletopficetree">{% blocktrans %}credit card spending{% endblocktrans %}</h2>
+    
+                <canvas id="canvascharttree"></canvas>
+
+            </div>
+
+        </div>
+    
+        <div class="marginbottomdiv"></div>
+
+    </div>
+
+</section>
+
+<script>
+    
+    // set config for navbar (INIT)
+    document.getElementById('iconnavdashboard').style.display = 'block';
+    // set config for navbar (END)
+
+    // Top 5 espenses (INIT)
+    document.getElementsByClassName('growthbar')[0].style = 'background-color: var(--redlight);';
+    document.getElementsByClassName('growthbar')[1].style = 'background-color: var(--newpurple);';
+    document.getElementsByClassName('growthbar')[2].style = 'background-color: var(--newpurple);';
+
+    const allitemsgrowth = document.querySelectorAll('.rowstopfiveitenstree div');
+
+    allitemsgrowth.forEach(element => {
+        const paragraphElement = element.querySelector('p').textContent;
+        const changegrowth = element.querySelectorAll('span');
+
+        changegrowth.forEach(spanElement => {
+            spanElement.style.width = `${parseFloat(paragraphElement)}vh`;
+        });
+
+        element.querySelector('p').textContent = paragraphElement + '%';
+        element.querySelector('span').textContent = '{% blocktrans %}${% endblocktrans %} ' + element.querySelector('span').textContent;
+
+    });
+
+    // hide long text
+    const spangrowth = document.getElementsByClassName('growthbar');
+
+    for (let i = 0; i < spangrowth.length; i++) {
+
+        const widthsize = (spangrowth[i].offsetWidth / window.innerHeight) * 100;
+        
+        if (widthsize < 10) {
+            spangrowth[i].textContent = '';
+        }
+    }
+
+    // hide empty items
+    const textpositionsnb = document.getElementsByClassName('valuemonetary');
+    const growthbarhide = document.getElementsByClassName('growthbar');
+
+    for (let i = 0; i < textpositionsnb.length; i++) {
+        if (textpositionsnb[i].textContent == '%') {
+            textpositionsnb[i].style.display = 'none';
+            growthbarhide[i].style.display = 'none';
+        }
+    }
+    
+    // diplay hidden for (.rowstopfiveitensone .textpositions) if empty
+    const allitensonedivp = document.querySelectorAll('.rowstopfiveitensone .textpositions');
+
+    for (let i = 0; i < allitensonedivp.length; i++) {
+
+        if (allitensonedivp[i].textContent === null || allitensonedivp[i].textContent.trim() === '') {
+            allitensonedivp[i].style = 'visibility: hidden;';
+        }
+    }
+    
+    // count display hidden
+    const allitensonedivpdisplay = document.querySelectorAll('.rowstopfiveitensone .textpositions');
+    let countWithDisplayHidden = 0;
+
+    for (let i = 0; i < allitensonedivpdisplay.length; i++) {
+
+        if (window.getComputedStyle(allitensonedivpdisplay[i]).visibility === 'hidden') {
+            countWithDisplayHidden++;
+        }
+
+    }
+
+    if (countWithDisplayHidden >= 5) {
+
+        var divEspecifica = document.getElementById('alltopfiveexpense');
+        var novoParagrafo = document.createElement("p");
+
+        novoParagrafo.textContent = "{% blocktrans %}You have nothing to display here. Please add new items!{% endblocktrans %}";
+        novoParagrafo.classList.add("amptyitenstopfive");
+        divEspecifica.appendChild(novoParagrafo);
+    }
+    // Top 5 espenses (END)
+
+
+    // chart major (INIT)
+    const ctx = document.getElementById('canvaschart');
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+
+            labels: ['{% blocktrans %}revenues{% endblocktrans %}', '{% blocktrans %}expenses{% endblocktrans %}', ],
+
+            datasets: [
+
+                {
+                    data: [{{GLOBAL_template_revenues|safe}}, {{GLOBAL_template_expenses|safe}}],
+                    backgroundColor: ['#5409F6', '#09F6CB'],
+                    borderWidth: 0,
+                    borderCapStyle: 'round', // Sets the ends to rounded
+                    pointRadius: 0,
+                },
+
+            ]
+
+        },
+
+        options: {
+
+            scales: {
+
+                x: {
+
+                    grid: {
+                        display: false, // Remover as linhas verticais de background
+                    },
+
+                    display: false,
+
+                },
+
+                y: {
+
+                    display: false,
+
+                    beginAtZero: true,
+
+                    ticks: {
+                        fontSize: 5
+                    },
+
+                    grid: {
+                        display: false,
+                    },
+                }
+
+            },
+
+            elements: {
+
+                line: {
+                    tension: 0.4 // Controls the curvature of the line
+                }
+            },
+
+            plugins: {
+
+                legend: {
+                    display: false
+                }
+
+            }
+        }
+    });
+    // chart major (END)
+
+    // chart major two (INIT)
+    const ctx2 = document.getElementById('canvascharttwo');
+
+    var categories_label = {{GLOBAL_expenses_categories.label|safe}};
+    var categories_data = {{GLOBAL_expenses_categories.dados|safe}};
+
+    new Chart(ctx2, {
+        type: 'pie',
+        data: {
+
+            labels: categories_label,
+
+            datasets: [
+
+                {
+                    data: categories_data,
+                    borderWidth: 2,
+                    borderCapStyle: 'round', // Sets the ends to rounded
+                    pointRadius: 0,
+                },
+
+            ]
+
+        },
+
+        options: {
+
+            scales: {
+
+                y: {
+
+                    display: false,
+
+                    beginAtZero: true,
+
+                    ticks: {
+                        fontSize: 5
+                    },
+
+                    grid: {
+                        display: false,
+                    },
+
+                }
+
+            },
+
+            elements: {
+                line: {
+                    tension: 0.4 // Controls the curvature of the line
+                }
+            },
+
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+    // chart major two (END)
+
+    // chart major two (INIT)
+    const ctx3 = document.getElementById('canvascharttree');
+
+    var categories_label = {{GLOBAL_credit_card.label|safe}};
+    var categories_data = {{GLOBAL_credit_card.dados|safe}};
+
+    new Chart(ctx3, {
+        type: 'bar',
+        data: {
+
+            labels: categories_label,
+
+            datasets: [
+
+                {
+                    data: categories_data,
+                    borderCapStyle: 'round', // Sets the ends to rounded
+                    pointRadius: 0,
+
+                    // colors
+                    backgroundColor: ['#09F6CB', '#5409F6', '#6699FF', '#FF9933'],
+                    borderColor: '#FA4658',
+                    borderWidth: 0,
+                },
+
+            ]
+
+        },
+
+        options: {
+
+            indexAxis: 'x',
+
+            scales: {
+                
+
+                x: {
+                    display: false,
+
+                    grid: {
+                        drawBorder: false,
+                        drawOnChartArea: false,
+                        display: false,
+                    },
+
+                    border:{
+                        display:false
+                    },
+
+                },
+
+                y: {
+                    display: false,
+
+                    beginAtZero: true,
+
+                    ticks: {
+                        fontSize: 5
+                    },
+
+                    grid: {
+                        drawOnChartArea: false,
+                        display: false,
+                    },
+
+                    border:{
+                        display:false
+                    },
+
+                }
+
+            },
+
+            elements: {
+
+                line: {
+                    tension: 0.4 // Controls the curvature of the line
+                }
+
+            },
+
+            plugins: {
+
+                legend: {
+                    display: false
+                }
+
+            }
+        }
+    });
+    // chart major two (END)
+
+    // set cookie for navbar (INIT)
+    document.cookie = "statusIconMobile=dashboard; path=/; SameSite=Strict;";
+    // set cookie for navbar (END)
+
+</script>
+
+{% endblock %}
+
+</html>

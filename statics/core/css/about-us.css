@@ -1,0 +1,666 @@
+@font-face {
+    font-family: 'textbold-normal';
+    src: url('../fonts/textbold/textbold-normal.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'textbold';
+    src: url('../fonts/textbold/textbold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'dolcevita-bold';
+    src: url('../fonts/dolcevita/dolcevita-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'arial-normal';
+    src: url('../fonts/arial/arial-normal.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cursives';
+    src: url('../fonts/cursives/cursives.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* desktop */
+@media (min-width: 1100px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        font-family: arial-normal;
+        background-color: #fe6775;
+        font-family: textbold;
+        color: white;
+    }
+
+    body section {
+        width: 100%;
+        min-height: 500px;
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    body section .img-title {
+        width: 100%;
+        height: 500px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 40% 60%;
+        margin-bottom: 250px;
+    }
+
+    body section .img-title .img {
+        background-image: url("../images/respect.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 600px;
+        border-radius: 0% 0% 60% 60%;
+    }
+
+    body section .img-title .title {
+        width: 90%;
+        font-size: 100%;
+        font-family: dolcevita-bold;
+        text-align: end;
+        font-size: 50px;
+        padding-right: 70px;
+    }
+
+    body section .p1 {
+        font-size: 20px;
+        width: 60%;
+        text-align: center;
+        line-height: 1.5;
+        text-indent: 2.5em;
+        padding: 5px;
+        margin-bottom: 50px;
+    }
+
+    body section .sub-title {
+        font-size: 80px;
+        color: black;
+        font-family: cursives;
+        text-align: center;
+        position: absolute;
+        margin-top: -640px;
+        border-bottom: 3px solid #F51E33;
+    }
+
+    body section .values {
+        width: 100%;
+        height: 400px;
+        background-color: #CACACA;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    body section .values .innovation {
+        width: 300px;
+        height: 280px;
+        background-color: #CACACA;
+        box-shadow: 1px 1px 20px grey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body section .values .innovation .img {
+        background-image: url("../images/innovation.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    body section .values .innovation .txt {
+        width: 100%;
+        font-family: dolcevita-bold;
+        font-size: 20px;
+        color: #404040;
+        margin-top: 15px;
+    }
+
+    body section .values .modernity {
+        width: 300px;
+        height: 280px;
+        background-color: #CACACA;
+        box-shadow: 1px 1px 20px grey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body section .values .modernity .img {
+        background-image: url("../images/modernity.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    body section .values .modernity .txt {
+        width: 100%;
+        font-family: dolcevita-bold;
+        font-size: 20px;
+        color: #404040;
+        margin-top: 15px;
+        ;
+    }
+
+    body section .values .respect {
+        width: 300px;
+        height: 280px;
+        background-color: #CACACA;
+        box-shadow: 1px 1px 20px grey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body section .values .respect .img {
+        background-image: url("../images/respect.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    body section .values .respect .txt {
+        width: 100%;
+        font-family: dolcevita-bold;
+        font-size: 20px;
+        color: #404040;
+        margin-top: 15px;
+        ;
+    }
+
+    body section .values .simplicity {
+        width: 300px;
+        height: 280px;
+        background-color: #CACACA;
+        box-shadow: 1px 1px 20px grey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body section .values .simplicity .img {
+        background-image: url("../images/simplicity.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    body section .values .simplicity .txt {
+        width: 100%;
+        font-family: dolcevita-bold;
+        font-size: 20px;
+        color: #404040;
+        margin-top: 15px;
+    }
+
+    body section .sub-title2 {
+        width: 50%;
+        font-size: 80px;
+        font-family: cursives;
+        text-align: center;
+        color: white;
+        margin-bottom: 140px;
+    }
+
+    body section .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 250px;
+    }
+
+    body section .box .txt {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body section .box .txt .p1 {
+        font-size: 15px;
+        text-align: justify;
+        line-height: 1.5;
+        width: 80%;
+        height: 100%;
+    }
+
+    body section .box .txt .p2 {
+        font-size: 15px;
+        text-align: justify;
+        line-height: 1.5;
+        width: 80%;
+        height: 100%;
+    }
+
+    body section .box .txt b {
+        font-size: 25px;
+        color: black;
+    }
+
+    body section .box .img1 {
+        background-image: url("../images/about-innovation.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        width: 100%;
+        height: 350px;
+        opacity: 80%;
+    }
+
+    body section .box .img2 {
+        background-image: url("../images/about-modernity.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        width: 100%;
+        height: 350px;
+        opacity: 80%;
+    }
+
+    body section .box .img3 {
+        background-image: url("../images/about-respect.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        width: 100%;
+        height: 350px;
+        opacity: 80%;
+    }
+
+    body section .box .img4 {
+        background-image: url("../images/about-simple.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        width: 100%;
+        height: 350px;
+        opacity: 80%;
+    }
+
+    body section .box:last-child {
+        margin-bottom: 250px;
+    }
+
+	.white-triangle {
+		display: flex;
+		justify-content: center;
+	}
+
+	.white-triangle .white-triangle2 {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		border-top: 20px solid #fe6775;
+	}
+
+    .img2mob {
+        display: none;
+    }
+
+    .img4mob {
+        display: none;
+    }
+
+}
+
+/* ##### */
+/* other devices */
+@media (max-width: 1099px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        font-family: arial-normal;
+        background-color: #fe6775;
+        font-family: textbold;
+        color: white;
+    }
+
+    body section {
+        width: 100%;
+        min-height: 500px;
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    body section .img-title {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 150px;
+    }
+
+    body section .img-title .img {
+        background-image: url("../images/respect.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: top;
+        height: 350px;
+        border-radius: 0% 0% 60% 60%;
+    }
+
+    body section .img-title .title {
+        color: #FFFFFF;
+        font-family: dolcevita-bold;
+        text-align: center;
+        font-size: 40px;
+        margin-top: 100px;
+    }
+
+    body section .p1 {
+        font-size: 15px;
+        width: 80%;
+        text-align: justify;
+        line-height: 1.5;
+        margin-bottom: 120px;
+        text-indent: 50px;
+    }
+
+    body section .sub-title {
+        font-size: 80px;
+        color: black;
+        font-family: cursives;
+        text-align: center;
+        position: absolute;
+        margin-top: -1600px;
+        border-bottom: 2px solid #F51E33;
+    }
+
+    body section .values {
+        width: 100%;
+        height: 1500px;
+        background-color: #CACACA;     
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    body section .values .innovation {
+        width: 300px;
+        height: 280px;
+        background-color: #CACACA;
+        box-shadow: 1px 1px 20px grey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body section .values .innovation .img {
+        background-image: url("../images/innovation.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    body section .values .innovation .txt {
+        width: 100%;
+        font-family: dolcevita-bold;
+        font-size: 20px;
+        color: #404040;
+        margin-top: 15px;
+    }
+
+    body section .values .modernity {
+        width: 300px;
+        height: 280px;
+        background-color: #CACACA;
+        box-shadow: 1px 1px 20px grey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body section .values .modernity .img {
+        background-image: url("../images/modernity.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    body section .values .modernity .txt {
+        width: 100%;
+        font-family: dolcevita-bold;
+        font-size: 20px;
+        color: #404040;
+        margin-top: 15px;
+        ;
+    }
+
+    body section .values .respect {
+        width: 300px;
+        height: 280px;
+        background-color: #CACACA;
+        box-shadow: 1px 1px 20px grey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body section .values .respect .img {
+        background-image: url("../images/respect.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    body section .values .respect .txt {
+        width: 100%;
+        font-family: dolcevita-bold;
+        font-size: 20px;
+        color: #404040;
+        margin-top: 15px;
+        ;
+    }
+
+    body section .values .simplicity {
+        width: 300px;
+        height: 280px;
+        background-color: #CACACA;
+        box-shadow: 1px 1px 20px grey;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body section .values .simplicity .img {
+        background-image: url("../images/simplicity.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    body section .values .simplicity .txt {
+        width: 100%;
+        font-family: dolcevita-bold;
+        font-size: 20px;
+        color: #404040;
+        margin-top: 15px;
+    }
+
+    body section .svg2 {
+        margin-bottom: 80px;
+    }
+
+    body section .sub-title2 {
+        width: 70%;
+        font-size: 80px;
+        font-family: cursives;
+        text-align: center;
+        color: white;
+        transform: rotate(-15deg);
+        z-index: 3;
+        line-height: 0.9;
+        margin-top: 50px;        
+        margin-bottom: 150px;
+    }
+
+    body section .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body section .box .txt {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body section .box .txt .p1 {
+        font-size: 15px;
+        text-align: justify;
+        line-height: 1.5;
+        text-indent: 2.5em;
+        width: 90%;
+        height: 100%;
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+
+    body section .box .txt .p2 {
+        font-size: 15px;
+        text-align: justify;
+        line-height: 1.5;
+        text-indent: 2.5em;
+        width: 90%;
+        height: 100%;
+        margin-top: 20px;
+    }
+
+    body section .box .txt b {
+        font-size: 20px;
+        color: black;
+    }
+
+    body section .box .img1 {
+        background-image: url("../images/about-innovation.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        width: 90%;
+        height: 350px;
+        opacity: 80%;
+        border-radius: 2vh;
+    }
+
+    body section .box .img2 {
+        display: none;
+    }
+
+    body section .box .img2mob {
+        background-image: url("../images/about-modernity.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        width: 90%;
+        height: 350px;
+        opacity: 80%;
+        border-radius: 2vh;
+        margin-top: 80px;
+    }
+
+    body section .box .img3 {
+        background-image: url("../images/about-respect.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        width: 90%;
+        height: 350px;
+        opacity: 80%;
+        border-radius: 2vh;
+        margin-top: 80px;
+    }
+
+    body section .box .img4 {
+        display: none;
+    }
+
+    body section .box .img4mob {
+        background-image: url("../images/about-simple.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: bottom;
+        width: 90%;
+        height: 350px;
+        opacity: 80%;
+        border-radius: 2vh;
+        margin-top: 80px;
+    }
+
+    body section .box:last-child {
+        margin-bottom: 100px;
+    }
+
+	.white-triangle {
+		display: flex;
+		justify-content: center;
+	}
+
+	.white-triangle .white-triangle2 {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		border-top: 20px solid #fe6775;
+	}
+
+}

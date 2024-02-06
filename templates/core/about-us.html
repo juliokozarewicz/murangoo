@@ -1,0 +1,115 @@
+{% extends 'core/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <title>Murangoo | finance - About us</title>
+        <meta name="theme-color" content="#000000"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000000"/>
+        <meta name="msapplication-navbutton-color" content="#000000"/>
+        <link rel="stylesheet" href="{% static '/core/css/about-us.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+<section>
+    <div class="img-title">
+        <h1 class="title">{% blocktrans %}see a little more about us{% endblocktrans %}</h1>
+        <div class="img"></div>
+    </div>
+    <p class="p1">{% blocktrans %}Our purpose is to be able to inspire and motivate people to have excellence and quality within our
+        service. We want everyone to be able to take control of their lives in a respectful, innovative, modern and
+        simple way. After all, finding purpose in our lives is something that makes us feel more interested in
+        general, purpose gives meaning to our routine and gives us a reason to always be looking at the horizon.{% endblocktrans %}</p>
+    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#CACACA" fill-opacity="1"
+            d="M0,64L26.7,53.3C53.3,43,107,21,160,32C213.3,43,267,85,320,133.3C373.3,181,427,235,480,240C533.3,245,587,203,640,192C693.3,181,747,203,800,213.3C853.3,224,907,224,960,224C1013.3,224,1067,224,1120,192C1173.3,160,1227,96,1280,85.3C1333.3,75,1387,117,1413,138.7L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+        </path>
+    </svg>
+    <div class="values">
+        <p class="sub-title">{% blocktrans %}Our values:{% endblocktrans %}</p>
+        <div class="innovation">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}innovation{% endblocktrans %}</p>
+        </div>
+        <div class="modernity">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}modernity{% endblocktrans %}</p>
+        </div>
+        <div class="respect">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}respect{% endblocktrans %}</p>
+        </div>
+        <div class="simplicity">
+            <div class="img"></div>
+            <p class="txt">{% blocktrans %}simplicity{% endblocktrans %}</p>
+        </div>
+    </div>
+    <svg class="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#CACACA" fill-opacity="1"
+            d="M0,224L40,192C80,160,160,96,240,96C320,96,400,160,480,181.3C560,203,640,181,720,149.3C800,117,880,75,960,85.3C1040,96,1120,160,1200,165.3C1280,171,1360,117,1400,90.7L1440,64L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+        </path>
+    </svg>
+    <p class="sub-title2">{% blocktrans %}What does that mean?{% endblocktrans %}</p>
+    <div class="box">
+        <div class="img1"></div>
+        <div class="txt">
+            <p class="p1">{% blocktrans %}An{% endblocktrans %} <b>{% blocktrans %}innovation{% endblocktrans %}</b> {% blocktrans %}means creating something new and is linked to an idea, a method or a goal that
+                is created and that has little resemblance to previous patterns. Innovation is always seen as synonymous
+                with changes and improvements in something that already exists and which becomes a new product, service or
+                business that, when delivered to the market, has its value recognized by it. Innovation must always be
+                present in most of our plans.{% endblocktrans %}
+        </div>
+        </p>
+    </div>
+    <div class="box">
+        <div class="img2mob"></div>
+        <div class="txt">
+            <p class="p2"><b>{% blocktrans %}Modernity{% endblocktrans %}</b> {% blocktrans %}is a period of time characterized by the current social, cultural and economic
+                reality in the world. In addition, health, education and security are directly benefited by more modern
+                eras. More efficient information management systems emerge over time, it is possible to observe the
+                emergence of smart cities, which integrate platforms and different resources to promote social well-being.{% endblocktrans %}
+            </p>
+        </div>
+        <div class="img2"></div>
+    </div>
+    <div class="box">
+        <div class="img3"></div>
+        <div class="txt">
+            <p class="p1">{% blocktrans %}Here we defend{% endblocktrans %} <b>{% blocktrans %}respect{% endblocktrans %}</b> {% blocktrans %}too much, which is one of the fundamental human values for life in
+                society. Whether in interpersonal relationships or in the face of norms, rules or established power. We
+                believe in respect as a feeling that leads a person to treat others with great care and deep appreciation.
+                Mutual respect represents one of the most basic and essential forms of social interaction.{% endblocktrans %}
+            </p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="img4mob"></div>
+        <div class="txt">
+            <p class="p2">{% blocktrans %}And finally, we want everything{% endblocktrans %} <b>{% blocktrans %}simple!{% endblocktrans %}</b> {% blocktrans %}Every day we are bombarded with new information,
+                tasks, new technologies and much more. We want it to be easy for you to access our platform and use our
+                services. It needs to be easy and fast, we don't want you to have to learn how to use our platform, take
+                courses and watch tutorials, of course we have support to help you, but we want everything to be intuitive,
+                that is, extremely easy and simple.{% endblocktrans %}
+            </p>
+        </div>
+        <div class="img4"></div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById('navmobile').style.backgroundColor = "#fe6775";
+        document.getElementById('id_logo_menu').src = "static/core/images/logo-white.svg"
+        document.getElementById('id-lineup').style.backgroundColor = "#fe6775";
+        document.getElementById('id_nav').style.backgroundColor = "#fe6775";
+    </script>
+    <style>
+        li {
+            color: white;
+        }       
+    </style>
+</section>
+{% endblock %}
+
+</html>

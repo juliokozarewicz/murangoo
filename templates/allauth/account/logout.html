@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block htmlhead %}
+      {% load static %}
+      {% load i18n %}
+      <title>Murangoo | finance</title>
+      <meta name="theme-color" content="#F51E33"/>
+      <meta name="apple-mobile-web-app-status-bar-style" content="#F51E33"/>
+      <meta name="msapplication-navbutton-color" content="#F51E33"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+      <link rel="stylesheet" href="{% static '/allauth/css/logout.css' %}">
+      <script src="{% static '/allauth/js/index.js' %}"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+  {% endblock htmlhead %}
+</head>
+
+<section id="idsectionlogin">
+
+  <div id="idbackfinancial" onclick="location.href='/financial'">
+    <p style="margin-right: 2vh;">{% blocktrans %}Stay Logged In{% endblocktrans %}</p>
+    <div id="idbackfinancialicon">x</div>
+  </div>
+
+  <img id="idlogomenuhambimg" src="{% static '/allauth/images/logo-white.svg' %}" />
+
+  <div id="idlinesep"></div>
+
+  <p id="idtextproceed">{% blocktrans %}Are you sure you want to sign out?{% endblocktrans %}</p>
+
+  <form method="post" action="{% url 'account_logout' %}" id="idformlogin" autocomplete="off" novalidate>
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <button id="idsubmitmessage" type="submit">{% trans 'Sign Out' %}</button>
+  </form>
+
+  <div id="idlinesep"></div>
+
+</section>
+
+</html>
+

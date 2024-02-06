@@ -1,0 +1,2085 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-08 09:05-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\core\forms.py:18 .\core\forms.py:21 .\userinfo\forms.py:21
+#: .\userinfo\forms.py:92
+msgid "Name"
+msgstr "Nome"
+
+#: .\core\forms.py:29 .\userinfo\forms.py:32
+msgid "Email"
+msgstr "Email"
+
+#: .\core\forms.py:32 .\userinfo\forms.py:35
+msgid "Enter your best email"
+msgstr "Insira seu melhor email"
+
+#: .\core\forms.py:40 .\core\forms.py:43
+msgid "Subject"
+msgstr "Assunto"
+
+#: .\core\forms.py:51
+msgid "Message"
+msgstr "Mensagem"
+
+#: .\core\forms.py:53
+msgid "Enter your message"
+msgstr "Insira a mensagem"
+
+#: .\core\forms.py:105 .\core\forms.py:121 .\core\forms.py:144
+#: .\core\forms.py:168
+msgid "Cannot contain"
+msgstr "não pode conter"
+
+#: .\core\views.py:50
+msgid "Your message was successfully delivered! I'll reply soon =)"
+msgstr "Sua mensagem foi enviada! Em breve entraremos em contato =)"
+
+#: .\financial\context_processors.py:123
+msgid "others"
+msgstr "outras"
+
+#: .\financial\forms.py:74 .\financial\views.py:143
+msgid "monthly"
+msgstr "mensal"
+
+#: .\financial\forms.py:75 .\financial\views.py:119
+msgid "weekly"
+msgstr "semanal"
+
+#: .\financial\forms.py:87
+msgid "Needs to be an integer and cannot be empty."
+msgstr "Precisa ser número inteiro e não estar vazio."
+
+#: .\financial\forms.py:90
+msgid "Cannot be empty."
+msgstr "Não pode estar vazio."
+
+#: .\financial\forms.py:120 .\financial\forms.py:226
+msgid "Enter payment description"
+msgstr "Insira uma descrição"
+
+#: .\financial\forms.py:130 .\financial\forms.py:236 .\financial\forms.py:307
+#: .\financial\forms.py:321 .\userinfo\forms.py:124
+msgid "MM/DD/YYYY"
+msgstr "DD/MM/AAAA"
+
+#: .\financial\forms.py:137 .\financial\forms.py:243
+msgid "Enter payment amount"
+msgstr "Insira o valor do pagamento"
+
+#: .\financial\forms.py:145 .\financial\forms.py:251
+msgid "Enter the document number"
+msgstr "Insira o número do documento"
+
+#: .\financial\forms.py:151 .\financial\forms.py:257
+msgid "Enter something about this transaction"
+msgstr "Insira mais informações sobre essa transação"
+
+#: .\financial\forms.py:271 .\financial\models.py:12
+#: .\templates\financial\list_invoice.html:451
+#: .\templates\financial\list_invoice.html:596
+msgid "revenue"
+msgstr "receita"
+
+#: .\financial\forms.py:272 .\financial\models.py:11
+#: .\templates\financial\list_invoice.html:455
+#: .\templates\financial\list_invoice.html:617
+msgid "expense"
+msgstr "despesa"
+
+#: .\financial\forms.py:273
+msgid "all"
+msgstr "todos"
+
+#: .\financial\forms.py:293
+msgid "ascending"
+msgstr "ascendente"
+
+#: .\financial\forms.py:294
+msgid "descending"
+msgstr "descendente"
+
+#: .\financial\forms.py:366
+msgid "Enter the category"
+msgstr "Nome da categoria"
+
+#: .\financial\forms.py:381
+msgid "Enter bank account"
+msgstr "Nome conta"
+
+#: .\financial\forms.py:396
+msgid "Enter credit card"
+msgstr "Nome do cartão"
+
+#: .\financial\forms.py:411
+msgid "Enter payee name"
+msgstr "Nome do beneficiário"
+
+#: .\financial\models.py:16 .\templates\financial\list_invoice.html:459
+msgid "pending"
+msgstr "pendente"
+
+#: .\financial\models.py:17 .\templates\financial\list_invoice.html:467
+msgid "paid"
+msgstr "pago"
+
+#: .\financial\models.py:18 .\templates\financial\list_invoice.html:463
+msgid "canceled"
+msgstr "cancelado"
+
+#: .\financial\models.py:19 .\templates\financial\list_invoice.html:471
+msgid "overdue"
+msgstr "vencido"
+
+#: .\financial\views.py:335 .\financial\views.py:355 .\financial\views.py:380
+#: .\financial\views.py:446 .\financial\views.py:485 .\financial\views.py:523
+#: .\financial\views.py:550 .\financial\views.py:589 .\financial\views.py:627
+#: .\financial\views.py:654 .\financial\views.py:693 .\financial\views.py:731
+#: .\financial\views.py:758 .\financial\views.py:797 .\financial\views.py:835
+#: .\userinfo\views.py:143
+msgid "No changes were made, check!"
+msgstr "Não foram feitas alterações, confira!"
+
+#: .\financial\views.py:354 .\financial\views.py:522 .\financial\views.py:626
+#: .\financial\views.py:730 .\financial\views.py:834
+msgid "Successfully deleted."
+msgstr "Apagado com sucesso!"
+
+#: .\financial\views.py:379 .\financial\views.py:484 .\financial\views.py:588
+#: .\financial\views.py:692 .\financial\views.py:796
+msgid "Successfully changed."
+msgstr "Alterado com sucesso."
+
+#: .\financial\views.py:445 .\financial\views.py:549 .\financial\views.py:653
+#: .\financial\views.py:757
+msgid "Successfully inserted."
+msgstr "Inserido com sucesso."
+
+#: .\templates\allauth\account\account_block_temp.html:24
+msgid "Access blocked"
+msgstr "Acesso bloqueado"
+
+#: .\templates\allauth\account\account_block_temp.html:26
+msgid ""
+"If you got your password wrong many times, wait a few minutes and try again."
+msgstr ""
+"Se você errou sua senha muitas vezes, espere alguns minutos e tente "
+"novamente."
+
+#: .\templates\allauth\account\account_block_temp.html:31
+#: .\templates\allauth\account\account_inactive.html:31
+#: .\templates\allauth\account\email_confirm.html:60
+#: .\templates\allauth\account\password_reset.html:86
+#: .\templates\allauth\account\password_reset_done.html:32
+#: .\templates\allauth\account\password_reset_from_key.html:88
+#: .\templates\allauth\account\password_reset_from_key_done.html:29
+#: .\templates\allauth\account\profile.html:78
+#: .\templates\allauth\account\signup.html:86
+#: .\templates\allauth\account\verification_sent.html:31
+msgid "Already have an account?"
+msgstr "já possui uma conta?"
+
+#: .\templates\allauth\account\account_block_temp.html:31
+#: .\templates\allauth\account\account_inactive.html:31
+#: .\templates\allauth\account\base.html:34
+#: .\templates\allauth\account\email_confirm.html:60
+#: .\templates\allauth\account\login.html:100
+#: .\templates\allauth\account\password_reset.html:86
+#: .\templates\allauth\account\password_reset_done.html:32
+#: .\templates\allauth\account\password_reset_from_key.html:88
+#: .\templates\allauth\account\password_reset_from_key_done.html:29
+#: .\templates\allauth\account\profile.html:78
+#: .\templates\allauth\account\signup.html:86
+#: .\templates\allauth\account\verification_sent.html:31
+#: .\templates\allauth\socialaccount\login.html:4
+msgid "Sign In"
+msgstr "Entrar"
+
+#: .\templates\allauth\account\account_inactive.html:24
+msgid "Account Inactive"
+msgstr "Conta Inativa"
+
+#: .\templates\allauth\account\account_inactive.html:26
+msgid "This account is inactive."
+msgstr "Esta conta está inativa."
+
+#: .\templates\allauth\account\accounts.html:21
+msgid "Hello, "
+msgstr "Olá, "
+
+#: .\templates\allauth\account\accounts.html:21
+#: .\templates\financial\base.html:120
+msgid "Manage your account."
+msgstr "Gerencie sua conta."
+
+#: .\templates\allauth\account\accounts.html:30
+msgid "Profile"
+msgstr "Perfil"
+
+#: .\templates\allauth\account\accounts.html:31
+msgid ""
+"Keep your profile information up to date on our website for accurate and "
+"relevant details, ensuring a better experience."
+msgstr ""
+"Mantenha suas informações de perfil atualizadas, assim você poderá obter "
+"detalhes precisos e relevantes, garantindo uma melhor experiência."
+
+#: .\templates\allauth\account\accounts.html:35
+msgid "profile"
+msgstr "perfil"
+
+#: .\templates\allauth\account\accounts.html:46
+msgid "Manage your emails"
+msgstr "Gerencie seus emails"
+
+#: .\templates\allauth\account\accounts.html:47
+msgid ""
+"Here you can associate more emails to your account or request a change to "
+"your current email."
+msgstr ""
+"Aqui você pode associar mais e-mails à sua conta ou solicitar a alteração do "
+"seu e-mail atual."
+
+#: .\templates\allauth\account\accounts.html:50
+msgid "email"
+msgstr "email"
+
+#: .\templates\allauth\account\accounts.html:60
+msgid "Change your password"
+msgstr "Altere sua senha"
+
+#: .\templates\allauth\account\accounts.html:61
+msgid ""
+"Protect your account with regular password changes and stay one step ahead "
+"of potential intruders. Never share your password with strangers."
+msgstr ""
+"Proteja sua conta com alterações regulares da sua senha e fique um passo à "
+"frente de possíveis invasores. Nunca compartilhe sua senha com estranhos."
+
+#: .\templates\allauth\account\accounts.html:64
+msgid "password"
+msgstr "senha"
+
+#: .\templates\allauth\account\accounts.html:73
+msgid "Payments"
+msgstr "Pagamentos"
+
+#: .\templates\allauth\account\accounts.html:74
+msgid ""
+"Here you can keep track of your payments, check, cancel, or change your "
+"plan. You can also manage your cards and payment methods."
+msgstr ""
+"Aqui você pode acompanhar seus pagamentos, consultar, cancelar ou alterar "
+"seu plano. Você também pode gerenciar seus cartões e formas de pagamento."
+
+#: .\templates\allauth\account\accounts.html:77
+msgid "payment"
+msgstr "pagamentos"
+
+#: .\templates\allauth\account\accounts.html:86
+msgid "Logout"
+msgstr "Logout"
+
+#: .\templates\allauth\account\accounts.html:87
+msgid "Do you want to exit the app and log in with another account?"
+msgstr "Deseja sair do aplicativo e entrar com uma outra conta?"
+
+#: .\templates\allauth\account\accounts.html:90
+#: .\templates\financial\base.html:179
+msgid "logout"
+msgstr "sair"
+
+#: .\templates\allauth\account\accounts.html:99
+msgid "Delete account"
+msgstr "Excluir minha conta"
+
+#: .\templates\allauth\account\accounts.html:100
+msgid ""
+"Attention! When deleting your account, all your data will be deleted, with "
+"no possibility of recovery. Be aware that if you decide to use Murangoo "
+"again you will need to create a new account and start all over again."
+msgstr ""
+"Atenção! Ao excluir sua conta, todos os seus dados serão excluídos, sem "
+"possibilidade de recuperação. Esteja ciente de que se você decidir usar o "
+"Murangoo novamente, precisará criar uma nova conta e começar tudo de novo."
+
+#: .\templates\allauth\account\accounts.html:103
+#: .\templates\userinfo\delete_acc.html:38
+msgid "delete"
+msgstr "EXCLUIR"
+
+#: .\templates\allauth\account\base.html:18
+msgid "Messages:"
+msgstr "Mensagens:"
+
+#: .\templates\allauth\account\base.html:28
+msgid "Menu:"
+msgstr "Menu:"
+
+#: .\templates\allauth\account\base.html:31
+msgid "Change E-mail"
+msgstr "Alterar email"
+
+#: .\templates\allauth\account\base.html:32
+#: .\templates\allauth\account\logout.html:36
+msgid "Sign Out"
+msgstr "Sair"
+
+#: .\templates\allauth\account\base.html:35
+#: .\templates\allauth\account\login.html:109
+#: .\templates\allauth\account\profile.html:72
+#: .\templates\allauth\account\signup.html:80
+#: .\templates\allauth\socialaccount\signup.html:8
+#: .\templates\allauth\socialaccount\signup.html:19
+msgid "Sign Up"
+msgstr "Inscreva-se"
+
+#: .\templates\allauth\account\email.html:26
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "Os endereços de e-mail seguintes estão associados com a sua conta:"
+
+#: .\templates\allauth\account\email.html:39
+msgid "Verified"
+msgstr "Verificado"
+
+#: .\templates\allauth\account\email.html:41
+msgid "Unverified"
+msgstr "Não verificado"
+
+#: .\templates\allauth\account\email.html:43
+msgid "Primary"
+msgstr "Primário"
+
+#: .\templates\allauth\account\email.html:49
+msgid "Make Primary"
+msgstr "Principal"
+
+#: .\templates\allauth\account\email.html:50
+msgid "Re-send Verification"
+msgstr "Verificar"
+
+#: .\templates\allauth\account\email.html:51
+#: .\templates\allauth\socialaccount\connections.html:35
+msgid "Remove"
+msgstr "Remover"
+
+#: .\templates\allauth\account\email.html:58
+msgid "Warning:"
+msgstr "Aviso:"
+
+#: .\templates\allauth\account\email.html:58
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"Não há nenhum endereço de e-mail associado a sua conta. Você deve adicionar "
+"um e-mail para que possa receber notificações, redefinir a senha, etc."
+
+#: .\templates\allauth\account\email.html:63
+msgid "Add E-mail Address"
+msgstr "Adicionar endereço de e-mail"
+
+#: .\templates\allauth\account\email.html:108
+msgid "Add E-mail"
+msgstr "Adicionar e-mail"
+
+#: .\templates\allauth\account\email.html:117
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "Deseja mesmo remover o endereço de e-mail selecionado?"
+
+#: .\templates\allauth\account\email.html:143
+#: .\templates\allauth\account\password_change.html:95
+#: .\templates\userinfo\payments.html:121 .\templates\userinfo\profile.html:114
+msgid " Back to Your Account"
+msgstr "voltar para sua conta"
+
+#: .\templates\allauth\account\email\account_already_exists_message.txt:4
+#, python-format
+msgid ""
+"You are receiving this e-mail because you or someone else tried to signup "
+"for an\n"
+"account using e-mail address:\n"
+"\n"
+"%(email)s\n"
+"\n"
+"However, an account using that e-mail address already exists.  In case you "
+"have\n"
+"forgotten about this, please use the password forgotten procedure to "
+"recover\n"
+"your account:\n"
+"\n"
+"%(password_reset_url)s"
+msgstr ""
+"Você está recebendo este e-mail porque você ou alguém tentou se inscrever "
+"para uma\n"
+"conta usando o endereço de e-mail:\n"
+"\n"
+"%(email)s\n"
+"\n"
+"No entanto, já existe uma conta usando esse endereço de e-mail. Caso você "
+"tenha\n"
+"esquecido disso, por favor, utilize o procedimento de redefinição de senha "
+"para recuperar\n"
+"sua conta:\n"
+"\n"
+"%(password_reset_url)s"
+
+#: .\templates\allauth\account\email\account_already_exists_subject.txt:3
+msgid "Account Already Exists"
+msgstr "Conta Já Existe"
+
+#: .\templates\allauth\account\email\base_message.txt:1
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr "Olá do site %(site_name)s!"
+
+#: .\templates\allauth\account\email\base_message.txt:5
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+"Obrigado por usar o site %(site_name)s!\n"
+"%(site_domain)s"
+
+#: .\templates\allauth\account\email\email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"You're receiving this e-mail because user %(user_display)s has given your e-"
+"mail address to register an account on %(site_domain)s.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s"
+msgstr ""
+"Você está recebendo essa mensagem porque o usuário %(user_display)s utilizou "
+"este e-mail para se cadastrar no site %(site_domain)s.\n"
+"\n"
+"Para confirmar que isso está correto, clique em %(activate_url)s"
+
+#: .\templates\allauth\account\email\email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr "Favor confirmar o endereço de e-mail"
+
+#: .\templates\allauth\account\email\password_reset_key_message.txt:4
+msgid ""
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+"Você está recebendo essa mensagem porque você ou alguém tentou requisitar "
+"uma senha para sua conta de usuário no site %(site_domain)s.\n"
+"Caso não tenha sido você que fez a requisição, simplesmente ignore a "
+"mensagem. Do contrário, clique no link abaixo para redefinir a senha. "
+
+#: .\templates\allauth\account\email\password_reset_key_message.txt:9
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr "Caso tenha esquecido, seu nome de usuário é %(username)s."
+
+#: .\templates\allauth\account\email\password_reset_key_subject.txt:3
+#: .\templates\allauth\account\email\unknown_account_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr "E-mail de Redefinição de Senha"
+
+#: .\templates\allauth\account\email\unknown_account_message.txt:4
+#, python-format
+msgid ""
+"You are receiving this e-mail because you or someone else has requested a\n"
+"password for your user account. However, we do not have any record of a "
+"user\n"
+"with email %(email)s in our database.\n"
+"\n"
+"This mail can be safely ignored if you did not request a password reset.\n"
+"\n"
+"If it was you, you can sign up for an account using the link below."
+msgstr ""
+"Você está recebendo essa mensagem porque você ou alguém tentou requisitar\n"
+" uma senha para sua conta de usuário. Ocorre que não há nenhum usuário com "
+"o\n"
+" e-mail %(email)s cadastrado em nosso banco de dados.\n"
+"\n"
+"Caso não tenha sido você que fez a requisição, simplesmente ignore a "
+"mensagem.\n"
+" Do contrário, clique no link abaixo para se cadastrar. "
+
+#: .\templates\allauth\account\email_confirm.html:29
+msgid "Confirm E-mail Address:"
+msgstr "Confirmar Endereço de E-mail"
+
+#: .\templates\allauth\account\email_confirm.html:30
+#, python-format
+msgid "%(email)s"
+msgstr "%(email)s"
+
+#: .\templates\allauth\account\email_confirm.html:34
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: .\templates\allauth\account\email_confirm.html:41
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please issue a new e-"
+"mail confirmation request. <a style=\"text-decoration: none; color: black;\" "
+"href=\"%(email_url)s\">[ click here ]</a>"
+msgstr ""
+"Este link de verificação de e-mail expirou ou é inválido. Por favor <a href="
+"\"%(email_url)s\">peça uma nova verificação de e-mail.</a>."
+
+#: .\templates\allauth\account\login.html:22
+msgid "Please log in to keep going:"
+msgstr "Faça login para continuar:"
+
+#: .\templates\allauth\account\login.html:90
+#: .\templates\allauth\account\logout.html:21
+msgid "Stay Logged In"
+msgstr "Manter Logado"
+
+#: .\templates\allauth\account\login.html:93
+msgid "Forgot Password"
+msgstr "Esqueceu a sua senha?"
+
+#: .\templates\allauth\account\login.html:102
+msgid "* By proceeding in the logged-in area, you accept our"
+msgstr "* Ao prosseguir na área logada você aceita nossa"
+
+#: .\templates\allauth\account\login.html:102 .\templates\core\base.html:127
+#: .\templates\core\base.html:146 .\templates\core\contact.html:69
+msgid "Privacy Policy"
+msgstr "Política de Privacidade"
+
+#: .\templates\allauth\account\login.html:102
+msgid "and"
+msgstr "e"
+
+#: .\templates\allauth\account\login.html:102
+msgid "Terms of Use"
+msgstr "Termos de Uso"
+
+#: .\templates\allauth\account\login.html:109
+msgid "Not a Member?"
+msgstr "Não é membro ainda?"
+
+#: .\templates\allauth\account\logout.html:29
+msgid "Are you sure you want to sign out?"
+msgstr "Tem certeza que deseja sair?"
+
+#: .\templates\allauth\account\messages\cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary e-mail address (%(email)s)."
+msgstr "Você não pode remover o seu endereço principal de e-mail (%(email)s)."
+
+#: .\templates\allauth\account\messages\email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation e-mail sent to %(email)s."
+msgstr "E-mail de confirmação enviado para %(email)s."
+
+#: .\templates\allauth\account\messages\email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr "Você acaba de confirmar %(email)s"
+
+#: .\templates\allauth\account\messages\email_deleted.txt:2
+#, python-format
+msgid "Removed e-mail address %(email)s."
+msgstr "%(email)s removido."
+
+#: .\templates\allauth\account\messages\logged_in.txt:3
+msgid "You have been successfully logged in."
+msgstr "Logado com sucesso."
+
+#: .\templates\allauth\account\messages\logged_out.txt:2
+msgid "You have signed out."
+msgstr "Você saiu do sistema."
+
+#: .\templates\allauth\account\messages\password_changed.txt:2
+msgid "Password successfully changed."
+msgstr "Senha alterada com sucesso."
+
+#: .\templates\allauth\account\messages\password_set.txt:2
+msgid "Password successfully set."
+msgstr "Senha definida com sucesso."
+
+#: .\templates\allauth\account\messages\primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr "Endereço primário de e-mail configurado."
+
+#: .\templates\allauth\account\messages\unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr "Seu endereço de e-mail principal precisa ser confirmado."
+
+#: .\templates\allauth\account\password_change.html:67
+#: .\templates\allauth\account\password_change.html:78
+msgid "Change Password"
+msgstr "Alterar senha"
+
+#: .\templates\allauth\account\password_change.html:79
+msgid "Forgot Password?"
+msgstr "Esqueceu a sua senha?"
+
+#: .\templates\allauth\account\password_reset.html:22
+msgid "Enter your email, a link to reset your password will be sent to you."
+msgstr ""
+"Digite seu e-mail, um link para redefinir sua senha será enviado para você."
+
+#: .\templates\allauth\account\password_reset.html:78
+msgid "Reset My Password"
+msgstr "Redefinir a minha senha"
+
+#: .\templates\allauth\account\password_reset_done.html:24
+msgid "Password Reset"
+msgstr "Redefinição da senha"
+
+#: .\templates\allauth\account\password_reset_done.html:26
+msgid ""
+"We have sent you an e-mail. If you have not received it please check your "
+"spam folder. Otherwise contact us if you do not receive it in a few minutes."
+msgstr ""
+"Acabamos de enviar um e-mail com as instruções. Caso não o receba nos "
+"próximos minutos, verifique sua pasta de spam ou entre em contato conosco."
+
+#: .\templates\allauth\account\password_reset_from_key.html:22
+msgid "Bad Token"
+msgstr "Problema no Token"
+
+#: .\templates\allauth\account\password_reset_from_key.html:22
+msgid "All ready! Now change your password."
+msgstr "Tudo pronto! Agora, altere sua senha."
+
+#: .\templates\allauth\account\password_reset_from_key.html:32
+#, python-format
+msgid ""
+"The password reset link was invalid! Please request a <a href="
+"\"%(passwd_reset_url)s\" style=\"text-decoration: none; color: black;\">new "
+"password reset</a>."
+msgstr ""
+"O link para redefinição da senha era inválido, provavelmente por já ter sido "
+"usado. Por favor peça uma <a href=\"%(passwd_reset_url)s\">nova redefinição "
+"da senha</a>."
+
+#: .\templates\allauth\account\password_reset_from_key.html:79
+msgid "change password"
+msgstr "alterar a senha"
+
+#: .\templates\allauth\account\password_reset_from_key_done.html:24
+msgid "Your password is now changed."
+msgstr "A sua senha foi alterada."
+
+#: .\templates\allauth\account\password_set.html:5
+#: .\templates\allauth\account\password_set.html:8
+#: .\templates\allauth\account\password_set.html:13
+msgid "Set Password"
+msgstr "Definir senha"
+
+#: .\templates\allauth\account\profile.html:22
+#: .\templates\allauth\account\signup.html:22
+msgid "Excellent choice, let's go!"
+msgstr "Excelente escolha, vamos nessa!"
+
+#: .\templates\allauth\account\signup_closed.html:5
+#: .\templates\allauth\account\signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr "Novos cadastros suspensos"
+
+#: .\templates\allauth\account\signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Infelizmente novos cadastros não podem ser feitos no momento."
+
+#: .\templates\allauth\account\snippets\already_logged_in.html:5
+msgid "Note"
+msgstr "Nota"
+
+#: .\templates\allauth\account\snippets\already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr "você já está logado como %(user_display)s."
+
+#: .\templates\allauth\account\verification_sent.html:22
+#: .\templates\allauth\account\verified_email_required.html:5
+#: .\templates\allauth\account\verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr "Verifique o seu endereço de e-mail"
+
+#: .\templates\allauth\account\verification_sent.html:26
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. If you do not see the verification e-mail in "
+"your main inbox, check your spam folder."
+msgstr ""
+"Acabamos de enviar uma mensagem contendo um link para finalizar o cadastro. "
+"Caso não receba a mensagem, lembre de verificar a caixa de spam. Entre em "
+"contato conosco se a mensagem não chegar dentro de alguns minutos."
+
+#: .\templates\allauth\account\verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"Esta parte do site requer que verifiquemos\n"
+"que você é quem diz que é. Para esse fim, pedimos que verifique que\n"
+"é dono do seu endereço de e-mail. "
+
+#: .\templates\allauth\account\verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside that e-mail. If you do not see "
+"the verification e-mail in your main inbox, check your spam folder. "
+"Otherwise\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"Acabamos de enviar a você um e-mail de verificação.\n"
+"Por favor clique no link dentro deste e-mail. Caso não receba a mensagem, \n"
+"lembre de verificar a caixa de spam. Entre em contato conosco se a \n"
+"mensagem não chegar dentro de alguns minutos."
+
+#: .\templates\allauth\account\verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Nota:</strong> você ainda pode <a href=\"%(email_url)s\">alterar o "
+"seu endereço de e-mail</a>."
+
+#: .\templates\allauth\openid\login.html:9
+msgid "OpenID Sign In"
+msgstr "Entrar com OpenID"
+
+#: .\templates\allauth\socialaccount\authentication_error.html:5
+#: .\templates\allauth\socialaccount\authentication_error.html:8
+msgid "Social Network Login Failure"
+msgstr "Falha ao Entrar com Rede Social"
+
+#: .\templates\allauth\socialaccount\authentication_error.html:10
+msgid ""
+"An error occurred while attempting to login via your social network account."
+msgstr "Houve um erro ao tentar entrar com a sua conta de rede social."
+
+#: .\templates\allauth\socialaccount\connections.html:5
+#: .\templates\allauth\socialaccount\connections.html:8
+msgid "Account Connections"
+msgstr "Conexões da Conta"
+
+#: .\templates\allauth\socialaccount\connections.html:11
+msgid ""
+"You can sign in to your account using any of the following third party "
+"accounts:"
+msgstr "Você pode entrar usando uma das seguintes contas externas:"
+
+#: .\templates\allauth\socialaccount\connections.html:43
+msgid ""
+"You currently have no social network accounts connected to this account."
+msgstr ""
+"No momento não tem nenhuma conta de rede social conectada a esta conta."
+
+#: .\templates\allauth\socialaccount\connections.html:46
+msgid "Add a 3rd Party Account"
+msgstr "Adicionar uma Conta Externa"
+
+#: .\templates\allauth\socialaccount\login.html:8
+#, python-format
+msgid "Connect %(provider)s"
+msgstr "Conecte com %(provider)s"
+
+#: .\templates\allauth\socialaccount\login.html:10
+#, python-format
+msgid "You are about to connect a new third party account from %(provider)s."
+msgstr ""
+"Você está prestes a conectar uma nova conta externa do provedor %(provider)s."
+
+#: .\templates\allauth\socialaccount\login.html:12
+#, python-format
+msgid "Sign In Via %(provider)s"
+msgstr "Entre com %(provider)s"
+
+#: .\templates\allauth\socialaccount\login.html:14
+#, python-format
+msgid "You are about to sign in using a third party account from %(provider)s."
+msgstr ""
+"Você está prestes a se logar usando uma conta externa do provedor "
+"%(provider)s."
+
+#: .\templates\allauth\socialaccount\login.html:19
+msgid "Continue"
+msgstr "Continuar"
+
+#: .\templates\allauth\socialaccount\login_cancelled.html:5
+#: .\templates\allauth\socialaccount\login_cancelled.html:9
+msgid "Login Cancelled"
+msgstr "Entrada Cancelada"
+
+#: .\templates\allauth\socialaccount\login_cancelled.html:13
+#, python-format
+msgid ""
+"You decided to cancel logging in to our site using one of your existing "
+"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
+"\">sign in</a>."
+msgstr ""
+"Você decidiu cancelar a entrada no site usando uma de suas contas. Se mudar "
+"de ideia, clique para <a href=\"%(login_url)s\">entrar</a>."
+
+#: .\templates\allauth\socialaccount\messages\account_connected.txt:2
+msgid "The social account has been connected."
+msgstr "A conta social foi conectada."
+
+#: .\templates\allauth\socialaccount\messages\account_connected_other.txt:2
+msgid "The social account is already connected to a different account."
+msgstr "Esta conta social já está conectada a outra conta."
+
+#: .\templates\allauth\socialaccount\messages\account_disconnected.txt:2
+msgid "The social account has been disconnected."
+msgstr "A conta social foi desconectada."
+
+#: .\templates\allauth\socialaccount\signup.html:5
+msgid "Signup"
+msgstr "Cadastre-se"
+
+#: .\templates\allauth\socialaccount\signup.html:10
+#, python-format
+msgid ""
+"You are about to use your %(provider_name)s account to login to\n"
+"%(site_name)s. As a final step, please complete the following form:"
+msgstr ""
+"Você está prestes a usar sua conta do %(provider_name)s para acessar o\n"
+"%(site_name)s. Para finalizar, por favor preencha o seguinte formulário:"
+
+#: .\templates\blog\blog.html:20
+msgid "Learn more about finance"
+msgstr "Aprenda mais sobre finanças"
+
+#: .\templates\blog\blog.html:24
+msgid ""
+"Discover more about finance, learn how and where to invest your money. With "
+"our tips, you can accelerate the process of growing your wealth, stay "
+"informed about market movements, and stay updated with our latest news."
+msgstr ""
+"Descubra mais sobre finanças, aprenda como e onde investir seu dinheiro. Com "
+"nossas dicas, você pode acelerar o processo de crescimento do seu "
+"patrimônio, se manter informado sobre os movimentos do mercado e ficar "
+"atualizado com nossas últimas notícias."
+
+#: .\templates\blog\post_detail.html:25
+msgid "back"
+msgstr "voltar"
+
+#: .\templates\core\about-us.html:20
+msgid "see a little more about us"
+msgstr "entenda um pouco mais sobre a gente"
+
+#: .\templates\core\about-us.html:23
+msgid ""
+"Our purpose is to be able to inspire and motivate people to have excellence "
+"and quality within our\n"
+"        service. We want everyone to be able to take control of their lives "
+"in a respectful, innovative, modern and\n"
+"        simple way. After all, finding purpose in our lives is something "
+"that makes us feel more interested in\n"
+"        general, purpose gives meaning to our routine and gives us a reason "
+"to always be looking at the horizon."
+msgstr ""
+"Nosso objetivo é inspirar e motivar as pessoas a alcançarem a excelência e a "
+"qualidade em nossos serviços. Queremos que todos possam assumir o controle "
+"de suas vidas de maneira respeitosa, inovadora, moderna e simples. Afinal, "
+"encontrar um propósito em nossas vidas é algo que nos torna mais "
+"interessados no geral. O propósito dá significado à nossa rotina e nos dá "
+"uma razão para sempre olhar para o horizonte."
+
+#: .\templates\core\about-us.html:33
+msgid "Our values:"
+msgstr "Valores:"
+
+#: .\templates\core\about-us.html:36 .\templates\core\about-us.html:60
+msgid "innovation"
+msgstr "inovação"
+
+#: .\templates\core\about-us.html:40
+msgid "modernity"
+msgstr "modernidade"
+
+#: .\templates\core\about-us.html:44 .\templates\core\about-us.html:82
+msgid "respect"
+msgstr "respeito"
+
+#: .\templates\core\about-us.html:48
+msgid "simplicity"
+msgstr "simplicidade"
+
+#: .\templates\core\about-us.html:56
+msgid "What does that mean?"
+msgstr "O que isso quer dizer?"
+
+#: .\templates\core\about-us.html:60
+msgid "An"
+msgstr "Uma"
+
+#: .\templates\core\about-us.html:60
+msgid ""
+"means creating something new and is linked to an idea, a method or a goal "
+"that\n"
+"                is created and that has little resemblance to previous "
+"patterns. Innovation is always seen as synonymous\n"
+"                with changes and improvements in something that already "
+"exists and which becomes a new product, service or\n"
+"                business that, when delivered to the market, has its value "
+"recognized by it. Innovation must always be\n"
+"                present in most of our plans."
+msgstr ""
+"significa criar algo novo e está ligada a uma ideia, um método ou um "
+"objetivo que é criado e que tem pouca semelhança com padrões anteriores. A "
+"inovação é sempre vista como sinônimo de mudanças e melhorias em algo que já "
+"existe, transformando-se em um novo produto, serviço ou negócio que, ao ser "
+"entregue ao mercado, tem seu valor reconhecido por ele. A inovação deve "
+"estar sempre presente na maioria de nossos planos."
+
+#: .\templates\core\about-us.html:71
+msgid "Modernity"
+msgstr "Modernidade"
+
+#: .\templates\core\about-us.html:71
+msgid ""
+"is a period of time characterized by the current social, cultural and "
+"economic\n"
+"                reality in the world. In addition, health, education and "
+"security are directly benefited by more modern\n"
+"                eras. More efficient information management systems emerge "
+"over time, it is possible to observe the\n"
+"                emergence of smart cities, which integrate platforms and "
+"different resources to promote social well-being."
+msgstr ""
+"é um período de tempo caracterizado pela realidade social, cultural e "
+"econômica atual no mundo. Além disso, saúde, educação e segurança são "
+"diretamente beneficiadas por eras mais modernas. Sistemas mais eficientes de "
+"gerenciamento de informações surgem ao longo do tempo, sendo possível "
+"observar o surgimento de cidades inteligentes, que integram plataformas e "
+"diferentes recursos para promover o bem-estar social."
+
+#: .\templates\core\about-us.html:82
+msgid "Here we defend"
+msgstr "Aqui nós defendemos o"
+
+#: .\templates\core\about-us.html:82
+msgid ""
+"too much, which is one of the fundamental human values for life in\n"
+"                society. Whether in interpersonal relationships or in the "
+"face of norms, rules or established power. We\n"
+"                believe in respect as a feeling that leads a person to treat "
+"others with great care and deep appreciation.\n"
+"                Mutual respect represents one of the most basic and "
+"essential forms of social interaction."
+msgstr ""
+"de forma intensa, pois é um dos valores humanos fundamentais para a "
+"convivência na sociedade. Seja nas relações interpessoais ou diante de "
+"normas, regras ou poder estabelecido, acreditamos no respeito como um "
+"sentimento que leva uma pessoa a tratar os outros com grande cuidado e "
+"profunda apreciação. O respeito mútuo representa uma das formas mais básicas "
+"e essenciais de interação social."
+
+#: .\templates\core\about-us.html:92
+msgid "And finally, we want everything"
+msgstr "E finalmente, sempre buscamos fazer tudo de maneira"
+
+#: .\templates\core\about-us.html:92
+msgid "simple!"
+msgstr "simples!"
+
+#: .\templates\core\about-us.html:92
+msgid ""
+"Every day we are bombarded with new information,\n"
+"                tasks, new technologies and much more. We want it to be easy "
+"for you to access our platform and use our\n"
+"                services. It needs to be easy and fast, we don't want you to "
+"have to learn how to use our platform, take\n"
+"                courses and watch tutorials, of course we have support to "
+"help you, but we want everything to be intuitive,\n"
+"                that is, extremely easy and simple."
+msgstr ""
+"Todos os dias somos bombardeados com novas informações, tarefas, novas "
+"tecnologias e muito mais. Queremos que seja fácil para você acessar nossa "
+"plataforma e utilizar nossos serviços. Precisa ser simples e rápido. Não "
+"queremos que você precise aprender a usar nossa plataforma, fazer cursos e "
+"assistir tutoriais. Claro, temos suporte para ajudar você, mas buscamos que "
+"tudo seja intuitivo, ou seja, extremamente fácil e simples."
+
+#: .\templates\core\base.html:34
+msgid "about"
+msgstr "sobre"
+
+#: .\templates\core\base.html:35 .\templates\core\base.html:107
+msgid "features"
+msgstr "funcionalidades"
+
+#: .\templates\core\base.html:36 .\templates\core\base.html:105
+msgid "blog"
+msgstr "blog"
+
+#: .\templates\core\base.html:37
+msgid "contact"
+msgstr "contato"
+
+#: .\templates\core\base.html:41 .\templates\core\base.html:83
+msgid "sign in"
+msgstr "entrar"
+
+#: .\templates\core\base.html:62
+msgid "HOME PAGE"
+msgstr "INÍCIO"
+
+#: .\templates\core\base.html:66
+msgid "ABOUT"
+msgstr "SOBRE"
+
+#: .\templates\core\base.html:70
+msgid "FEATURES"
+msgstr "FUNCIONALIDADES"
+
+#: .\templates\core\base.html:74
+msgid "BLOG"
+msgstr "BLOG"
+
+#: .\templates\core\base.html:78
+msgid "CONTACT"
+msgstr "CONTATO"
+
+#: .\templates\core\base.html:98
+msgid "Follow our social networks:"
+msgstr "Redes sociais:"
+
+#: .\templates\core\base.html:106
+msgid "about us"
+msgstr "sobre nós"
+
+#: .\templates\core\base.html:111
+msgid "Did not find what you were looking for?"
+msgstr "Não encontrou o que estava procurando?"
+
+#: .\templates\core\base.html:112
+msgid "contact us"
+msgstr "suporte"
+
+#: .\templates\core\base.html:116
+msgid "home page"
+msgstr "início"
+
+#: .\templates\core\base.html:117
+msgid "login"
+msgstr "login"
+
+#: .\templates\core\base.html:118
+msgid "try now"
+msgstr "experimente"
+
+#: .\templates\core\base.html:127
+msgid "Murangoo uses cookies in accordance with our"
+msgstr "O Murangoo utiliza cookies conforme a nossa"
+
+#: .\templates\core\base.html:127
+msgid ""
+"By continuing to browse this site, you declare that you are aware of these "
+"conditions."
+msgstr ""
+"Ao continuar navegando neste site você declara estar ciente dessas condições."
+
+#: .\templates\core\base.html:147 .\templates\core\service_terms.html:22
+msgid "Service Terms"
+msgstr "Termos de Uso"
+
+#: .\templates\core\base.html:153
+msgid "SELECT ONE OF OUR SERVICE CHANNELS:"
+msgstr "SELECIONE UM CANAL DE ATENDIMENTO:"
+
+#: .\templates\core\contact.html:20
+msgid "contact us and clear your doubts."
+msgstr "Entre em contato com a gente e tire suas dúvidas."
+
+#: .\templates\core\contact.html:23
+msgid ""
+"Do you have any questions? Get in touch with us, and we'll be happy to "
+"assist you. We're here to clear up any doubts you may have. Don't hesitate "
+"to reach out to us!"
+msgstr ""
+"Você tem alguma dúvida? Entre em contato conosco e ficaremos felizes em "
+"ajudar. Estamos aqui para esclarecer quaisquer dúvidas que você possa ter. "
+"Não hesite em nos mandar uma mensagem!"
+
+#: .\templates\core\contact.html:25
+msgid "Contact:"
+msgstr "Contato:"
+
+#: .\templates\core\contact.html:68
+msgid "This site is protected by reCAPTCHA Enterprise and the Google "
+msgstr "Este site é protegido pelo reCAPTCHA Enterprise e pelo Google. Sua "
+
+#: .\templates\core\contact.html:69
+msgid " and "
+msgstr " e "
+
+#: .\templates\core\contact.html:70
+msgid "Terms of Service"
+msgstr "Termos de Uso"
+
+#: .\templates\core\contact.html:71
+msgid "apply."
+msgstr "se aplicam."
+
+#: .\templates\core\contact.html:74
+msgid "send message"
+msgstr "Enviar mensagem"
+
+#: .\templates\core\contact.html:78
+msgid ""
+"You can reach out to us through these customer service channels as well:"
+msgstr ""
+"Você também pode entrar em contato conosco por meio de outros canais de "
+"atendimento:"
+
+#: .\templates\core\contact.html:114
+msgid ""
+"We are always at your disposal, ready to assist you. We will be happy to "
+"help you in any way we can. We believe you are special and deserve our full "
+"attention and support. Count on us to make your experience even more "
+"exceptional."
+msgstr ""
+"Estamos sempre à sua disposição, prontos para ajudar. Ficaremos felizes em "
+"auxiliá-lo da melhor maneira possível. Acreditamos que você é especial e "
+"merece nossa total atenção e suporte. Conte conosco para tornar sua "
+"experiência ainda mais interessante."
+
+#: .\templates\core\features.html:20
+msgid "Discover more features of our platform"
+msgstr "Descubra mais funções da nossa plataforma"
+
+#: .\templates\core\features.html:23
+msgid ""
+"Discover how we can assist you! With our platform, you can customize your "
+"financial and personal life in a practical, easy, and intuitive manner. "
+"Don't waste time! Explore the resources that will provide you with a "
+"complete path to your financial well-being, helping you make better "
+"decisions in the future."
+msgstr ""
+"Descubra como podemos ajudar você! Com nossa plataforma é possível "
+"personalizar sua vida financeira e pessoal de maneira prática, fácil e "
+"intuitiva. Não perca tempo! Explore os recursos que te oferecerão um caminho "
+"completo para seu bem-estar financeiro e pessoal, te ajudando a tomar "
+"decisões melhores no futuro."
+
+#: .\templates\core\features.html:25
+msgid "Features:"
+msgstr "Funções:"
+
+#: .\templates\core\features.html:36
+msgid "Spending"
+msgstr "Despesas"
+
+#: .\templates\core\features.html:40
+msgid "Revenues"
+msgstr "Receitas"
+
+#: .\templates\core\features.html:44
+msgid "reports"
+msgstr "Relatórios"
+
+#: .\templates\core\features.html:48
+msgid "Tasks and goals"
+msgstr "Tarefas e metas"
+
+#: .\templates\core\features.html:52
+msgid "Assets"
+msgstr "Investimentos"
+
+#: .\templates\core\features.html:56
+msgid "Categories"
+msgstr "Categorias"
+
+#: .\templates\core\features.html:60
+msgid "Email notices"
+msgstr "Aviso por email"
+
+#: .\templates\core\features.html:64
+msgid "Bank accounts"
+msgstr "Contas bancárias"
+
+#: .\templates\core\features.html:68
+msgid "Credit cards"
+msgstr "Cartões de crédito"
+
+#: .\templates\core\features.html:72
+#: .\templates\financial\dashboards_financial.html:9
+msgid "Dashboard"
+msgstr "dashboard"
+
+#: .\templates\core\features.html:76
+msgid "Budgets"
+msgstr "Orçamentos"
+
+#: .\templates\core\features.html:80
+msgid "Payees"
+msgstr "Beneficiários"
+
+#: .\templates\core\features.html:89
+msgid ""
+"We are part of an organic system that is constantly changing, evolving, and "
+"exploring new paths. Our company operates in the same way, prioritizing "
+"safety while continuously studying and researching new possibilities and "
+"functionalities. And you know who can help us? It's you! Your "
+"recommendations and opinions allow us to assess the feasibility of "
+"implementing new features."
+msgstr ""
+"Nós fazemos parte de um sistema orgânico em constante mudança, evolução e "
+"exploração de novos caminhos. Nossa empresa opera da mesma forma, "
+"priorizando a segurança enquanto estuda e pesquisa continuamente novas "
+"possibilidades e funcionalidades. E você sabe quem pode nos ajudar? É você! "
+"Suas recomendações e opiniões nos permitem avaliar a viabilidade da "
+"implementação de novos recursos."
+
+#: .\templates\core\home.html:21
+msgid "Take control of your life"
+msgstr "Tome o controle da sua vida"
+
+#: .\templates\core\home.html:22
+msgid ""
+"With us, you can finally gain control over your finances and also take "
+"charge of your personal life. Murangoo makes it easy and hassle-free to "
+"organize yourself"
+msgstr ""
+"Com a gente você pode finalmente tomar o controle das suas finanças e também "
+"assumir o comando da sua vida pessoal. A Murangoo ajuda você a se organizar "
+"de maneira fácil e descomplicada"
+
+#: .\templates\core\home.html:23
+msgid "Try now! It's free."
+msgstr "Experimente! É grátis."
+
+#: .\templates\core\home.html:33
+msgid "How we help..."
+msgstr "Como vamos te ajudar..."
+
+#: .\templates\core\home.html:34
+msgid ""
+"Take a look at what we have to offer. These are just the main features of "
+"our system, we have many\n"
+"\t\t\t\tmore tools that can help you."
+msgstr ""
+"Veja só o que temos para oferecer. Estas são apenas as principais "
+"características do nosso sistema, ainda temos muitas outras ferramentas que "
+"podem ajudar você."
+
+#: .\templates\core\home.html:40
+msgid "Take care of your money, organize and plan your financial life."
+msgstr "Cuide do seu dinheiro, organize e planeje sua vida financeira."
+
+#: .\templates\core\home.html:41
+msgid "MONEY"
+msgstr "FINANÇAS"
+
+#: .\templates\core\home.html:45
+msgid "Organize your tasks, build goals and reach your dreams."
+msgstr "Organize suas tarefas, estabeleça metas e alcance seus sonhos."
+
+#: .\templates\core\home.html:46
+msgid "TASKS"
+msgstr "TAREFAS"
+
+#: .\templates\core\home.html:50
+msgid ""
+"Generate customized reports that will help you determine which way to go."
+msgstr ""
+"Produza relatórios personalizados que o ajudarão a determinar qual caminho "
+"seguir."
+
+#: .\templates\core\home.html:51
+msgid "REPORTS"
+msgstr "RELÁTÓRIOS"
+
+#: .\templates\core\home.html:55
+msgid "Invest your money in the correct way and make your assets grow."
+msgstr "Invista seu dinheiro da maneira correta e faça seus ativos crescerem."
+
+#: .\templates\core\home.html:56
+msgid "INVESTMENTS"
+msgstr "INVESTIMENTOS"
+
+#: .\templates\core\home.html:67
+msgid "REINVENT YOURSELF"
+msgstr "REINVENTE-SE"
+
+#: .\templates\core\home.html:68
+msgid ""
+"Discover new possibilities! By accessing your spending history and with our "
+"help, you can create personalized plans to reduce expenses. Try new "
+"experiences by reallocating expenses to other areas, or simply invest and "
+"make your extra money go even further."
+msgstr ""
+"Explore novas opções! Com a gente, você pode dar um jeito nas suas contas. "
+"Crie planos personalizados para cortar gastos, teste coisas novas alocando "
+"seu dinheiro de lugar ou até invista para ver seu patrimônio crescendo ainda "
+"mais. Vamos nessa!"
+
+#: .\templates\core\home.html:69
+msgid ""
+"Be more productive! Don't worry about when to pay your bills, we'll help you "
+"remember."
+msgstr ""
+"Seja mais produtivo! Deixe a preocupação com as datas de pagamento com a "
+"gente, nós vamos te lembrar na hora certa."
+
+#: .\templates\core\home.html:78
+msgid "WE TEACH YOU ABOUT FINANCE"
+msgstr "APRENDA SOBRE FINANÇAS"
+
+#: .\templates\core\home.html:81
+msgid "LEARN MORE ON OUR BLOG"
+msgstr "CONFIRA NOSSO BLOG"
+
+#: .\templates\core\home.html:84
+msgid ""
+"When we learn to take better care of our money, it becomes easier to balance "
+"our finances. Knowing where to invest and how to use money over time is "
+"essential for success. By handling finances responsibly, it's possible to "
+"balance the budget and achieve goals."
+msgstr ""
+"Quando aprendemos a cuidar melhor do nosso dinheiro, fica mais fácil "
+"equilibrar as finanças. Saber onde investir e como utilizar o dinheiro ao "
+"longo do tempo é essencial para o sucesso. Ao lidar com as finanças de "
+"maneira responsável, é possível equilibrar o orçamento e alcançar metas."
+
+#: .\templates\core\home.html:85
+msgid ""
+"Take a look at our blog to learn how to improve your financial life, "
+"discover where to invest, and get various tips. Simplify the way you manage "
+"your personal or business finances. With us, you can do it!"
+msgstr ""
+"Dê uma olhada no nosso blog para aprender como melhorar sua vida financeira, "
+"descobrir onde investir e obter várias dicas. Simplifique a maneira como "
+"você gerencia suas finanças pessoais ou empresariais. Com a gente, você "
+"consegue!"
+
+#: .\templates\core\home.html:88
+msgid "Learn more on our blog"
+msgstr "Confira nosso blog"
+
+#: .\templates\core\home.html:110
+msgid "view more"
+msgstr "veja mais"
+
+#: .\templates\core\home.html:119
+msgid "see what others have to say:"
+msgstr "Dê uma olhada no que outras pessoas estão dizendo:"
+
+#: .\templates\core\home.html:121
+msgid "Based on user reviews"
+msgstr "Baseado nas reviews dos usuários"
+
+#: .\templates\core\home.html:125
+#, python-format
+msgid ""
+"I started using it a few months ago, but I'm really enjoying it! Used daily "
+"to control my\n"
+"\t\t\t\t\texpenses and I can also control my credit card, I have already "
+"managed to reduce about 10%% of my\n"
+"\t\t\t\t\texpenses. I REALLY RECOMMEND!"
+msgstr ""
+"Comecei a usar há alguns meses, e estou gostando bastante! Utilizo "
+"diariamente para controlar minhas despesas, e também consigo gerenciar meu "
+"cartão de crédito. Já consegui reduzir cerca de 10%% dos meus gastos. EU "
+"RECOMENDO MUITO!"
+
+#: .\templates\core\home.html:131
+msgid ""
+"The system is incredible! I've been using it for a long time and I can't "
+"live without it. Assists\n"
+"\t\t\t\t\tin the visualization and control of finances, it is also very "
+"simple to use and intuitive. Your\n"
+"\t\t\t\t\texpenses can be allocated and edited on the days and months you "
+"prefer."
+msgstr ""
+"Esse sistema é show! Tô usando faz um tempão, e sério, não sei como vivia "
+"sem. Ajuda demais a ver e controlar minhas finanças, e o melhor é que é "
+"facinho de usar. Dá pra organizar e mudar os gastos nos dias e meses que "
+"quiser. Top demais!"
+
+#: .\templates\core\home.html:137
+msgid ""
+"It is a complete app with many features. Excellent, super organized and "
+"gives good visibility of\n"
+"\t\t\t\t\tour monthly commitment among other really cool options. I "
+"recommend it and the best app I've\n"
+"\t\t\t\t\tever seen. Enjoy the app that just keeps getting better!"
+msgstr ""
+"Esse app é incrível, sério! Cheio de recursos maneiros, mega organizado e dá "
+"uma visão boa dos gastos mensais, além de outras coisas legais. Recomendo "
+"demais, é o melhor que já vi. Vale a pena conferir, só tá melhorando!"
+
+#: .\templates\core\home.html:143
+msgid ""
+"Good for controlling your resources. Some functions are still missing, I "
+"spoke with the support\n"
+"\t\t\t\t\tstaff and their response was that they are always studying how to "
+"improve the system and accept\n"
+"\t\t\t\t\tsuggestions to develop improvements."
+msgstr ""
+"Bem legal pra manter o controle. Ainda tão acertando algumas coisas, mas "
+"falei com o pessoal do suporte e eles disseram que estão sempre na missão de "
+"deixar o sistema melhor, aceitam sugestões de boas ideias também."
+
+#: .\templates\core\privacy_policy.html:22
+msgid "Privacy Police"
+msgstr "Política de Privacidade"
+
+#: .\templates\core\privacy_policy.html:28
+msgid "Privacy Policy of Murangoo Finance"
+msgstr "Política de Privacidade de Murangoo Finance"
+
+#: .\templates\core\privacy_policy.html:43
+#: .\templates\core\service_terms.html:42
+msgid "Please contact support for more information"
+msgstr "Para mais informações, contate o suporte"
+
+#: .\templates\core\privacy_policy.html:43
+#: .\templates\core\service_terms.html:42 .\templates\financial\base.html:175
+msgid "support"
+msgstr "suporte"
+
+#: .\templates\core\service_terms.html:28
+msgid "Service terms of Murangoo Finance"
+msgstr "Termos de uso de Murangoo Finance"
+
+#: .\templates\financial\account_settings.html:9
+msgid "Settings"
+msgstr "Configurações"
+
+#: .\templates\financial\account_settings.html:28
+msgid "categories:"
+msgstr "categorias:"
+
+#: .\templates\financial\account_settings.html:48
+msgid "bank accounts:"
+msgstr "contas bancárias:"
+
+#: .\templates\financial\account_settings.html:68
+msgid "credit cards:"
+msgstr "cartões de crédito:"
+
+#: .\templates\financial\account_settings.html:88
+msgid "payees:"
+msgstr "beneficiários:"
+
+#: .\templates\financial\account_settings.html:122
+#: .\templates\financial\dashboards_financial.html:213
+#: .\templates\financial\list_invoice.html:795
+msgid "You have nothing to display here. Please add new items!"
+msgstr "Você não tem nada para exibir aqui. Adicione novos itens!"
+
+#: .\templates\financial\bank_new.html:24
+msgid "new bank account"
+msgstr "nova conta bancária"
+
+#: .\templates\financial\bank_new.html:25
+msgid ""
+"Customize! Add your bank accounts, this can also help with your filters!"
+msgstr ""
+"Customize! Adicione suas contas bancárias, isso também pode ajudar com seus "
+"filtros!"
+
+#: .\templates\financial\bank_new.html:31
+#: .\templates\financial\card_new.html:31
+#: .\templates\financial\category_new.html:31
+#: .\templates\financial\list_invoice.html:428
+#: .\templates\financial\payee_new.html:31
+msgid "+ insert"
+msgstr "+ inserir"
+
+#: .\templates\financial\bank_update.html:24
+msgid "update bank account"
+msgstr "alterar conta bancária"
+
+#: .\templates\financial\bank_update.html:25
+msgid "Here you can change or delete your bank accounts."
+msgstr "Aqui você pode alterar ou excluir suas contas bancárias."
+
+#: .\templates\financial\bank_update.html:35
+#: .\templates\financial\card_update.html:35
+#: .\templates\financial\category_update.html:35
+#: .\templates\financial\payee_update.html:35
+#: .\templates\financial\update_invoice.html:175
+msgid "update"
+msgstr "alterar"
+
+#: .\templates\financial\base.html:119 .\templates\financial\base.html:169
+msgid "Hello"
+msgstr "Olá"
+
+#: .\templates\financial\base.html:127
+msgid "dashboard"
+msgstr "dashboard"
+
+#: .\templates\financial\base.html:132
+msgid "finance"
+msgstr "finanças"
+
+#: .\templates\financial\base.html:137
+msgid "tasks"
+msgstr "tarefas"
+
+#: .\templates\financial\base.html:142
+msgid "investments"
+msgstr "investimentos"
+
+#: .\templates\financial\base.html:147
+msgid "settings"
+msgstr "configurações"
+
+#: .\templates\financial\base.html:172
+msgid "my account"
+msgstr "minha conta"
+
+#: .\templates\financial\base.html:173
+msgid "privacy policy"
+msgstr "política de privacidade"
+
+#: .\templates\financial\base.html:174
+msgid "service terms"
+msgstr "termos de uso"
+
+#: .\templates\financial\card_new.html:24
+msgid "new credit card"
+msgstr "novo cartão de crédito"
+
+#: .\templates\financial\card_new.html:25
+msgid "Customize! Add your credit cards, this can also help with your filters!"
+msgstr ""
+"Customize! Adicione seus cartões de crédito, isso também pode ajudar com "
+"seus filtros!"
+
+#: .\templates\financial\card_update.html:24
+msgid "update credit card"
+msgstr "alterar cartão de crédito"
+
+#: .\templates\financial\card_update.html:25
+msgid "Here you can change or delete your credit cards."
+msgstr "Aqui você pode alterar ou excluir seus cartões de crédito."
+
+#: .\templates\financial\category_new.html:24
+msgid "new category"
+msgstr "nova categoria"
+
+#: .\templates\financial\category_new.html:25
+msgid ""
+"Customize! Create your own categories, this can also help with your filters!"
+msgstr ""
+" Customize! Crie suas próprias categorias, isso também pode ajudar nos seus "
+"filtros!"
+
+#: .\templates\financial\category_update.html:24
+msgid "update category"
+msgstr "alterar categoria"
+
+#: .\templates\financial\category_update.html:25
+msgid "Here you can change or delete your categories."
+msgstr "Aqui você pode alterar ou excluir suas categorias."
+
+#: .\templates\financial\dashboards_financial.html:25
+msgid "Monitor your financial health"
+msgstr "Monitore sua saúde financeira"
+
+#: .\templates\financial\dashboards_financial.html:35
+#: .\templates\financial\dashboards_financial.html:61
+#: .\templates\financial\dashboards_financial.html:227
+#: .\templates\financial\list_invoice.html:43
+msgid "revenues"
+msgstr "receitas"
+
+#: .\templates\financial\dashboards_financial.html:40
+#: .\templates\financial\dashboards_financial.html:66
+#: .\templates\financial\dashboards_financial.html:227
+#: .\templates\financial\list_invoice.html:49
+msgid "expenses"
+msgstr "despesas"
+
+#: .\templates\financial\dashboards_financial.html:51
+msgid "expenses by categories"
+msgstr "despesas por categorias"
+
+#: .\templates\financial\dashboards_financial.html:60
+#: .\templates\financial\dashboards_financial.html:65
+#: .\templates\financial\dashboards_financial.html:70
+#: .\templates\financial\dashboards_financial.html:159
+#: .\templates\financial\list_invoice.html:27
+#: .\templates\financial\list_invoice.html:36
+#: .\templates\financial\list_invoice.html:42
+#: .\templates\financial\list_invoice.html:48
+#: .\templates\financial\list_invoice.html:54
+#: .\templates\financial\list_invoice.html:510
+#: .\templates\financial\list_invoice.html:543
+#: .\templates\financial\list_invoice.html:584
+#: .\templates\financial\list_invoice.html:605
+#: .\templates\financial\list_invoice.html:627
+#: .\templates\userinfo\payments.html:35 .\templates\userinfo\payments.html:76
+msgid "$"
+msgstr "R$"
+
+#: .\templates\financial\dashboards_financial.html:71
+#: .\templates\financial\list_invoice.html:37
+msgid "balance"
+msgstr "saldo"
+
+#: .\templates\financial\dashboards_financial.html:80
+msgid "top 5 expenses"
+msgstr "top 5 despesas"
+
+#: .\templates\financial\dashboards_financial.html:123
+msgid "credit card spending"
+msgstr "gasto por cartão de crédito"
+
+#: .\templates\financial\delete_invoice.html:25
+msgid "delete transaction"
+msgstr "apagar lançamento"
+
+#: .\templates\financial\delete_invoice.html:26
+msgid "Do you really want to delete "
+msgstr "Deseja realmente remover "
+
+#: .\templates\financial\delete_invoice.html:29
+msgid "Delete"
+msgstr "Deletar"
+
+#: .\templates\financial\list_invoice.html:9
+#: .\templates\financial\update_invoice.html:9
+msgid "Financial"
+msgstr "Finanças"
+
+#: .\templates\financial\list_invoice.html:26
+msgid "Your current balance is:"
+msgstr "Seu saldo atual é:"
+
+#: .\templates\financial\list_invoice.html:55
+msgid "total selected"
+msgstr "total selecionado"
+
+#: .\templates\financial\list_invoice.html:60
+#: .\templates\financial\list_invoice.html:266
+#: .\templates\financial\new_invoice.html:25
+msgid "new transaction"
+msgstr "novo lançamento"
+
+#: .\templates\financial\list_invoice.html:67
+#: .\templates\financial\list_invoice.html:77
+msgid "Search..."
+msgstr "Pesquisar..."
+
+#: .\templates\financial\list_invoice.html:72
+#: .\templates\financial\new_invoice.html:153
+msgid "+ new transaction"
+msgstr "+ novo lançamento"
+
+#: .\templates\financial\list_invoice.html:88
+msgid "select all"
+msgstr "selecionar todos"
+
+#: .\templates\financial\list_invoice.html:89
+#: .\templates\userinfo\payments.html:61
+msgid "date"
+msgstr "data"
+
+#: .\templates\financial\list_invoice.html:90
+#: .\templates\financial\list_invoice.html:282
+#: .\templates\financial\new_invoice.html:40
+#: .\templates\financial\update_invoice.html:44
+msgid "description"
+msgstr "descrição"
+
+#: .\templates\financial\list_invoice.html:91
+#: .\templates\financial\list_invoice.html:272
+#: .\templates\financial\new_invoice.html:30
+#: .\templates\financial\update_invoice.html:32
+msgid "type"
+msgstr "tipo"
+
+#: .\templates\financial\list_invoice.html:92
+#: .\templates\financial\list_invoice.html:205
+#: .\templates\financial\list_invoice.html:327
+#: .\templates\financial\new_invoice.html:85
+#: .\templates\financial\update_invoice.html:89
+msgid "category"
+msgstr "categoria"
+
+#: .\templates\financial\list_invoice.html:93
+msgid "bank"
+msgstr "conta"
+
+#: .\templates\financial\list_invoice.html:94
+#: .\templates\financial\list_invoice.html:215
+#: .\templates\financial\list_invoice.html:366
+#: .\templates\financial\new_invoice.html:124
+#: .\templates\financial\update_invoice.html:128
+msgid "card"
+msgstr "cartão"
+
+#: .\templates\financial\list_invoice.html:95
+#: .\templates\financial\list_invoice.html:297
+#: .\templates\financial\new_invoice.html:55
+#: .\templates\financial\update_invoice.html:59
+#: .\templates\userinfo\payments.html:63
+msgid "amount"
+msgstr "valor"
+
+#: .\templates\financial\list_invoice.html:96
+#: .\templates\financial\list_invoice.html:220
+#: .\templates\financial\list_invoice.html:380
+#: .\templates\financial\new_invoice.html:138
+#: .\templates\financial\update_invoice.html:142
+#: .\templates\userinfo\payments.html:64
+msgid "status"
+msgstr "status"
+
+#: .\templates\financial\list_invoice.html:97
+msgid "actions"
+msgstr "ações"
+
+#: .\templates\financial\list_invoice.html:171
+msgid "customize how data will be displayed:"
+msgstr "personalize como os dados serão exibidos:"
+
+#: .\templates\financial\list_invoice.html:175
+msgid "initial date"
+msgstr "data inicial"
+
+#: .\templates\financial\list_invoice.html:185
+msgid "final date"
+msgstr "data final"
+
+#: .\templates\financial\list_invoice.html:195
+msgid "Transaction type"
+msgstr "Tipo de lançamento"
+
+#: .\templates\financial\list_invoice.html:210
+#: .\templates\financial\list_invoice.html:342
+#: .\templates\financial\new_invoice.html:100
+#: .\templates\financial\update_invoice.html:104
+msgid "bank account"
+msgstr "conta bancária"
+
+#: .\templates\financial\list_invoice.html:225
+msgid "order"
+msgstr "ordem"
+
+#: .\templates\financial\list_invoice.html:242
+msgid "clean filter"
+msgstr "limpar filtro"
+
+#: .\templates\financial\list_invoice.html:243
+msgid "apply filter"
+msgstr "filtrar"
+
+#: .\templates\financial\list_invoice.html:312
+#: .\templates\financial\new_invoice.html:70
+#: .\templates\financial\update_invoice.html:74
+msgid "due date"
+msgstr "data"
+
+#: .\templates\financial\list_invoice.html:352
+#: .\templates\financial\new_invoice.html:110
+#: .\templates\financial\update_invoice.html:114
+msgid "payee"
+msgstr "beneficiário"
+
+#: .\templates\financial\list_invoice.html:359
+#: .\templates\financial\new_invoice.html:117
+#: .\templates\financial\update_invoice.html:121
+msgid "document number"
+msgstr "número do documento"
+
+#: .\templates\financial\list_invoice.html:373
+#: .\templates\financial\new_invoice.html:131
+#: .\templates\financial\update_invoice.html:135
+msgid "notes"
+msgstr "notas"
+
+#: .\templates\financial\list_invoice.html:387
+msgid "repeat"
+msgstr "repetir"
+
+#: .\templates\financial\list_invoice.html:396
+msgid "number of repetitions"
+msgstr "número de repetições"
+
+#: .\templates\financial\list_invoice.html:407
+msgid "period"
+msgstr "período"
+
+#: .\templates\financial\list_invoice.html:427
+#: .\templates\financial\new_invoice.html:152
+#: .\templates\financial\update_invoice.html:174
+msgid "cancel"
+msgstr "cancelar"
+
+#: .\templates\financial\payee_new.html:24
+msgid "new payee"
+msgstr "novo beneficiário"
+
+#: .\templates\financial\payee_new.html:25
+msgid ""
+"Customize! Add some beneficiaries, this can also help with your filters!"
+msgstr ""
+"Customize! Adicione alguns beneficiários, isso também pode ajudar nos seus "
+"filtros!"
+
+#: .\templates\financial\payee_update.html:24
+msgid "update payee"
+msgstr "alterar beneficiário"
+
+#: .\templates\financial\payee_update.html:25
+msgid "Here you can change or delete your beneficiaries."
+msgstr "Aqui você pode alterar ou excluir seus beneficiários."
+
+#: .\templates\financial\update_invoice.html:27
+msgid "update transaction"
+msgstr "alterar lançamento"
+
+#: .\templates\financial\update_invoice.html:80
+msgid "MM/DD/AAAA"
+msgstr "DD/MM/AAAA"
+
+#: .\templates\userinfo\delete_acc.html:25
+msgid "delete account"
+msgstr "excluir conta"
+
+#: .\templates\userinfo\delete_acc.html:26
+msgid ""
+"Be careful! After entering your password, inputting the code sent to your "
+"email, and clicking 'delete,' your account will be permanently deleted, and "
+"all your data will be lost."
+msgstr ""
+"Tenha cuidado! Depois de inserir sua senha, inserir o código enviado ao seu "
+"email e clicar em ‘excluir’, sua conta será excluída e todos os seus dados "
+"serão perdidos permanentemente!"
+
+#: .\templates\userinfo\delete_acc.html:35
+msgid "send code"
+msgstr "enviar código"
+
+#: .\templates\userinfo\delete_acc.html:36
+msgid "resend code"
+msgstr "reenviar código"
+
+#: .\templates\userinfo\payments.html:27
+msgid "Your current plan:"
+msgstr "Seu plano atual:"
+
+#: .\templates\userinfo\payments.html:37
+msgid "Plan valid until:"
+msgstr "Plano válido até:"
+
+#: .\templates\userinfo\payments.html:40
+msgid "+ Change my plan"
+msgstr "+ Alterar meu plano"
+
+#: .\templates\userinfo\payments.html:45
+msgid ""
+"We are still in the testing phase. For now, feel free to try our services."
+msgstr ""
+"Ainda estamos em fase de teste, mas fique a vontade para usar nossos "
+"serviços."
+
+#: .\templates\userinfo\payments.html:54
+msgid "subscription history:"
+msgstr "Histórico da assinatura:"
+
+#: .\templates\userinfo\payments.html:62
+msgid "plan"
+msgstr "plano"
+
+#: .\templates\userinfo\payments.html:91 .\userinfo\models.py:82
+msgid "renewed"
+msgstr "renovado"
+
+#: .\templates\userinfo\payments.html:98 .\userinfo\models.py:83
+msgid "refused"
+msgstr "recusado"
+
+#: .\templates\userinfo\profile.html:24
+msgid "Check your profile:"
+msgstr "Confira seu perfil:"
+
+#: .\templates\userinfo\profile.html:69
+msgid "Name:"
+msgstr "Nome:"
+
+#: .\templates\userinfo\profile.html:73
+msgid "Phone number:"
+msgstr "Número do celular:"
+
+#: .\templates\userinfo\profile.html:77
+msgid "Email:"
+msgstr "Email:"
+
+#: .\templates\userinfo\profile.html:81
+msgid "Country:"
+msgstr "País:"
+
+#: .\templates\userinfo\profile.html:85
+msgid "Date of birth:"
+msgstr "Data de nascimento:"
+
+#: .\templates\userinfo\profile.html:89
+msgid "Occupation:"
+msgstr "Profissão:"
+
+#: .\templates\userinfo\profile.html:93
+msgid "Bio:"
+msgstr "Bio:"
+
+#: .\templates\userinfo\profile.html:97
+msgid "Update Profile"
+msgstr "Atualizar perfil"
+
+#: .\userinfo\forms.py:24 .\userinfo\forms.py:95
+msgid "Enter your full name"
+msgstr "Insira seu nome completo"
+
+#: .\userinfo\forms.py:104
+msgid "occupation"
+msgstr "profissão"
+
+#: .\userinfo\forms.py:107
+msgid "What's your profession?"
+msgstr "Qual a sua profissão?"
+
+#: .\userinfo\forms.py:116
+msgid "date_of_birth"
+msgstr "Data de nascimento"
+
+#: .\userinfo\forms.py:131
+msgid "biography"
+msgstr "biografia"
+
+#: .\userinfo\forms.py:134
+msgid "So, tell us a bit more about you. What's your story?"
+msgstr "Então, conte um pouco sobre você, qual a sua história?"
+
+#: .\userinfo\forms.py:143
+msgid "Phone"
+msgstr "Celular"
+
+#: .\userinfo\forms.py:148
+msgid "Enter your phone number"
+msgstr "Insira o número do seu celular"
+
+#: .\userinfo\forms.py:156
+msgid "Enter a valid phone number (numbers only)."
+msgstr "Insira um número de celular válido (apenas números)."
+
+#: .\userinfo\forms.py:166
+msgid "current password"
+msgstr "senha atual"
+
+#: .\userinfo\forms.py:170
+msgid "Current password"
+msgstr "Senha atual"
+
+#: .\userinfo\forms.py:176
+msgid "number sent"
+msgstr "número enviado"
+
+#: .\userinfo\forms.py:180
+msgid "Number sent to email"
+msgstr "Número enviado ao email"
+
+#: .\userinfo\models.py:15
+msgid "trial"
+msgstr "teste"
+
+#: .\userinfo\models.py:21
+msgid "signature"
+msgstr "assinatura"
+
+#: .\userinfo\models.py:27
+msgid "free"
+msgstr "grátis"
+
+#: .\userinfo\views.py:38
+msgid "Your profile has been updated."
+msgstr "Seu perfil foi atualizado com sucesso."
+
+#: .\userinfo\views.py:124
+msgid "MURANGOO: Account deletion code"
+msgstr "MURANGOO: Código de exclusão de conta"
+
+#: .\userinfo\views.py:125
+msgid "Your code to delete your account is: "
+msgstr "Seu código para excluir sua conta é: "
+
+#: .\userinfo\views.py:142
+msgid "Your account has been successfully deleted."
+msgstr "Sua conta foi excluída com sucesso."
+
+#: .\userinfo\views.py:144
+msgid "The password entered does not match the user's password."
+msgstr "A senha digitada não corresponde à senha do usuário."
+
+#: .\userinfo\views.py:145
+msgid ""
+"You were logged out because you exceeded the attempt limit. Be careful, your "
+"account will be blocked."
+msgstr ""
+"Você foi desconectado porque excedeu o limite de tentativas. Tenha cuidado, "
+"sua conta pode ser bloqueada."
+
+#: .\userinfo\views.py:146
+msgid ""
+"The number entered is not the same as the number sent to your email, repeat "
+"the process!"
+msgstr ""
+"O número digitado não corresponde ao enviado ao seu email, repita o processo!"
+
+#: .\userinfo\views.py:170
+msgid "MURANGOO: Account deletion"
+msgstr "MURANGOO: Exclusão de conta"
+
+#: .\userinfo\views.py:171
+msgid ""
+"Your account has been successfully deleted from our app. Your data has all "
+"been deleted and there is no longer any record of you with us. Thank you for "
+"spending this time with us."
+msgstr ""
+"Sua conta foi excluida com sucesso de nosso aplicativo. Seus dados foram "
+"todos apagados e não existe mais registro seu conosco. Obrigado por passar "
+"esse tempo com a gente."
+
+#: .\userinfo\views.py:193
+msgid "MURANGOO: Attention! Someone is trying to delete your account"
+msgstr "MURANGOO: Atenção! Alguém está tentando excluir sua conta"
+
+#: .\userinfo\views.py:194
+msgid ""
+"Attention! Someone is trying to delete your account. Since attempts to "
+"delete your account using your password have already been exceeded, you have "
+"been logged out. If you are not trying to delete your account, please change "
+"your password!"
+msgstr ""
+"Atenção! Alguém está tentando excluir sua conta. Como as tentativas de "
+"excluir sua conta usando sua senha já foram excedidas, você foi "
+"desconectado. Se você não está tentando excluir sua conta, por favor, altere "
+"sua senha!"
+
+#~ msgid "Date of birth"
+#~ msgstr "Data de nascimento"
+
+#~ msgid "back to blog"
+#~ msgstr "voltar"

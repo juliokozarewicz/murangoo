@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+
+<!-- This web application was developed entirely by Julio Kozarewicz. -->
+<!-- www.juliokozarewicz.dev -->
+
+
+<html>
+
+<head>
+	{% load static %}
+	{% load i18n %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+
+	<meta name="theme-color" content="#FA4658"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#FA4658"/>
+	<meta name="msapplication-navbutton-color" content="#FA4658"/>
+
+	<script src="{% static '/financial/js/financial.js' %}"></script>
+	<link rel="stylesheet" href="{% static '/financial/css/base.css' %}">
+	<link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+	{% block htmlhead %}
+	{% endblock htmlhead %}
+</head>
+
+<body>
+
+	<header style="z-index: 90; position: relative; display: flex; justify-content: center; width: 100%;">
+
+		<nav id="idnav">
+
+			<div id="idframeerror">
+		
+				{% if messages %}
+
+					{% for message in messages %}
+						{% if message.tags == 'error' %}
+							<div id="{{ message }}" class="classerror" onclick="new unloadPage('{{ message }}')">
+								<strong>{{ message }}</strong>
+								<p onclick="new unloadPage('{{ message }}')" id="closeerror">x</p>
+							</div>
+						{% endif %}
+					{% endfor %}
+
+					{% for message in messages %}
+						{% if message.tags != 'error' %}
+							<div id="id_{{ message }}" class="classsucess" onclick="new unloadPage('id_{{ message }}')">
+								<strong>{{ message|safe }}</strong>
+								<p onclick="new unloadPage('id_{{ message }}')" id="closeerror">x</p>
+							</div>
+						{% endif %}
+					{% endfor %}
+
+				{% endif %}
+					
+				{% if form.errors %}
+					{% for error in form.non_field_errors %}
+						<div id="{{ error }}" class="classerror" onclick="new unloadPage('{{ error }}')">
+							<strong>{{ error }}</strong>
+							<p onclick="new unloadPage('{{ error }}')" id="closeerror">x</p>
+						</div>
+					{% endfor %}
+
+					{% for field in form %}
+						{% for error in field.errors %}
+							<div id="{{ field.auto_id }}" class="classerror" onclick="new unloadPage('{{ field.auto_id }}')">
+							<strong>{{ field.label }}: {{ error }}</strong>
+							<p onclick="new unloadPage('{{ field.auto_id }}')" id="closeerror">x</p>
+							</div>
+						{% endfor %}
+					{% endfor %}
+				{% endif %}
+			</div>
+
+			<div id="idblackbackgroundhamb" onclick="new status_menu()"></div>
+
+			<div class="iconoptmenumobile" onclick="location.href='/financial'">
+				<img class="imagoptionnav" src="{% static '/financial/images/dashboard-optgreen.svg' %}" />
+				<div class="iconnavselected" id="iconnavdashboard"></div>
+			</div>
+
+			<div class="iconoptmenumobile" onclick="location.href='/financial/invoices'">
+				<img class="imagoptionnav" src="{% static '/financial/images/finance-optgreen.svg' %}" />
+				<div class="iconnavselected" id="iconnavlisinvoice"></div>
+			</div>
+			
+			<div class="iconoptmenumobile" onclick="location.href='/financial/'">
+				<img class="imagoptionnav" src="{% static '/financial/images/tasks-optgreen.svg' %}" />
+				<div class="iconnavselected" id="iconnavtasks"></div>
+			</div>
+
+			<div id="idclcickmenulefthamburguer" onclick="new status_menu()">
+				<div id="idtransparenthamburguer">
+
+					<div id="idhamb1"></div>
+					<div id="idhamb2"></div>
+					<div id="idhamb3"></div>
+
+				</div>
+			</div>
+
+			<div id="idredbackgorund">
+
+				<div id="idhamboptionsmenu">
+
+					<div id="imagelogomenu">
+						<img class="imagelogomenuimg" src="{% static '/financial/images/logo-white.svg' %}" />
+					</div>
+
+					<div id="mobileaccoptallframe" onclick="location.href='/accounts'">
+						<div id="mobileaccopt">
+							<div id="ballinitmenuicon"></div>
+							<img class="iconaccmobilemenusvg" src="{% static '/financial/images/iconaccmobilemenu.svg' %}" />
+							<div id="ballinitialsmobile">
+								<div id="ballnameinitialsmenu">{{user_initials}}</div>
+							</div>
+							<div id="contentaccmobile">
+								<p id="hellousermobile">{% blocktrans %}Hello{% endblocktrans %}, {{first_name_global}}!</p>
+								<p id="textaccmobile">{% blocktrans %}Manage your account.{% endblocktrans %}</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="optionmenuhamburguer" onclick="location.href='/financial'">
+						<img class="imagoption" src="{% static '/financial/images/dashboard-opt.svg' %}" />
+						<p>{% blocktrans %}dashboard{% endblocktrans %}</p>
+					</div>
+
+					<div class="optionmenuhamburguer" onclick="location.href='/financial/invoices'">
+						<img class="imagoption" src="{% static '/financial/images/finance-opt.svg' %}" />
+						<p>{% blocktrans %}finance{% endblocktrans %}</p>
+					</div>
+
+					<div class="optionmenuhamburguer">
+						<img class="imagoption" src="{% static '/financial/images/tasks-opt.svg' %}" />
+						<p>{% blocktrans %}tasks{% endblocktrans %}</p>
+					</div>
+
+					<div class="optionmenuhamburguer">
+						<img class="imagoption" src="{% static '/financial/images/investments-opt.svg' %}" />
+						<p>{% blocktrans %}investments{% endblocktrans %}</p>
+					</div>
+
+					<div class="optionmenuhamburguer" onclick="location.href='/account-settings'">
+						<img class="imagoption" src="{% static '/financial/images/settings-opt.svg' %}" />
+						<p>{% blocktrans %}settings{% endblocktrans %}</p>
+					</div>
+
+				</div>
+			</div>
+
+			<img id="idlogomenu" src="{% static '/financial/images/logo-white.svg' %}" />
+
+			<div id="idblackbackgroundkebab" onclick="new status_account()"></div>
+
+			<div id="idmenurightkebab" onclick="new status_account()">
+				<div id="idaccountball">
+					<span id="textinitialsbasebar" data-user-initials="{{ user_initials }}">{{user_initials}}</span>
+				</div>
+			</div>
+
+			<div id="idmenuoptionskebab">
+
+				<div style="margin-top: 5vh;"></div>
+				<div id="ballnameinitialsmenu">{{user_initials}}</div>
+
+				<div style="margin-top: 2vh;"></div>
+				<p id="textnamehellomenu">{% blocktrans %}Hello{% endblocktrans %}, {{first_name_global}}!</p>
+				<div style="margin-bottom: 2vh;"></div>
+
+				<div class="optionskebab" onclick="location.href='/accounts'">{% blocktrans %}my account{% endblocktrans %}</div>
+				<div class="optionskebab" onclick="window.open('/privacy-policy'), new status_account()">{% blocktrans %}privacy policy{% endblocktrans %}</div>
+				<div class="optionskebab" onclick="window.open('/service-terms'), new status_account()">{% blocktrans %}service terms{% endblocktrans %}</div>
+				<div class="optionskebab" onclick="window.open('/contact'), new status_account()">{% blocktrans %}support{% endblocktrans %}</div>
+
+				<div style="margin-bottom: 5vh;"></div>
+
+				<div id="idlogout" onclick="location.href='/accounts/logout'">{% blocktrans %}logout{% endblocktrans %}</div>
+			</div>
+
+		</nav>
+	
+	</header>
+
+	<div style="z-index: 80; position: relative;">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+
+</html>

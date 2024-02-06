@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+		<link rel="stylesheet" href="{% static '/userinfo/css/delete_acc.css' %}">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+    {% endblock htmlhead %}
+</head>
+
+<section id="sectiondeleteinvoice_delete">
+
+    <div id="blackbackground_delete" onclick="new unloadPage('loadcontent')"></div>
+
+    <div id="framedelete_delete">
+
+        <div id="closexframe_delete" onclick="new unloadPage('loadcontent')">x</div>
+
+        <div id="contentdelete_delete">
+            <h1>{% blocktrans %}delete account{% endblocktrans %}</h1>
+            <p>{% blocktrans %}Be careful! After entering your password, inputting the code sent to your email, and clicking 'delete,' your account will be permanently deleted, and all your data will be lost.{% endblocktrans %}</p>
+            <form id="formid" method="post" action="{% url 'userinfo:delete_account' %}" novalidate>
+                {% csrf_token %}
+                <div id="inputdiv2">
+                    {{ form_delete_account.password_inserted }}
+                </div>
+                <div id="inputdiv3">
+                    {{ form_delete_account.number_entered }}
+                </div>
+                <div id="buttonsendcode" onclick="new generate_code(), new hideshowbuttons()">{% blocktrans %}send code{% endblocktrans %}</div>
+                <div id="resendcode" onclick="new generate_code()">{% blocktrans %}resend code{% endblocktrans %}</div>
+                <div id="deleteupdateicon">
+                    <button type="submit" id="trashdelete">{% blocktrans %}delete{% endblocktrans %}</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+</html>

@@ -1,0 +1,684 @@
+@import url("colors.css");
+
+@font-face {
+	font-family: 'title1';
+	src: url('../fonts/title1.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'title2';
+	src: url('../fonts/title2.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'textbold';
+	src: url('../fonts/textbold.ttf') format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-weight: normal;
+}
+
+#idsectiondashboards {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: var(--black);
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+	font-size: 2vh;
+	font-family: textbold;
+	color: var(--newgreen);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.sectionfinancial {
+	width: 90%;
+	max-width: 180vh;
+}
+
+.sectionfinancial .titlesection {
+	max-width: 40vh;
+
+	font-size: 4vh;
+	font-family: title1;
+}
+
+.sectionfinancial .datasection {
+	max-width: 40vh;
+
+	font-size: 3vh;
+	font-family: title1;
+
+	color: var(--redlight);
+}
+
+#splittwosecfinancial {
+	width: 100%;
+	height: 60vh;
+
+	margin-top: 5vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	gap: 3vh;
+}
+
+#alltreecards {
+	width: 45vh;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	gap: 3vh;
+}
+
+.framecontentcards {
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--newpurple);
+
+	border-radius: 2vh;
+
+	border: 0.5vh solid var(--newgreen);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+
+	gap: 0vh;
+
+	overflow: hidden;
+}
+
+.framecontentcards span {
+	font-size: 4vh;
+}
+
+.framecontentcards p {
+	font-size: 2vh;
+
+	margin-top: 2vh;
+	margin-bottom: 1vh;
+
+	text-transform: capitalize;
+}
+
+.framecontentcards:nth-child(2) span {
+	color: var(--redlight);
+}
+
+.framecontentcards:nth-child(3) span {
+	color: white;
+}
+
+#alltopfiveexpense {
+	width: 100vh;
+	height: 100%;
+
+	margin-top: 5vh;
+
+	border-radius: 2vh;
+
+	border: 0.5vh solid var(--redlight);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+
+	overflow: hidden;
+}
+
+.titletopfice {
+	max-width: 40vh;
+
+	color: var(--redlight);
+
+	text-transform: capitalize;
+
+	margin-top: 5vh;
+
+	font-size: 2vh;
+	font-family: textbold;
+	text-transform: capitalize;
+}
+
+.titletopficetree {
+	max-width: 40vh;
+
+	color: var(--blue);
+
+	text-transform: capitalize;
+
+	margin-top: 5vh;
+
+	font-size: 2vh;
+	font-family: textbold;
+	text-transform: capitalize;
+}
+
+#splittreedivtopfive {
+	margin-top: 10vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 2vh;
+}
+
+.rowstopfiveitensone {
+	width: 2vh;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+
+	color: white;
+	text-transform: capitalize;
+
+	gap: 2vh;
+}
+
+.rowstopfiveitenstwo {
+	max-width: 60vh;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+
+	color: var(--newgreen);
+	text-transform: capitalize;
+
+	gap: 2vh;
+}
+
+.rowstopfiveitenstree {
+
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+
+	gap: 2vh;
+}
+
+.textpositions {
+	max-width: 30vh;
+	height: 5vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: start;
+
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;	
+}
+
+.textpositions span {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rowstopfiveitenstree div {
+	position: relative;
+
+	height: 5vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.growthbar {
+	z-index: 1;
+
+	max-width: 40vh;
+
+	margin-left: 2vh;
+
+	position: relative;
+
+	height: 70%;
+
+	background-color: var(--newgreen);
+
+	border-radius: 3vh;
+
+	font-size: 1.3vh;
+	color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: start;
+
+	padding-left: 2vh;
+
+	white-space: nowrap;
+    text-overflow: ellipsis;
+
+	overflow: hidden;
+}
+
+.valuemonetary {
+	z-index: 5;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	min-width: 7.5vh;
+
+	height: 60%;
+
+	border-radius: 1vh;
+
+	font-size: 1.3vh;
+	background-color: white;
+	color: var(--black);
+}
+
+.amptyitenstopfive {
+	position: absolute;
+	bottom: 40vh;
+
+	font-size: 2vh;
+	color: var(--gray4);
+}
+
+#graphmajorbalance {
+	position: relative;
+
+	flex: 1;
+	height: 100%;
+
+	border-radius: 2vh;
+
+	border: 0.5vh solid var(--newpurple);
+
+	display: flex;
+	align-items: start;
+	justify-content: center;
+
+	overflow: hidden;
+}
+
+#graphmajorbalance2 {
+	position: relative;
+
+	flex: 1;
+	height: 100%;
+
+	border-radius: 2vh;
+
+	border: 0.5vh solid var(--orange);
+
+	display: flex;
+	align-items: start;
+	justify-content: center;
+
+	overflow: hidden;
+}
+
+#canvaschart {
+	margin-top: 10vh;
+	max-width: 90%;
+	max-height: 80%;
+}
+
+#canvascharttwo {
+	margin-top: 10vh;
+	max-width: 90%;
+	max-height: 80%;
+}
+
+#canvascharttree {
+	position: absolute;
+	bottom: 3vh;
+
+	max-width: 90%;
+	max-height: 90%;
+}
+
+#legendsmajor {
+	position: absolute;
+	top: 3vh;
+	right: 5vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 5vh;
+}
+
+#legendrevenues {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 1vh;
+}
+
+#legendrevenues div {
+	width: 1.5vh;
+	height: 1.5vh;
+
+	border-radius: 50%;
+
+	background-color: var(--newpurple);
+}
+
+#legendrevenues p {
+	color: var(--gray4);
+	font-size: 1.5vh;
+	text-transform: capitalize;
+}
+
+#legendexpenses {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 1vh;
+}
+
+#legendexpenses div {
+	width: 1.5vh;
+	height: 1.5vh;
+
+	border-radius: 50%;
+
+	background-color: var(--newgreen);
+}
+
+#legendexpenses p {
+	color: var(--gray4);
+	font-size: 1.5vh;
+	text-transform: capitalize;
+}
+
+#titlemajortwo {
+	position: absolute;
+	top: 3vh;
+
+	color: var(--orange);
+
+	font-size: 2vh;
+	font-family: textbold;
+	text-transform: capitalize;
+}
+
+#twosecdashboardfinance {
+	height: 60vh;
+
+	margin-top: 2vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 3vh;
+}
+
+#secondframe {
+	position: relative;
+
+	flex: 1;
+	height: 100%;
+
+	margin-top: 5vh;
+
+	border-radius: 2vh;
+
+	border: 0.5vh solid var(--blue);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+
+	overflow: hidden;
+}
+
+/* ##### */
+/* other devices */
+@media (max-width: 900px) {
+	.sectionfinancial {
+		width: 100%;
+
+		margin-bottom: 5vh;
+	}
+
+	#splittwosecfinancial {
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		margin-top: 5vh;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		gap: 3vh;
+	}
+
+	#graphmajorbalance {
+		width: 90%;
+
+		border-radius: 2vh;
+
+		border: 0.5vh solid var(--newpurple);
+
+		display: flex;
+		align-items: start;
+		justify-content: center;
+
+	}
+
+	#graphmajorbalance2 {
+
+		margin-top: 3vh;
+
+		width: 90%;
+
+		border-radius: 2vh;
+
+		border: 0.5vh solid var(--orange);
+
+		display: flex;
+		align-items: start;
+		justify-content: center;
+
+		overflow: hidden;
+	}
+
+	#canvaschart {
+		margin-top: 8vh;
+		max-width: 90%;
+		max-height: 30vh;
+		margin-bottom: 3vh;
+	}
+
+	#canvascharttwo {
+		margin-top: 8vh;
+		max-width: 90%;
+		max-height: 30vh;
+		margin-bottom: 3vh;
+	}
+
+	#twosecdashboardfinance {
+		width: 100%;
+		height: auto;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		gap: 3vh;
+	}
+
+	#alltopfiveexpense {
+		width: 90%;
+		height: 58vh;
+
+		margin-top: 6vh;
+
+		border-radius: 2vh;
+
+		border: 0.5vh solid var(--redlight);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+
+		overflow: hidden;
+	}
+
+	.sectionfinancial .titlesection {
+		max-width: 100%;
+
+		text-align: center;
+
+		font-size: 4vh;
+		font-family: title1;
+	}
+
+	.sectionfinancial .datasection {
+		max-width: 100%;
+
+		margin: 2vh;
+
+		font-size: 3vh;
+		font-family: title1;
+
+		text-align: center;
+
+		color: var(--redlight);
+	}
+
+	#legendsmajor {
+		position: absolute;
+		top: 2vh;
+		right: 2vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		gap: 5vh;
+	}
+
+	#alltreecards {
+		display: none;
+		width: 100%;
+		height: 100%;
+	}
+
+	.framecontentcards {
+		width: 90%;
+		height: 13vh;
+
+		background-color: var(--newpurple);
+
+		border-radius: 2vh;
+
+		border: 0.5vh solid var(--newgreen);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		align-items: center;
+
+		gap: 0vh;
+
+		overflow: hidden;
+	}
+
+	.framecontentcards span {
+		font-size: 3vh;
+	}
+
+	.framecontentcards p {
+		font-size: 2vh;
+
+		margin-top: 2vh;
+		margin-bottom: 1vh;
+
+		text-transform: capitalize;
+	}
+
+	.rowstopfiveitenstree span {
+		display: none;
+	}
+
+	#secondframe {
+		position: relative;
+
+		width: 90%;
+		min-height: 40vh;
+		max-height: 58vh;
+
+		margin-top: 3vh;
+
+		border-radius: 2vh;
+
+		border: 0.5vh solid var(--blue);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+
+		overflow: hidden;
+	}
+
+	#canvascharttree {
+		position: absolute;
+		bottom: 3vh;
+
+		max-width: 80%;
+		max-height: 70%;
+	}
+
+	.textpositions {
+		max-width: 20vh;
+		height: 5vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: start;
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;	
+	}
+
+}

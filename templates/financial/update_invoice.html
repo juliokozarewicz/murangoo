@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        {% load l10n %}
+        <title>Murangoo | finance: {% blocktrans %}Financial{% endblocktrans %}</title>
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+		<link rel="stylesheet" href="{% static '/financial/css/update_invoices.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+{% block content %}
+
+    <section id="transaction_content_update">
+
+        <div id="background_black_filter_update" onclick="new updateInvoiceFrame()"></div>
+
+            <div id="contentnewinvoice_update">
+
+                <div id="scrolloffilters_update">
+
+                    <p id="ttitlefilters_update">{% blocktrans %}update transaction{% endblocktrans %}:</p>
+
+                    <form id="formupdateinvoice" method="post" autocomplete="off" action="{% url 'financial:update_invoice' pk=update_invoice.pk %}" novalidate>
+                        {% csrf_token %}
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}type{% endblocktrans %}:</p>
+                        <div class="typetransaction_update">
+                            <div class="radiotypetransaction_update">
+                                {{ form.posting_type.0.tag }}
+                                <label for="{{ form.posting_type.0.id_for_label }}">{{ form.posting_type.0.choice_label }}</label>
+                            </div>
+                            <div class="radiotypetransaction_update">
+                                {{ form.posting_type.1.tag }}
+                                <label for="{{ form.posting_type.1.id_for_label }}">{{ form.posting_type.1.choice_label }}</label>
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}description{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="iconcalendarinput_update">
+                                <img class="iconnewinvoicerequired_update" src="{% static '/financial/images/descriptionicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_update" id="id_payment_description">
+                                {{form.payment_description}}
+                            </div>
+                        </div>
+                        {% if form.payment_description.errors %}
+                            <script type="text/javascript">
+                                document.getElementById('id_payment_description').classList.add("errorinputform");
+                            </script>
+                        {% endif %}
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}amount{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="iconcalendarinput_update">
+                                <img class="iconnewinvoicerequired_update" src="{% static '/financial/images/moneyicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_update" id="id_payment_amount">
+                                {{form.payment_amount}}
+                            </div>
+                        </div>
+                        {% if form.payment_amount.errors %}
+                            <script type="text/javascript">
+                                document.getElementById('id_payment_amount').classList.add("errorinputform");
+                            </script>
+                        {% endif %}
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}due date{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="iconcalendarinput_update">
+                                <img class="iconnewinvoicerequired_update" src="{% static '/financial/images/calendaicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_update" id="id_due_date">
+                                <input type="int" pattern="[0-9/]*" name="due_date" placeholder="{% blocktrans %}MM/DD/AAAA{% endblocktrans %}" inputmode="numeric" required="" class="posting_type" id="id_due_date" label="transaction type" value="{{ form.due_date.value|date:"SHORT_DATE_FORMAT" }}">
+                            </div>
+                        </div>
+                        {% if form.due_date.errors %}
+                            <script type="text/javascript">
+                                document.getElementById('id_due_date').classList.add("errorinputform");
+                            </script>
+                        {% endif %}
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}category{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="iconcalendarinput_update">
+                                <img class="iconnewinvoicerequired_update" src="{% static '/financial/images/categoryicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_update" id="id_category">
+                                {{form.category}}
+                            </div>
+                        </div>
+                        {% if form.category.errors %}
+                            <script type="text/javascript">
+                                document.getElementById('id_category').classList.add("errorinputform");
+                            </script>
+                        {% endif %}
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}bank account{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="iconcalendarinput_update">
+                                <img class="iconnewinvoicerequired_update" src="{% static '/financial/images/bankicon.svg' %}" />
+                            </div>
+                            <div class="filterfieldform_update">
+                                {{form.bank_account}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}payee{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="filterfieldform_update">
+                                {{form.payee}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}document number{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="filterfieldform_update">
+                                {{form.document_number}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}card{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="filterfieldform_update">
+                                {{form.card}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}notes{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="filterfieldformtextarea_update">
+                                {{form.notes}}
+                            </div>
+                        </div>
+
+                        <p id="labelfieldformfilter_update">{% blocktrans %}status{% endblocktrans %}:</p>
+                        <div class="frameinputandicon_update">
+                            <div class="filterfieldform_update">
+                                {{form.status}}
+                            </div>
+                        </div>
+
+                        <div id="deleteiconinsideudpdate">
+                            <div id="framedeleiconupdate" onclick="new updateInvoiceFrame(), new newInvoiceFrame(), new fill_out_copy_form(
+
+                            '{{form.posting_type.value}}',
+                            '{{form.payment_description.value}}',
+                            '{{form.payment_amount.value}}',
+                            '{{form.due_date.value|date:'SHORT_DATE_FORMAT'}}',
+                            '{{form.category.value}}',
+                            '{{form.bank_account.value}}',
+                            '{{form.payee.value}}',
+                            '{{form.document_number.value}}',
+                            '{{form.card.value}}',
+                            '{{form.notes.value}}'
+
+                        )"><img id="trashicondeleteupdate" src="{% static '/financial/images/copyiconwhite.svg' %}" /></div>
+                            <div id="framedeleiconupdate" onclick="new loadPage('{% url 'financial:delete_invoice' pk=update_invoice.pk %}', 'loadcontent'), new updateInvoiceFrame()"><img id="trashicondeleteupdate" src="{% static '/financial/images/trashicondeleteupdate.svg' %}" /></div>
+                        </div>
+
+                        <div style="margin-bottom: 12vh;"></div>
+
+                    </form>
+
+                </div>
+
+                <div id="btnsfiltersendclosenew_update">
+                    <button class="btncancel_update" type="submit" onclick="new updateInvoiceFrame()">{% blocktrans %}cancel{% endblocktrans %}</button>
+                    <button class="buttoninsert_update" type="submit" onclick="new sendforminsertinvoice('formupdateinvoice'), new updateInvoiceFrame()">{% blocktrans %}update{% endblocktrans %}</button>
+                </div>
+
+            </div>
+
+    </section>
+
+{% endblock %}
+
+</html>
+

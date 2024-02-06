@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block htmlhead %}
+      {% load static %}
+      {% load i18n %}
+      <title>Murangoo | finance</title>
+      <meta name="theme-color" content="#F51E33"/>
+      <meta name="apple-mobile-web-app-status-bar-style" content="#F51E33"/>
+      <meta name="msapplication-navbutton-color" content="#F51E33"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+      <link rel="stylesheet" href="{% static '/allauth/css/forgotpassword.css' %}">
+      <script src="{% static '/allauth/js/index.js' %}"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="{% static '/core/images/favicon.png' %}">
+  {% endblock htmlhead %}
+</head>
+
+<section id="idsectionlogin">
+
+  <img id="idlogomenuhambimg" src="{% static '/allauth/images/logo-white.svg' %}" />
+
+  <p id="idtextproceed">{% trans "Verify Your E-mail Address" %}</p>
+
+  <div id="idlinesep"></div>
+  
+  <p id="idtextproceed">{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification e-mail in your main inbox, check your spam folder.{% endblocktrans %}</p>
+
+  <div id="idlinesep"></div>
+
+  <div id="idsignupbottom">
+    <p>{% blocktrans %}Already have an account?{% endblocktrans %}<a onclick="location.href='/accounts/login/'">{% blocktrans %}Sign In{% endblocktrans %}</a></p>
+  </div>
+
+</section>
+
+</html>

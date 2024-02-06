@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        {% load l10n %}
+        {% load humanize %}
+        <title>Murangoo | finance</title>
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+		<link rel="stylesheet" href="{% static '/financial/css/new_invoice.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+<section id="new_transaction_content">
+
+    <div id="background_black_filter" onclick="new unloadPage('contentshowhide')"></div>
+
+    <div id="contentnewinvoice">
+
+        <div id="scrolloffilters">
+            <p id="ttitlefilters">{% blocktrans %}new transaction{% endblocktrans %}:</p>
+
+            <form id="forminsertinvoice" action="{% url 'financial:new_invoice' %}" method="post" autocomplete="off" novalidate>
+                {% csrf_token %}
+
+                <p id="labelfieldformfilter">{% blocktrans %}type{% endblocktrans %}:</p>
+                <div class="typetransaction">
+                    {% for radio in form.posting_type %}
+                        <div class="radiotypetransaction">
+                            {{ radio.tag }}
+                            <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <p id="labelfieldformfilter">{% blocktrans %}description{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="iconcalendarinput">
+                        <img class="iconnewinvoicerequired" src="{% static '/financial/images/descriptionicon.svg' %}" />
+                    </div>
+                    <div class="filterfieldform" id="id_payment_description">
+                        {{form.payment_description}}
+                    </div>
+                </div>
+                {% if form.payment_description.errors %}
+                    <script type="text/javascript">
+                        document.getElementById('id_payment_description').classList.add("errorinputform");
+                    </script>
+                {% endif %}
+
+                <p id="labelfieldformfilter">{% blocktrans %}amount{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="iconcalendarinput">
+                        <img class="iconnewinvoicerequired" src="{% static '/financial/images/moneyicon.svg' %}" />
+                    </div>
+                    <div class="filterfieldform" id="id_payment_amount">
+                        {{form.payment_amount|intcomma}}
+                    </div>
+                </div>
+                {% if form.payment_amount.errors %}
+                    <script type="text/javascript">
+                        document.getElementById('id_payment_amount').classList.add("errorinputform");
+                    </script>
+                {% endif %}
+
+                <p id="labelfieldformfilter">{% blocktrans %}due date{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="iconcalendarinput">
+                        <img class="iconnewinvoicerequired" src="{% static '/financial/images/calendaicon.svg' %}" />
+                    </div>
+                    <div class="filterfieldform" id="id_due_date">
+                        {{form.due_date}}
+                    </div>
+                </div>
+                {% if form.due_date.errors %}
+                    <script type="text/javascript">
+                        document.getElementById('id_due_date').classList.add("errorinputform");
+                    </script>
+                {% endif %}
+
+                <p id="labelfieldformfilter">{% blocktrans %}category{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="iconcalendarinput">
+                        <img class="iconnewinvoicerequired" src="{% static '/financial/images/categoryicon.svg' %}" />
+                    </div>
+                    <div class="filterfieldform" id="id_category">
+                        {{form.category}}
+                    </div>
+                </div>
+                {% if form.category.errors %}
+                    <script type="text/javascript">
+                        document.getElementById('id_category').classList.add("errorinputform");
+                    </script>
+                {% endif %}
+
+                <p id="labelfieldformfilter">{% blocktrans %}bank account{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="iconcalendarinput">
+                        <img class="iconnewinvoicerequired" src="{% static '/financial/images/bankicon.svg' %}" />
+                    </div>
+                    <div class="filterfieldform">
+                        {{form.bank_account}}
+                    </div>
+                </div>
+
+                <p id="labelfieldformfilter">{% blocktrans %}payee{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="filterfieldform">
+                        {{form.payee}}
+                    </div>
+                </div>
+
+                <p id="labelfieldformfilter">{% blocktrans %}document number{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="filterfieldform">
+                        {{form.document_number}}
+                    </div>
+                </div>
+
+                <p id="labelfieldformfilter">{% blocktrans %}card{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="filterfieldform">
+                        {{form.card}}
+                    </div>
+                </div>
+
+                <p id="labelfieldformfilter">{% blocktrans %}notes{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="filterfieldformtextarea">
+                        {{form.notes}}
+                    </div>
+                </div>
+
+                <p id="labelfieldformfilter">{% blocktrans %}status{% endblocktrans %}:</p>
+                <div class="frameinputandicon">
+                    <div class="filterfieldform">
+                        {{form.status}}
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 15vh;"></div>
+
+            </form>
+
+        </div>
+
+        <div id="btnsfiltersendclosenew">
+            <button id="sendformfilter" class="btncancel" type="submit" onclick="new unloadPage('contentshowhide')">{% blocktrans %}cancel{% endblocktrans %}</button>
+            <button id="sendformfilter" class="buttoninsert" type="submit" onclick="sendforms('forminsertinvoice')">{% blocktrans %}+ new transaction{% endblocktrans %}</button>
+        </div>
+    </div>
+
+</section>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+    <h1 style="color: black;" >DESCRIPTION: {{detail_invoice.payment_description}}</h1>
+    <p>TYPE: {{detail_invoice.posting_type}}</p>
+    <p>PAYMENT AMOUNT: {{detail_invoice.payment_amount}}</p>
+    <p>DUE DATE: {{detail_invoice.due_date}}</p>
+    <p>PAYEE: {{detail_invoice.payee}}</p>
+    <p>DOC NUMBER: {{detail_invoice.document_number}}</p>
+    <p>CATEGORY: {{detail_invoice.category}}</p>
+    <p>BANK ACCOUNT: {{detail_invoice.bank_account}}</p>
+    <p>DISCOUNT: {{detail_invoice.discount}}</p>
+    <p>INCREASE: {{detail_invoice.increase}}</p>
+    <p>FEES: {{detail_invoice.fees}}</p>
+    <p>PAYMENT DATE: {{detail_invoice.payment_date}}</p>
+    <p>STATUS PAYMENT: {{detail_invoice.paid_the_bill}}</p>
+    <br>
+    <br>
+    <a href="{{detail_invoice.get_absolute_url_update}}">++ INVOICE EDIT ++</a>
+    <br>
+    <br>
+    <a href="{{detail_invoice.get_absolute_url_delete}}">*** DELETE ***</a>
+
+    
+</body>
+</html>

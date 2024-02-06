@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block htmlhead %}
+        {% load static %}
+        {% load i18n %}
+        <meta name="theme-color" content="#1A1A1A"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A"/>
+        <meta name="msapplication-navbutton-color" content="#1A1A1A"/>
+		<link rel="stylesheet" href="{% static '/financial/css/category_update.css' %}">
+    {% endblock htmlhead %}
+</head>
+
+<section id="sectiondeleteinvoice_update">
+
+    <div id="blackbackground_update" onclick="new unloadPage('loadcontent')"></div>
+
+    <div id="framedelete_update">
+
+        <div id="closexframe_update" onclick="new unloadPage('loadcontent')">x</div>
+
+        <div id="contentdelete_update">
+            <h1>{% blocktrans %}update bank account{% endblocktrans %}</h1>
+            <p>{% blocktrans %}Here you can change or delete your bank accounts.{% endblocktrans %}</p>
+            <form id="formid" method="post" action="{% url 'financial:settings_update_bank' pk=settings_update_bank.pk %}" novalidate>
+                {% csrf_token %}
+                <div id="inputdiv">
+                    {{ form.invoice_bank }}
+                </div>
+                <div id="deleteupdateicon">
+                    <button type="submit" id="trashdelete" formaction="{% url 'financial:settings_delete_bank' pk=settings_update_bank.pk %}">
+                        <img id="trashicondeleteupdatecat" src="/static/financial/images/trashicondeleteupdate.svg">
+                    </button>
+                    <input type="submit" value="{% blocktrans %}update{% endblocktrans %}">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+</html>
