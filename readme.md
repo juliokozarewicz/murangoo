@@ -4,6 +4,8 @@ Murangoo Finance is a financial management platform designed to meet modern fina
 
 <img src="1_files/desktop/Screenshot_1.jpg"> <br /> <br />
 
+[![Texto alternativo](https://img.youtube.com/vi/zFoXgpDrT24/0.jpg)](https://www.youtube.com/watch?v=zFoXgpDrT24)
+
 
 ## Mobile (Responsive Web Application)
 
