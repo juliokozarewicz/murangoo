@@ -5,6 +5,10 @@ Murangoo Finance is a financial management platform designed to meet modern fina
 ## Mobile (Responsive Web Application)
 
 <img src="1_files/0_README/1.png"> <br /> <br />
+<img src="1_files/0_README/2.png"> <br /> <br />
+<img src="1_files/0_README/3.png"> <br /> <br />
+<img src="1_files/0_README/4.png"> <br /> <br />
+<img src="1_files/0_README/5.png"> <br /> <br />
 
 Furthermore, Murangoo Finance offers comprehensive account control features, allowing users to track their expenses, income, and balances in real-time, providing a clear and organized view of their finances. In addition to this, the platform also provides functionalities for task and investment control, offering a complete and integrated solution for managing personal and professional finances efficiently and conveniently.
 
