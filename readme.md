@@ -3,9 +3,9 @@
 Murangoo Finance is a financial management platform designed to meet modern financial control needs. With its responsive web application, users can access their accounts and perform financial control tasks from any device, whether it's a desktop computer, tablet, or smartphone.
 
 <br />
------------------------------------------------------------------------
+
 **Murangoo Finance video: [Click here to see the web application in action](https://www.youtube.com/watch?v=zFoXgpDrT24)**
------------------------------------------------------------------------
+
 <br />
 
 <img src="1_files/desktop/Screenshot_1.jpg"> <br /> <br />
